@@ -220,15 +220,16 @@ class SendCode extends StatelessWidget {
       children: [
         for (var num in listnumber)
           Container(
-              margin: EdgeInsets.symmetric(vertical: 7, horizontal: 7),
-              alignment: Alignment.center,
-              width: 50,
-              height: 50,
-              color: Color.fromARGB(20, 255, 255, 255),
-              child: Text(
-                num,
-                style: TextStyle(fontSize: 20),
-              ))
+            margin: EdgeInsets.symmetric(vertical: 7, horizontal: 7),
+            alignment: Alignment.center,
+            width: 50,
+            height: 50,
+            color: Color.fromARGB(20, 255, 255, 255),
+            child: Text(
+              num,
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
       ],
     );
   }

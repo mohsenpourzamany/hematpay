@@ -1,6 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenu/aipay.dart';
+import 'package:hematpay/mainmenu/bank_transfer.dart';
+import 'package:hematpay/mainmenu/funds_box.dart';
+import 'package:hematpay/mainmenu/money_bag.dart';
+import 'package:hematpay/mainmenu/receive_money.dart';
+import 'package:hematpay/mainmenu/send_money.dart';
+import 'package:hematpay/mainmenu/trans_history.dart';
+import 'package:hematpay/widgets/last_trans.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -54,90 +62,29 @@ class MainScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                Spacer(),
                 Container(
+                  width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(212, 255, 255, 255),
+                    color: Color.fromARGB(249, 254, 254, 254),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(50)),
                   ),
-                  child: Wrap(
-                    children: [
-                      // Column(
-                      //   children: [
-                      //     Container(
-                      //       margin: EdgeInsets.symmetric(
-                      //           horizontal: 7, vertical: 15),
-                      //       decoration: BoxDecoration(
-                      //         border: Border.all(
-                      //           color: Color.fromARGB(255, 213, 213, 213),
-                      //         ),
-                      //         boxShadow: [
-                      //           BoxShadow(
-                      //               offset: Offset(0, 4),
-                      //               color: Color.fromARGB(255, 117, 117, 117)
-                      //                   .withOpacity(0.25),
-                      //               spreadRadius: 4,
-                      //               blurRadius: 50)
-                      //         ],
-                      //         borderRadius: BorderRadius.circular(50),
-                      //       ),
-                      //       child: Padding(
-                      //         padding: const EdgeInsets.all(21.0),
-                      //         child: ImageIcon(
-                      //           AssetImage('assets/icon/Down.png'),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     SizedBox(
-                      //       height: 8,
-                      //     ),
-                      //     Text(
-                      //       'دریافت پول',
-                      //       style: TextStyle(
-                      //           fontSize: 15, fontWeight: FontWeight.w600),
-                      //     ),
-                      //   ],
-                      // ),
-                      // Column(
-                      //   children: [
-                      //     Container(
-                      //       margin: EdgeInsets.symmetric(
-                      //           horizontal: 7, vertical: 15),
-                      //       decoration: BoxDecoration(
-                      //         border: Border.all(
-                      //           color: Color(0xffc4c4c4),
-                      //         ),
-                      //         boxShadow: [
-                      //           BoxShadow(
-                      //               offset: Offset(0, 4),
-                      //               color: Color.fromARGB(255, 123, 123, 123)
-                      //                   .withOpacity(0.25),
-                      //               spreadRadius: 4,
-                      //               blurRadius: 50)
-                      //         ],
-                      //         borderRadius: BorderRadius.circular(50),
-                      //       ),
-                      //       child: Padding(
-                      //         padding: const EdgeInsets.all(21.0),
-                      //         // child: _geticonmain(),
-                      //         child: ImageIcon(
-                      //           AssetImage('assets/icon/up.png'),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     SizedBox(
-                      //       height: 8,
-                      //     ),
-                      //     // _gettextmain(),
-                      //     Text(
-                      //       'ارسال پول',
-                      //       style: TextStyle(
-                      //           fontSize: 15, fontWeight: FontWeight.w600),
-                      //     ),
-                      //   ],
-                      // ),
-                      _getlismain(),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: Wrap(
+                      children: [
+                        ReceiveMoney(),
+                        SendMoney(),
+                        BankTransfer(),
+                        MoneyBag(),
+                        AIPay(),
+                        TransHistory(),
+                        FundsBox(),
+                        LastTrans(),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -145,104 +92,6 @@ class MainScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _gettextmain() {
-    var listtext = [
-      'دریافت پول ',
-      'ارسال پول',
-      'انتقال بانکی',
-      'کیف پول',
-      'پرداخت هوشمند',
-      'تاریخچه تراکنش ها',
-      'بازار بورس و کریپتو',
-      'تنظیمات',
-    ];
-    return Wrap(
-      children: [
-        for (var text in listtext)
-          Text(
-            text,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-          ),
-      ],
-    );
-  }
-
-  Widget _geticonmain() {
-    final List<IconData> icons = [
-      Icons.home,
-      Icons.star,
-      Icons.settings,
-      Icons.phone,
-      Icons.email,
-      Icons.camera_alt,
-      Icons.favorite,
-    ];
-
-    return Wrap(
-      children: [for (var icon in icons) Icon(icon, size: 30)],
-    );
-  }
-
-  Widget _getlismain() {
-    var listtext = [
-      'دریافت پول ',
-      'ارسال پول',
-      'انتقال بانکی',
-      'کیف پول',
-      'پرداخت هوشمند',
-      'تاریخچه تراکنش ها',
-      'بازار بورس و کریپتو',
-      'تنظیمات',
-    ];
-    final List<IconData> icons = [
-      Icons.home,
-      Icons.star,
-      Icons.settings,
-      Icons.phone,
-      Icons.email,
-      Icons.camera_alt,
-      Icons.favorite,
-    ];
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 7, vertical: 15),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Color(0xffc4c4c4),
-            ),
-            boxShadow: [
-              BoxShadow(
-                  offset: Offset(0, 4),
-                  color: Color.fromARGB(255, 123, 123, 123).withOpacity(0.25),
-                  spreadRadius: 4,
-                  blurRadius: 50)
-            ],
-            borderRadius: BorderRadius.circular(50),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(21.0),
-            // child: _geticonmain(),
-            // child: ImageIcon(
-            //   AssetImage('assets/icon/up.png'),
-            // ),
-            child: Wrap(
-              children: [for (var icon in icons) Icon(icon, size: 30)],
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 8,
-        ),
-        _gettextmain(),
-        // Text(
-        //   'ارسال پول',
-        //   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-        // ),
-      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/screen/signin.dart';
 
 class TransHistory extends StatelessWidget {
   const TransHistory({super.key});
@@ -8,11 +9,8 @@ class TransHistory extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
           decoration: BoxDecoration(
-            border: Border.all(
-              color: const Color(0xffc4c4c4),
-            ),
             boxShadow: [
               BoxShadow(
                   offset: const Offset(0, 4),
@@ -23,9 +21,26 @@ class TransHistory extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(50),
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(21.0),
-            child: ImageIcon(AssetImage('assets/icon/Calendar.png')),
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const Signin();
+                  },
+                ),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              // minimumSize: const Size(45, 45),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 22),
+              child: ImageIcon(AssetImage('assets/icon/Calendar.png')),
+            ),
           ),
         ),
         const SizedBox(

@@ -13,7 +13,7 @@ class _LastTransState extends State<LastTrans> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(
-        margin: const EdgeInsets.only(top: 50, bottom: 20),
+        margin: const EdgeInsets.only(top: 70, bottom: 25),
         child: const Column(
           children: [
             Row(

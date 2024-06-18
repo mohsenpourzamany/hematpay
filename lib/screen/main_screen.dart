@@ -8,6 +8,7 @@ import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/receive_money.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
+// import 'package:hematpay/widgets/botton_appbar.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
 class MainScreen extends StatelessWidget {
@@ -16,7 +17,38 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              width: 35,
+              height: 35,
+              image: AssetImage('assets/images/Ellipse.png'),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 57),
+              child: Column(
+                children: [
+                  Text(
+                    'سلام حامد ',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    'به همت پی خوش آمدی',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+                  ),
+                ],
+              ),
+            ),
+            Image(
+              width: 35,
+              height: 35,
+              image: AssetImage('assets/images/notification-red.png'),
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -31,36 +63,6 @@ class MainScreen extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      width: 35,
-                      height: 35,
-                      image: AssetImage('assets/images/Ellipse.png'),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 57),
-                      child: Column(
-                        children: [
-                          Text(
-                            'سلام حامد ',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            'به همت پی خوش آمدی',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w300),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Image(
-                      width: 35,
-                      height: 35,
-                      image: AssetImage('assets/images/notification-red.png'),
-                    ),
-                  ],
                 ),
                 Spacer(),
                 Container(
@@ -72,7 +74,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
+                        horizontal: 20, vertical: 20),
                     child: Wrap(
                       children: [
                         ReceiveMoney(),
@@ -87,6 +89,7 @@ class MainScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                // BottonAppBar(),
               ],
             ),
           ],

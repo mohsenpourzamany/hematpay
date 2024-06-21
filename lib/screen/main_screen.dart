@@ -8,6 +8,7 @@ import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/receive_money.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
+import 'package:hematpay/widgets/card_balance.dart';
 // import 'package:hematpay/widgets/botton_appbar.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
@@ -61,9 +62,8 @@ class MainScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
+                CardBalance(),
+
                 Spacer(),
                 Container(
                   width: double.infinity,

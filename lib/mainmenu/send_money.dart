@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/signin.dart';
+import 'package:hematpay/mainmenuscreen/send_money_screen.dart';
 
 class SendMoney extends StatelessWidget {
   const SendMoney({super.key});
@@ -26,7 +26,7 @@ class SendMoney extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const Signin();
+                    return const SendMoneyScreen();
                   },
                 ),
               );

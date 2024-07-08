@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/send_money_qrcode.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
@@ -75,7 +76,7 @@ class SendMoneyScreen extends StatelessWidget {
                         child: const Row(
                           children: [
                             Text(
-                              'دریافت پول ',
+                              'ارسال پول ',
                               style: TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600,
@@ -115,7 +116,7 @@ class SendMoneyScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
-                            return const MainScreen();
+                            return const SendMoneyQRcode();
                           }));
                         },
                         style: ElevatedButton.styleFrom(

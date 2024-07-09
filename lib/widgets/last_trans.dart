@@ -20,7 +20,10 @@ class _LastTransState extends State<LastTrans> {
               children: [
                 Text(
                   'آخرین تراکنش ها ',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'vazir'),
                 ),
                 ImageIcon(
                   AssetImage('assets/icon/trans.png'),
@@ -34,21 +37,30 @@ class _LastTransState extends State<LastTrans> {
               children: [
                 Text(
                   '750',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'vazir'),
                 ),
                 SizedBox(
                   width: 4,
                 ),
                 Text(
                   ('\u0024'),
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'vazir'),
                 ),
                 SizedBox(
                   width: 120,
                 ),
                 Text(
                   'شارژ کیف پول اصلی  ',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'vazir'),
                 ),
               ],
             ),

@@ -48,7 +48,8 @@ class MoneyBag extends StatelessWidget {
         ),
         const Text(
           'کیف پول',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
         ),
       ],
     );

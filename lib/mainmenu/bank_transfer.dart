@@ -48,7 +48,8 @@ class BankTransfer extends StatelessWidget {
         ),
         const Text(
           'انتقال بانکی',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
         ),
       ],
     );

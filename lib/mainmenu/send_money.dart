@@ -50,7 +50,8 @@ class SendMoney extends StatelessWidget {
         ),
         const Text(
           'ارسال پول',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
         ),
       ],
     );

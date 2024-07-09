@@ -43,8 +43,8 @@ class _CardBalanceState extends State<CardBalance> {
                     child: const Text(
                       'HEMATPAY CARD',
                       style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
                           color: Colors.black38),
                     ),
                   ),
@@ -66,7 +66,11 @@ class _CardBalanceState extends State<CardBalance> {
                     margin: const EdgeInsets.only(right: 120),
                     child: const Text(
                       '  موجودی اکانت شما ',
-                      style: TextStyle(fontSize: 10, color: Colors.black45),
+                      style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black45,
+                          fontFamily: 'vazir',
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                   // ignore: prefer_const_constructors
@@ -76,7 +80,10 @@ class _CardBalanceState extends State<CardBalance> {
                         margin: const EdgeInsets.only(left: 20),
                         child: const Text(
                           '17,592',
-                          style: TextStyle(fontSize: 17, color: Colors.black54),
+                          style: TextStyle(
+                              fontSize: 17,
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                       const SizedBox(

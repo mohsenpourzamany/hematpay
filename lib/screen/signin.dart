@@ -11,7 +11,11 @@ class Signin extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(' ورود '),
+        title: const Text(
+          ' ورود ',
+          style: TextStyle(
+              fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'vazir'),
+        ),
       ),
       body: SafeArea(
         child: Container(
@@ -70,14 +74,16 @@ class Signin extends StatelessWidget {
                           Text(
                             'ایمیل',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'vazir'),
                           ),
                           Container(
                             width: 314,
                             height: 39,
                             color: Colors.white,
                             child: TextField(
-                              obscureText: true,
+                              obscureText: false,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'ایمیل خود را وارد کنید',
@@ -90,7 +96,9 @@ class Signin extends StatelessWidget {
                           Text(
                             'رمز',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'vazir'),
                           ),
                           Container(
                             width: 314,
@@ -107,7 +115,13 @@ class Signin extends StatelessWidget {
                           SizedBox(
                             height: 100,
                           ),
-                          Text('عضو نیستید ؟ اکانت خود را ایجاد کنید '),
+                          Text(
+                            'عضو نیستید ؟ اکانت خود را ایجاد کنید ',
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'vazir'),
+                          ),
                           ElevatedButton(
                             onPressed: () {
                               Navigator.of(context)

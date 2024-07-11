@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/send_money_account.dart';
+import 'package:hematpay/mainmenuscreen/send_money_contact.dart';
 import 'package:hematpay/mainmenuscreen/send_money_qrcode.dart';
-import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class SendMoneyScreen extends StatelessWidget {
@@ -147,7 +148,7 @@ class SendMoneyScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
-                            return const MainScreen();
+                            return const SendMoneyAccount();
                           }));
                         },
                         style: ElevatedButton.styleFrom(
@@ -178,7 +179,7 @@ class SendMoneyScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
-                            return const MainScreen();
+                            return const SendMoneyContact();
                           }));
                         },
                         style: ElevatedButton.styleFrom(

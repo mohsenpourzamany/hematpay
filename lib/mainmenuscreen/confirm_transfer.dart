@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/confirm_transfer.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
-class SendQRCodeTransfer extends StatelessWidget {
-  const SendQRCodeTransfer({super.key});
+class ConfirmTransfer extends StatelessWidget {
+  const ConfirmTransfer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -99,14 +99,31 @@ class SendQRCodeTransfer extends StatelessWidget {
                   const SizedBox(
                     height: 25,
                   ),
-                  const Image(
-                    image: AssetImage('assets/images/Ellipse2.png'),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image(
+                        image: AssetImage('assets/images/Ellipse3.png'),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Image(
+                        image: AssetImage('assets/icon/ArrowRight.png'),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Image(
+                        image: AssetImage('assets/images/Ellipse2.png'),
+                      ),
+                    ],
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   const Text(
-                    'نام صاحب حساب : محسن پورزمانی ',
+                    'گیرنده : محسن پورزمانی ',
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -116,27 +133,57 @@ class SendQRCodeTransfer extends StatelessWidget {
                     height: 3,
                   ),
                   const Text(
-                    ' واحد پولی : دلار آمریکا',
+                    'فرستنده : حامد قوام ',
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'vazir'),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  const Text(
+                    'واریز به حساب :135719780000',
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'vazir'),
                   ),
                   const SizedBox(
-                    height: 3,
+                    height: 7,
                   ),
                   const Text(
-                    'شماره حساب :135719780000',
+                    ' شماره  پیگیری : 423657865 ',
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'vazir'),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
+                  ),
+                  Container(
+                    width: 218,
+                    height: 34,
+                    decoration: const BoxDecoration(
+                        color: Color(0xff00890E),
+                        borderRadius: BorderRadius.all(Radius.circular(7))),
+                    child: const Center(
+                      child: Text(
+                        ' مبلغ انتقالی  : ۱۲۰۰ دلار ',
+                        style: TextStyle(
+                            color: Color(0xffffffff),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'vazir'),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 7,
                   ),
                   const Text(
-                    'درصورت تایید مشخصات بالامبلغ موردنظر برای ',
+                    'تاریخ و ساعت انتقال ',
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 14,
@@ -147,7 +194,7 @@ class SendQRCodeTransfer extends StatelessWidget {
                     height: 2,
                   ),
                   const Text(
-                    'انتقال را وارد کنید .در غیر این صورت پنجره را ببندید',
+                    '2024/05/24   14:23:34',
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 14,
@@ -157,26 +204,11 @@ class SendQRCodeTransfer extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    width: 314,
-                    height: 39,
-                    color: Colors.white,
-                    child: const TextField(
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'مبلغ مورد نظر جهت انتقال وارد کنید ',
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
-                        return const ConfirmTransfer();
+                        return const MainScreen();
                       }));
                     },
                     style: ElevatedButton.styleFrom(
@@ -189,7 +221,7 @@ class SendQRCodeTransfer extends StatelessWidget {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
-                        'انتقال بده',
+                        ' اشتراک گذاری رسید',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'vazir',

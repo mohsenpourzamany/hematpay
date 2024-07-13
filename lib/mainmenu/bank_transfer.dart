@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/signin.dart';
+import 'package:hematpay/mainmenuscreen/transfer/main_bank_transfer.dart';
 
 class BankTransfer extends StatelessWidget {
   const BankTransfer({super.key});
@@ -26,7 +26,7 @@ class BankTransfer extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const Signin();
+                    return const MainBankTransfer();
                   },
                 ),
               );

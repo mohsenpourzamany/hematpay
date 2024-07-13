@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/main_screen.dart';
+import 'package:hematpay/mainmenuscreen/send_qrcode_transfer.dart';
 import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/widgets/invite_friends.dart';
 
 class SendMoneyContact extends StatelessWidget {
   const SendMoneyContact({super.key});
@@ -130,7 +131,15 @@ class SendMoneyContact extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const SendQRCodeTransfer();
+                              },
+                            ),
+                          );
+                        },
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -162,10 +171,13 @@ class SendMoneyContact extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return const MainScreen();
-                      }));
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const InviteFriends();
+                          },
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),

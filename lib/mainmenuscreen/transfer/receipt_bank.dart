@@ -66,7 +66,7 @@ class _ConfirmBankTransferState extends State<RecieptBank> {
               width: double.infinity,
               margin: const EdgeInsets.only(top: 20),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 249, 249, 249),
+                color: Color.fromARGB(248, 222, 222, 222),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                 ),
@@ -74,9 +74,12 @@ class _ConfirmBankTransferState extends State<RecieptBank> {
               child: Column(
                 children: [
                   Container(
-                      margin: const EdgeInsets.only(top: 25),
-                      child: const Image(
-                          image: AssetImage('assets/images/Ellipse2.png'))),
+                    margin: const EdgeInsets.only(top: 25),
+                    child: const Image(
+                      width: 120,
+                      image: AssetImage('assets/images/Logo250H.png'),
+                    ),
+                  ),
                   const Padding(
                     padding: EdgeInsets.only(top: 35.0),
                     child: Row(

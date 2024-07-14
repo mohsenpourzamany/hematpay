@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/signin.dart';
+import 'package:hematpay/mainmenuscreen/wallet/make_wallet.dart';
 
 class MoneyBag extends StatelessWidget {
   const MoneyBag({super.key});
@@ -26,7 +26,7 @@ class MoneyBag extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const Signin();
+                    return const MakeWallet();
                   },
                 ),
               );

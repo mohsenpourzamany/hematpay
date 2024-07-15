@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/aipay/aipay_receipt.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
-class DepositeWallet extends StatefulWidget {
-  const DepositeWallet({super.key});
+class AiPayConfirm extends StatefulWidget {
+  const AiPayConfirm({super.key});
 
   @override
-  State<DepositeWallet> createState() => _ConfirmBankTransferState();
+  State<AiPayConfirm> createState() => _ConfirmBankTransferState();
 }
 
-class _ConfirmBankTransferState extends State<DepositeWallet> {
+class _ConfirmBankTransferState extends State<AiPayConfirm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +79,7 @@ class _ConfirmBankTransferState extends State<DepositeWallet> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'شارژ کیف پول ',
+                          ' پرداخت هوشمند ',
                           style: TextStyle(
                               fontSize: 21,
                               fontWeight: FontWeight.w600,
@@ -88,99 +89,85 @@ class _ConfirmBankTransferState extends State<DepositeWallet> {
                           width: 5,
                         ),
                         Image(
-                          image: AssetImage('assets/icon/Wallet.png'),
+                          image: AssetImage('assets/icon/Plus.png'),
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 15,
                   ),
-                  Container(
-                    width: 314,
-                    height: 43,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
-                      ),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(314, 43),
-                        backgroundColor:
-                            const Color.fromARGB(255, 245, 245, 245),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'کیف پول اصلی ',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black54,
-                                fontFamily: 'vazir'),
-                          ),
-                          SizedBox(
-                            width: 60,
-                          ),
-                          Text(
-                            '17,453',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black54,
-                                fontFamily: 'vazir'),
-                          ),
-                          SizedBox(
-                            width: 2,
-                          ),
-                          Text(
-                            ('\u0024'),
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black54,
-                                fontFamily: 'vazir'),
-                          ),
-                        ],
-                      ),
+                  const Text(
+                    'سرویس پرداخت برق را انتخاب کرده اید ',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 148, 148, 148),
+                      fontFamily: 'vazir',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   const SizedBox(
-                    height: 55,
+                    height: 10,
                   ),
-                  Container(
-                    width: 314,
-                    height: 43,
-                    color: Colors.transparent,
-                    child: const TextField(
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintStyle: TextStyle(color: Color(0xffc1c1c1)),
-                        labelText: 'شماره حساب را وارد کنید',
-                      ),
-                    ),
+                  const Image(
+                    width: 40,
+                    image: AssetImage('assets/images/enerji.png'),
                   ),
                   const SizedBox(
                     height: 25,
                   ),
-                  Container(
-                    width: 314,
-                    height: 43,
-                    color: Colors.transparent,
-                    child: const TextField(
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintStyle: TextStyle(color: Color(0xffc1c1c1)),
-                        labelText: 'مبلغ شارژ کیف پول را وارد کنید ',
-                      ),
+                  const Text(
+                    'نام مشترک : حامد قوامی ',
+                    style: TextStyle(
+                      fontFamily: 'vazir',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const Text(
+                    'شماره اشتراک : ۲۴۳۵۶۷۱',
+                    style: TextStyle(
+                      fontFamily: 'vazir',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const Text(
+                    'مبلغ قابل پرداخت : ۱۲و۶۷ دلار',
+                    style: TextStyle(
+                      fontFamily: 'vazir',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    'در صورت تایید مشخصات بالا گزینه پرداخت را ',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 148, 148, 148),
+                      fontFamily: 'vazir',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  const Text(
+                    'انتخاب کنید تا قبض تان پرداخت شود',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 148, 148, 148),
+                      fontFamily: 'vazir',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   const SizedBox(
@@ -188,13 +175,13 @@ class _ConfirmBankTransferState extends State<DepositeWallet> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const InviteFriends();
-                      //     },
-                      //   ),
-                      // );
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const AiPayReceipt();
+                          },
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),
@@ -206,7 +193,7 @@ class _ConfirmBankTransferState extends State<DepositeWallet> {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
-                        'انتقال به کیف پول',
+                        'تایید و پرداخت',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'vazir',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/signin.dart';
+import 'package:hematpay/mainmenuscreen/aipay/aipay_list.dart';
 
 class AIPay extends StatelessWidget {
   const AIPay({super.key});
@@ -26,7 +26,7 @@ class AIPay extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const Signin();
+                    return const AiPayList();
                   },
                 ),
               );

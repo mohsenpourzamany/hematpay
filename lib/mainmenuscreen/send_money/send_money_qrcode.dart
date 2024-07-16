@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/send_qrcode_transfer.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
-class SendMoneyAccount extends StatelessWidget {
-  const SendMoneyAccount({super.key});
+class SendMoneyQRcode extends StatelessWidget {
+  const SendMoneyQRcode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class SendMoneyAccount extends StatelessWidget {
             ),
             const CardBalance(),
             Container(
-              margin: const EdgeInsets.only(top: 360),
+              margin: const EdgeInsets.only(top: 160),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(248, 255, 255, 255),
                 borderRadius: BorderRadius.only(
@@ -87,32 +87,23 @@ class SendMoneyAccount extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   const Text(
-                    ' شماره حساب و مبلغ مورد نظر خود را وارد کنید',
+                    ' کیو آر کد دریافتی خود را در کادر زیر قرار دهید',
                     style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'vazir'),
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 25,
                   ),
-                  Container(
-                    width: 314,
-                    height: 39,
-                    color: Colors.white,
-                    child: const TextField(
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'شماره حساب مورد نظر را وارد کنید ',
-                      ),
-                    ),
+                  const Image(
+                    image: AssetImage('assets/images/scanframe.png'),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 10,
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -131,11 +122,11 @@ class SendMoneyAccount extends StatelessWidget {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
-                        'دریافت مشخصات شماره حساب',
+                        'اسکن کن',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'vazir',
-                          fontSize: 15,
+                          fontSize: 18,
                           fontWeight: FontWeight.w700,
                         ),
                       ),

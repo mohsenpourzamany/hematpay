@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/send_money_screen.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 
 class SendMoney extends StatelessWidget {
   const SendMoney({super.key});

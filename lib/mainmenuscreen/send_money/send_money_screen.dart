@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/send_money_account.dart';
-import 'package:hematpay/mainmenuscreen/send_money_contact.dart';
-import 'package:hematpay/mainmenuscreen/send_money_qrcode.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_account.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_contact.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_qrcode.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class SendMoneyScreen extends StatelessWidget {

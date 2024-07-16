@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/aipay.dart';
@@ -7,9 +7,9 @@ import 'package:hematpay/mainmenu/funds_box.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/receive_money.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
+import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
 import 'package:hematpay/widgets/card_balance.dart';
-// import 'package:hematpay/widgets/botton_appbar.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
 class MainScreen extends StatelessWidget {
@@ -50,103 +50,110 @@ class MainScreen extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: Container(
-      //   decoration: BoxDecoration(
-      //     borderRadius: BorderRadius.only(
-      //       topLeft: Radius.circular(15),
-      //       topRight: Radius.circular(15),
-      //     ),
-      //   ),
-      //   child: ClipRRect(
-      //     borderRadius: BorderRadius.only(
-      //       topLeft: Radius.circular(15),
-      //       topRight: Radius.circular(15),
-      //     ),
-      //     child: BottomNavigationBar(
-      //       type: BottomNavigationBarType.fixed,
-      //       backgroundColor: Color(0xff1C1F2E),
-      //       // currentIndex: _selectedBottomNavigationItem,
-      //       onTap: (int index) {
-      //         // setState(() {
-      //         //   _selectedBottomNavigationItem = index;
-      //         // });
-      //       },
-      //       showSelectedLabels: false,
-      //       showUnselectedLabels: false,
-      //       items: [
-      //         BottomNavigationBarItem(
-      //           icon: Image.asset('images/icon_home.png'),
-      //           activeIcon: Image.asset('images/icon_active_home.png'),
-      //           label: 'Item1',
-      //         ),
-      //         BottomNavigationBarItem(
-      //           icon: Image.asset('images/transfer.png'),
-      //           activeIcon:
-      //               Image.asset('images/icon_search_navigation_active.png'),
-      //           label: 'Item2',
-      //         ),
-      //         BottomNavigationBarItem(
-      //           icon: Image.asset('images/icon_add_navigation.png'),
-      //           activeIcon:
-      //               Image.asset('images/icon_add_navigation_active.png'),
-      //           label: 'Item3',
-      //         ),
-      //         BottomNavigationBarItem(
-      //           icon: Image.asset('images/icon_activity_navigation.png'),
-      //           activeIcon:
-      //               Image.asset('images/icon_activity_navigation_active.png'),
-      //           label: 'Item4',
-      //         ),
-      //         BottomNavigationBarItem(
-      //           icon: Container(
-      //             width: 30,
-      //             height: 30,
-      //             decoration: BoxDecoration(
-      //               border: Border.all(
-      //                 width: 2,
-      //                 color: Color(0xffC5C5C5),
-      //               ),
-      //               borderRadius: BorderRadius.all(
-      //                 Radius.circular(8),
-      //               ),
-      //             ),
-      //             child: ClipRRect(
-      //               borderRadius: BorderRadius.all(Radius.circular(6)),
-      //               child: FittedBox(
-      //                 fit: BoxFit.cover,
-      //                 child: Image.asset('images/profile.png'),
-      //               ),
-      //             ),
-      //           ),
-      //           activeIcon: Container(
-      //             width: 30,
-      //             height: 30,
-      //             decoration: BoxDecoration(
-      //               border: Border.all(
-      //                 width: 2,
-      //                 color: Color(0xffF35383),
-      //               ),
-      //               borderRadius: BorderRadius.all(
-      //                 Radius.circular(8),
-      //               ),
-      //             ),
-      //             child: ClipRRect(
-      //               borderRadius: BorderRadius.all(Radius.circular(6)),
-      //               child: FittedBox(
-      //                 fit: BoxFit.cover,
-      //                 child: Image.asset('images/profile.png'),
-      //               ),
-      //             ),
-      //           ),
-      //           label: 'Item4',
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+          ),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(15),
+            topRight: Radius.circular(15),
+          ),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Color.fromARGB(255, 243, 243, 243),
+            // currentIndex: _selectedBottomNavigationItem,
+            onTap: (int index) {
+              // setState(() {
+              //   _selectedBottomNavigationItem = index;
+              // });
+            },
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            items: [
+              BottomNavigationBarItem(
+                icon: Container(
+                    width: 38,
+                    height: 38,
+                    child: Image.asset('assets/icon/home.png')),
+                activeIcon: Image.asset('assets/icon/home.png'),
+                label: 'Item1',
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                    width: 38,
+                    height: 38,
+                    child: Image.asset('assets/icon/currency_exchange.png')),
+                activeIcon: Image.asset('assets/icon/currency_exchange.png'),
+                label: 'Item2',
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                    width: 42,
+                    height: 42,
+                    child: Image.asset('assets/icon/settings.png')),
+                activeIcon: Image.asset('assets/icon/settings.png'),
+                label: 'Item3',
+              ),
+              BottomNavigationBarItem(
+                // ignore: duplicate_ignore
+                // ignore: sized_box_for_whitespace
+                icon: Container(
+                    width: 38,
+                    height: 38,
+                    child: Image.asset('assets/icon/cards.png')),
+                activeIcon: Image.asset('assets/icon/cards.png'),
+                label: 'Item4',
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                  width: 38,
+                  height: 38,
+                  decoration: BoxDecoration(),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                    child: FittedBox(
+                      fit: BoxFit.cover,
+                      child: Image.asset('assets/icon/accounts.png'),
+                    ),
+                  ),
+                ),
+                activeIcon: Container(
+                  width: 38,
+                  height: 38,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 2,
+                      color: Color(0xffF35383),
+                    ),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                    child: FittedBox(
+                      fit: BoxFit.cover,
+                      child: Image.asset('assets/icon/accounts.png'),
+                    ),
+                  ),
+                ),
+                label: 'Item4',
+              ),
+            ],
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Stack(
           children: [
+            //       IndexedStack(
+            //   index: _selectedBottomNavigationItem,
+            //   children: getLayout(),
+            // ),
             SizedBox(
               width: double.infinity,
               child: Image(
@@ -154,41 +161,45 @@ class MainScreen extends StatelessWidget {
                 image: AssetImage('assets/images/sbg.jpg'),
               ),
             ),
-            Column(
-              children: [
-                CardBalance(),
-
-                Spacer(),
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(249, 254, 254, 254),
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(50)),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
-                    child: Wrap(
-                      children: [
-                        ReceiveMoney(),
-                        SendMoney(),
-                        BankTransfer(),
-                        MoneyBag(),
-                        AIPay(),
-                        TransHistory(),
-                        FundsBox(),
-                        LastTrans(),
-                      ],
-                    ),
-                  ),
+            CardBalance(),
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 130),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(249, 254, 254, 254),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Wrap(
+                  children: [
+                    ReceiveMoney(),
+                    SendMoney(),
+                    BankTransfer(),
+                    MoneyBag(),
+                    AIPay(),
+                    TransHistory(),
+                    FundsBox(),
+                    Settings(),
+                    LastTrans(),
+                  ],
                 ),
-                // BottonAppBar(),
-              ],
+              ),
             ),
           ],
         ),
       ),
     );
   }
+
+  // List<Widget> getLayout() {
+  //   return <Widget>[
+  //     MainScreen(),
+  //     SearchScreen(),
+  //     AddContentScreen(),
+  //     ActivityScreen(),
+  //     UserProfileScreen()
+  //   ];
+  // }
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/send_qrcode_transfer.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
 import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/widgets/invite_friends.dart';
 
-class SendMoneyQRcode extends StatelessWidget {
-  const SendMoneyQRcode({super.key});
+class SendMoneyContact extends StatelessWidget {
+  const SendMoneyContact({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ class SendMoneyQRcode extends StatelessWidget {
                 children: [
                   Container(
                     margin:
-                        const EdgeInsets.only(left: 135, top: 40, bottom: 25),
+                        const EdgeInsets.only(left: 135, top: 40, bottom: 18),
                     child: const Row(
                       children: [
                         Text(
@@ -87,30 +88,96 @@ class SendMoneyQRcode extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 3,
                   ),
                   const Text(
-                    ' کیو آر کد دریافتی خود را در کادر زیر قرار دهید',
+                    'شماره های زیر از دفتر تلفن شما عضو همت پی  ',
                     style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'vazir'),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const Text(
+                    ' هستند .با انتخاب هر کدام می توانید مبلغ  ',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'vazir'),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const Text(
+                    ' مورد نظر خود را بصورت آنی انتقال دهید ',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'vazir'),
                   ),
                   const SizedBox(
                     height: 25,
                   ),
-                  const Image(
-                    image: AssetImage('assets/images/scanframe.png'),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          maximumSize: const Size(330, 45),
+                          backgroundColor:
+                              const Color.fromARGB(248, 255, 255, 255),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const SendQRCodeTransfer();
+                              },
+                            ),
+                          );
+                        },
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.arrow_back_ios),
+                            SizedBox(
+                              width: 60,
+                            ),
+                            Text(
+                              'حامد قوام',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'vazir'),
+                            ),
+                            SizedBox(
+                              width: 80,
+                            ),
+                            Image(
+                              width: 38,
+                              image: AssetImage('assets/images/Ellipse3.png'),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return const SendQRCodeTransfer();
-                      }));
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const InviteFriends();
+                          },
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),
@@ -122,11 +189,11 @@ class SendMoneyQRcode extends StatelessWidget {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
-                        'اسکن کن',
+                        'دیگران را دعوت به عضویت کنید',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'vazir',
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700,
                         ),
                       ),

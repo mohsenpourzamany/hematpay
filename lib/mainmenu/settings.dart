@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/recieve_money/receive_money_screen.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 
-class ReceiveMoney extends StatelessWidget {
-  const ReceiveMoney({super.key});
+class Settings extends StatelessWidget {
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ReceiveMoney extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const ReceiveMoneyScreen();
+                    return const SettingPage();
                   },
                 ),
               );
@@ -40,7 +40,7 @@ class ReceiveMoney extends StatelessWidget {
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 22),
               child: ImageIcon(
-                AssetImage('assets/icon/Down.png'),
+                AssetImage('assets/icon/settings.png'),
               ),
             ),
           ),
@@ -49,7 +49,7 @@ class ReceiveMoney extends StatelessWidget {
           height: 5,
         ),
         const Text(
-          'دریافت پول',
+          'تنظیمات',
           style: TextStyle(
               fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
         ),

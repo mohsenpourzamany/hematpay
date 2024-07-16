@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/confirm_transfer.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
-class SendQRCodeTransfer extends StatelessWidget {
-  const SendQRCodeTransfer({super.key});
+class SendMoneyAccount extends StatelessWidget {
+  const SendMoneyAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class SendQRCodeTransfer extends StatelessWidget {
             ),
             const CardBalance(),
             Container(
-              margin: const EdgeInsets.only(top: 160),
+              margin: const EdgeInsets.only(top: 360),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(248, 255, 255, 255),
                 borderRadius: BorderRadius.only(
@@ -87,75 +87,17 @@ class SendQRCodeTransfer extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   const Text(
-                    ' مشخصات اکانت گیرنده',
+                    ' شماره حساب و مبلغ مورد نظر خود را وارد کنید',
                     style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'vazir'),
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  const Image(
-                    image: AssetImage('assets/images/Ellipse2.png'),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Text(
-                    'نام صاحب حساب : محسن پورزمانی ',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'vazir'),
-                  ),
-                  const SizedBox(
-                    height: 3,
-                  ),
-                  const Text(
-                    ' واحد پولی : دلار آمریکا',
-                    style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 13,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'vazir'),
                   ),
                   const SizedBox(
-                    height: 3,
-                  ),
-                  const Text(
-                    'شماره حساب :135719780000',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'vazir'),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Text(
-                    'درصورت تایید مشخصات بالامبلغ موردنظر برای ',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'vazir'),
-                  ),
-                  const SizedBox(
-                    height: 2,
-                  ),
-                  const Text(
-                    'انتقال را وارد کنید .در غیر این صورت پنجره را ببندید',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'vazir'),
-                  ),
-                  const SizedBox(
-                    height: 15,
+                    height: 50,
                   ),
                   Container(
                     width: 314,
@@ -165,18 +107,18 @@ class SendQRCodeTransfer extends StatelessWidget {
                       obscureText: false,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'مبلغ مورد نظر جهت انتقال وارد کنید ',
+                        labelText: 'شماره حساب مورد نظر را وارد کنید ',
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
-                        return const ConfirmTransfer();
+                        return const SendQRCodeTransfer();
                       }));
                     },
                     style: ElevatedButton.styleFrom(
@@ -189,11 +131,11 @@ class SendQRCodeTransfer extends StatelessWidget {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
-                        'انتقال بده',
+                        'دریافت مشخصات شماره حساب',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'vazir',
-                          fontSize: 18,
+                          fontSize: 15,
                           fontWeight: FontWeight.w700,
                         ),
                       ),

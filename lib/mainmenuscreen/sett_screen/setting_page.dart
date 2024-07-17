@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/aipay/aipay_receipt.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/change_pass.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class SettingPage extends StatelessWidget {
@@ -106,7 +107,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SendQRCodeTransfer();
+                            return const ChangePass();
                           },
                         ),
                       );
@@ -147,7 +148,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 7,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -161,7 +162,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SendQRCodeTransfer();
+                            return const ChangeTell();
                           },
                         ),
                       );
@@ -202,7 +203,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 7,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -249,7 +250,7 @@ class SettingPage extends StatelessWidget {
                             ),
                             child: const Image(
                               width: 38,
-                              image: AssetImage('assets/icon/Lock.png'),
+                              image: AssetImage('assets/icon/Document.png'),
                             ),
                           ),
                         ],
@@ -257,7 +258,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 7,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -304,7 +305,63 @@ class SettingPage extends StatelessWidget {
                             ),
                             child: const Image(
                               width: 38,
-                              image: AssetImage('assets/icon/Lock.png'),
+                              image: AssetImage('assets/icon/Chat.png'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      maximumSize: const Size(314, 45),
+                      backgroundColor: const Color.fromARGB(255, 255, 151, 47),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const SendQRCodeTransfer();
+                          },
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                              color: Color(0xffffffff), Icons.arrow_back_ios),
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          const Text(
+                            '  تماس با پشتیبانی',
+                            style: TextStyle(
+                                color: Color(0xffffffff),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'vazir'),
+                          ),
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: const Color(0xffffffff),
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 168, 168, 168)),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: const Image(
+                              width: 38,
+                              image: AssetImage('assets/icon/Logout.png'),
                             ),
                           ),
                         ],
@@ -312,40 +369,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 35,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const AiPayReceipt();
-                          },
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(314, 43),
-                      backgroundColor: const Color.fromARGB(255, 255, 151, 47),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    child: const MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'خروج از برنامه',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 25,
+                    height: 40,
                   ),
                 ],
               ),

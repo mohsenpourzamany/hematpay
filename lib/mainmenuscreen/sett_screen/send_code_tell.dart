@@ -10,8 +10,42 @@ class SendCodeTell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text(' ورود کد '),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              width: 35,
+              height: 35,
+              image: AssetImage('assets/images/Ellipse.png'),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              child: Column(
+                children: [
+                  Text(
+                    'سلام حامد ',
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'vazir'),
+                  ),
+                  Text(
+                    'به همت پی خوش آمدی',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'vazir'),
+                  ),
+                ],
+              ),
+            ),
+            Image(
+              width: 35,
+              height: 35,
+              image: AssetImage('assets/images/notification-red.png'),
+            ),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Container(
@@ -75,14 +109,37 @@ class SendCodeTell extends StatelessWidget {
                             height: 30,
                           ),
                           Text(
-                            'لطفا کد ارسال شده به شماره موبایل',
+                            textDirection: TextDirection.rtl,
+                            'ورود کد ',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir',
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
                           ),
                           Text(
-                            '۰۰۹۰۵۵۲****۲۷۹۰ راوارد کنید ',
+                            textDirection: TextDirection.rtl,
+                            'لطفا کد ارسال شده به شماره موبایل',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir',
+                            ),
+                          ),
+                          Text(
+                            textDirection: TextDirection.rtl,
+                            '۰۰۹۰۵۵۲****۲۷۹۰ را وارد کنید ',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir',
+                            ),
+                          ),
+                          SizedBox(
+                            height: 25,
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
@@ -154,9 +211,9 @@ class SendCodeTell extends StatelessWidget {
                           SizedBox(
                             height: 30,
                           ),
-                          Text('ارسال دوباره '),
+                          Text(' ارسال دوباره کد '),
                           SizedBox(
-                            height: 5,
+                            height: 10,
                           ),
                           ElevatedButton(
                             onPressed: () {

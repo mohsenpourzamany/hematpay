@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/change_language.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_pass.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/suppurt_contact.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class SettingPage extends StatelessWidget {
@@ -217,7 +219,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SendQRCodeTransfer();
+                            return const ChangeLanguage();
                           },
                         ),
                       );
@@ -272,7 +274,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SendQRCodeTransfer();
+                            return const SuppurtContact();
                           },
                         ),
                       );

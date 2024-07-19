@@ -9,6 +9,7 @@ class ChangeLanguage extends StatefulWidget {
 }
 
 class _ConfirmBankTransferState extends State<ChangeLanguage> {
+  bool? isChecked = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

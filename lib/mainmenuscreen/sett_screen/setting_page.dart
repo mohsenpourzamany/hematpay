@@ -343,7 +343,7 @@ class SettingPage extends StatelessWidget {
                             width: 3,
                           ),
                           const Text(
-                            '  تماس با پشتیبانی',
+                            'خروج از برنامه',
                             style: TextStyle(
                                 color: Color(0xffffffff),
                                 fontSize: 18,
@@ -351,7 +351,7 @@ class SettingPage extends StatelessWidget {
                                 fontFamily: 'vazir'),
                           ),
                           const SizedBox(
-                            width: 50,
+                            width: 85,
                           ),
                           Container(
                             decoration: BoxDecoration(

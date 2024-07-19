@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/send_code_tell.dart';
 import 'package:hematpay/widgets/card_balance.dart';
@@ -66,9 +64,9 @@ class _ConfirmBankTransferState extends State<SuppurtContact> {
             const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 130),
+              margin: const EdgeInsets.only(top: 70),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
+                color: Color.fromARGB(210, 253, 253, 253),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                 ),
@@ -112,21 +110,37 @@ class _ConfirmBankTransferState extends State<SuppurtContact> {
                     height: 55,
                   ),
                   const Text(
-                    'شماره پشتیبانی افغانستان :۰۰۹۳۷۶۵۸۹۴۶۳۷۲',
+                    'شماره پشتیبانی ',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'vazir'),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    'افغانستان :۰۰۹۳۷۶۵۸۹۴۶۳۷۲',
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'vazir'),
                   ),
+                  const SizedBox(
+                    height: 3,
+                  ),
                   const Text(
-                    'شماره پشتیبانی ترکیه :۰۰۹۰۷۶۵۸۹۴۶۳۷۲',
+                    'ترکیه :        ۰۰۹۰۷۶۵۸۹۴۶۳۷۲',
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'vazir'),
                   ),
+                  const SizedBox(
+                    height: 3,
+                  ),
                   const Text(
-                    'شماره پشتیبانی آلمان :۰۰۴۹۷۶۵۸۹۴۶۳۷۲',
+                    'آلمان :       ۰۰۴۹۷۶۵۸۹۴۶۳۷۲',
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
@@ -142,24 +156,24 @@ class _ConfirmBankTransferState extends State<SuppurtContact> {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintStyle: TextStyle(color: Color(0xffc1c1c1)),
-                        labelText: 'عنوان پیام خود را وارد کنید',
+                        labelText: 'عنوان پیام',
                       ),
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
+                  // ignore: sized_box_for_whitespace
                   Container(
                     width: 314,
-                    height: 43,
-                    color: Colors.transparent,
-                    child: const TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
+                    child: TextFormField(
+                      minLines: 5,
+                      maxLines: null,
+                      keyboardType: TextInputType.multiline,
+                      decoration: const InputDecoration(
+                        alignLabelWithHint: true,
                         border: OutlineInputBorder(),
-                        hintStyle:
-                            TextStyle(color: Color(0xffc1c1c1), height: 200),
-                        labelText: 'متن پیام شما',
+                        labelText: ' متن پیام',
                       ),
                     ),
                   ),

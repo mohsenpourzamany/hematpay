@@ -76,10 +76,10 @@ class MainScreen extends StatelessWidget {
             items: [
               BottomNavigationBarItem(
                 icon: Container(
-                    width: 38,
-                    height: 38,
-                    child: Image.asset('assets/icon/home.png')),
-                activeIcon: Image.asset('assets/icon/home.png'),
+                    width: 5,
+                    height: 5,
+                    child: Image.asset('assets/icon/Mainpage.png')),
+                activeIcon: Image.asset('assets/icon/Mainpage.png'),
                 label: 'Item1',
               ),
               BottomNavigationBarItem(
@@ -147,47 +147,49 @@ class MainScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            //       IndexedStack(
-            //   index: _selectedBottomNavigationItem,
-            //   children: getLayout(),
-            // ),
-            SizedBox(
-              width: double.infinity,
-              child: Image(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Stack(
+            children: [
+              //       IndexedStack(
+              //   index: _selectedBottomNavigationItem,
+              //   children: getLayout(),
+              // ),
+              SizedBox(
                 width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            CardBalance(),
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 130),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(249, 254, 254, 254),
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Wrap(
-                  children: [
-                    ReceiveMoney(),
-                    SendMoney(),
-                    BankTransfer(),
-                    MoneyBag(),
-                    AIPay(),
-                    TransHistory(),
-                    FundsBox(),
-                    Settings(),
-                    LastTrans(),
-                  ],
+                child: Image(
+                  width: double.infinity,
+                  image: AssetImage('assets/images/sbg.jpg'),
                 ),
               ),
-            ),
-          ],
+              CardBalance(),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.only(top: 220),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(249, 254, 254, 254),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Wrap(
+                    children: [
+                      ReceiveMoney(),
+                      SendMoney(),
+                      BankTransfer(),
+                      MoneyBag(),
+                      AIPay(),
+                      TransHistory(),
+                      FundsBox(),
+                      Settings(),
+                      LastTrans(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

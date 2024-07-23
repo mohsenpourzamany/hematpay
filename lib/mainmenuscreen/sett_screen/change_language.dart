@@ -71,9 +71,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                   topLeft: Radius.circular(50),
                 ),
               ),
-              child: const Column(
+              child: Column(
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(top: 35.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -95,10 +95,10 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
-                  Text(
+                  const Text(
                     'تغییر زبان برنامه',
                     style: TextStyle(
                         color: Color.fromARGB(255, 154, 154, 154),
@@ -106,8 +106,104 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                         fontWeight: FontWeight.w400,
                         fontFamily: 'vazir'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 55,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const InviteFriends();
+                      //     },
+                      //   ),
+                      // );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(314, 43),
+                      backgroundColor: const Color.fromARGB(255, 187, 187, 187),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'فارسی',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const InviteFriends();
+                      //     },
+                      //   ),
+                      // );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(314, 43),
+                      backgroundColor: const Color.fromARGB(255, 187, 187, 187),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'English',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const InviteFriends();
+                      //     },
+                      //   ),
+                      // );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(314, 43),
+                      backgroundColor: const Color.fromARGB(255, 187, 187, 187),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'پښتو',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

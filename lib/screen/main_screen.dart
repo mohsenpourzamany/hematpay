@@ -9,6 +9,7 @@ import 'package:hematpay/mainmenu/receive_money.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
@@ -165,14 +166,13 @@ class MainScreen extends StatelessWidget {
               CardBalance(),
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.only(top: 220),
+                margin: EdgeInsets.only(top: 182),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(249, 254, 254, 254),
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
                 ),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: const EdgeInsets.only(top: 20, left: 40, right: 30),
                   child: Wrap(
                     children: [
                       ReceiveMoney(),
@@ -195,13 +195,13 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  // List<Widget> getLayout() {
-  //   return <Widget>[
-  //     MainScreen(),
-  //     SearchScreen(),
-  //     AddContentScreen(),
-  //     ActivityScreen(),
-  //     UserProfileScreen()
-  //   ];
-  // }
+  List<Widget> getLayout() {
+    return <Widget>[
+      MainScreen(),
+      // SearchScreen(),
+      SettingPage(),
+      // ActivityScreen(),
+      // UserProfileScreen()
+    ];
+  }
 }

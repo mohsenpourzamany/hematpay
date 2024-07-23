@@ -18,7 +18,7 @@ class _CardBalanceState extends State<CardBalance> {
         Container(
           margin: const EdgeInsets.only(top: 30, right: 70),
           child: const Image(
-            width: 250,
+            width: 300,
             image: AssetImage(
               'assets/images/goldcredit.png',
             ),
@@ -43,23 +43,29 @@ class _CardBalanceState extends State<CardBalance> {
                     child: const Text(
                       'HEMATPAY CARD',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700,
-                          color: Colors.black38),
+                          color: Colors.black54),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 60, top: 20),
                     child: const Text(
                       '135719780000',
-                      style: TextStyle(fontSize: 17, color: Colors.black38),
+                      style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black45),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 60),
                     child: const Text(
                       '1357 1978 0011 1234',
-                      style: TextStyle(fontSize: 17, color: Colors.black38),
+                      style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black45),
                     ),
                   ),
                   Container(
@@ -67,7 +73,7 @@ class _CardBalanceState extends State<CardBalance> {
                     child: const Text(
                       '  موجودی اکانت شما ',
                       style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 11,
                           color: Colors.black45,
                           fontFamily: 'vazir',
                           fontWeight: FontWeight.w600),
@@ -81,9 +87,9 @@ class _CardBalanceState extends State<CardBalance> {
                         child: const Text(
                           '17,592',
                           style: TextStyle(
-                              fontSize: 17,
+                              fontSize: 18,
                               color: Colors.black54,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700),
                         ),
                       ),
                       const SizedBox(

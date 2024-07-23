@@ -211,7 +211,7 @@ class _ConfirmBankTransferState extends State<SuppurtContact> {
                     ),
                   ),
                   const SizedBox(
-                    height: 45,
+                    height: 120,
                   ),
                 ],
               ),

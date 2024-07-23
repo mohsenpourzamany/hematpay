@@ -66,7 +66,7 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
               width: double.infinity,
               margin: const EdgeInsets.only(top: 130),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
+                color: Color.fromARGB(210, 253, 253, 253),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                 ),

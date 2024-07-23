@@ -87,6 +87,9 @@ class _LastTransState extends State<LastTrans> {
                       fontWeight: FontWeight.w300,
                       color: Color.fromARGB(255, 148, 148, 148)),
                 ),
+                SizedBox(
+                  height: 50,
+                )
               ],
             ),
           ],

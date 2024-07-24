@@ -56,7 +56,7 @@ class GetBodyWidget extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 200, top: 283),
+            margin: EdgeInsets.only(left: 200, top: 305),
             child: Image(
               image: AssetImage(
                 'assets/images/credit1.png',

@@ -10,6 +10,7 @@ import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/user_account/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
@@ -23,13 +24,24 @@ class MainScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(
-              width: 35,
-              height: 35,
-              image: AssetImage('assets/images/Ellipse.png'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const UserAccount();
+                    },
+                  ),
+                );
+              },
+              child: Image(
+                width: 35,
+                height: 35,
+                image: AssetImage('assets/images/Ellipse.png'),
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 57),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 78),
               child: Column(
                 children: [
                   Text(
@@ -153,7 +165,7 @@ class MainScreen extends StatelessWidget {
           child: Stack(
             children: [
               //       IndexedStack(
-              //   index: _selectedBottomNavigationItem,
+              //                                           index: _selectedBottomNavigationItem,
               //   children: getLayout(),
               // ),
               SizedBox(
@@ -164,27 +176,31 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               CardBalance(),
-              Container(
-                width: double.infinity,
-                margin: EdgeInsets.only(top: 182),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(249, 254, 254, 254),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 40, right: 30),
-                  child: Wrap(
-                    children: [
-                      ReceiveMoney(),
-                      SendMoney(),
-                      BankTransfer(),
-                      MoneyBag(),
-                      AIPay(),
-                      TransHistory(),
-                      FundsBox(),
-                      Settings(),
-                      LastTrans(),
-                    ],
+              SingleChildScrollView(
+                child: Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.only(top: 182),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(253, 253, 253, 253),
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(50)),
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 20, left: 40, right: 30),
+                    child: Wrap(
+                      children: [
+                        ReceiveMoney(),
+                        SendMoney(),
+                        BankTransfer(),
+                        MoneyBag(),
+                        AIPay(),
+                        TransHistory(),
+                        FundsBox(),
+                        Settings(),
+                        LastTrans(),
+                      ],
+                    ),
                   ),
                 ),
               ),

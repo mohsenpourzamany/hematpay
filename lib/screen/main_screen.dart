@@ -10,13 +10,19 @@ import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +30,9 @@ class MainScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            IconButton(
+              icon: Image.asset('assets/images/Ellipse.png'),
+              iconSize: 35,
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -34,14 +42,9 @@ class MainScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: Image(
-                width: 35,
-                height: 35,
-                image: AssetImage('assets/images/Ellipse.png'),
-              ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 78),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 62),
               child: Column(
                 children: [
                   Text(
@@ -55,10 +58,18 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Image(
-              width: 35,
-              height: 35,
-              image: AssetImage('assets/images/notification-red.png'),
+            IconButton(
+              icon: Image.asset('assets/images/notification-red.png'),
+              iconSize: 35,
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const NotificationUser();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),

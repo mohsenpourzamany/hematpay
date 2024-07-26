@@ -33,63 +33,67 @@ class _LastTransState extends State<LastTrans> {
             SizedBox(
               height: 15,
             ),
-            Row(
+            Column(
               children: [
-                Text(
-                  '750',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'vazir'),
+                Row(
+                  children: [
+                    Text(
+                      '750',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'vazir'),
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
+                    Text(
+                      ('\u0024'),
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'vazir'),
+                    ),
+                    SizedBox(
+                      width: 120,
+                    ),
+                    Text(
+                      'شارژ کیف پول اصلی  ',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'vazir'),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  width: 4,
+                Row(
+                  children: [
+                    Text(
+                      'واریز به اکانت',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromARGB(255, 148, 148, 148),
+                      ),
+                    ),
+                    ImageIcon(
+                      AssetImage('assets/icon/depositarrow.png'),
+                    ),
+                    SizedBox(
+                      width: 67,
+                    ),
+                    Text(
+                      'Mar 14,2024 at 2:30am',
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w300,
+                          color: Color.fromARGB(255, 148, 148, 148)),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    )
+                  ],
                 ),
-                Text(
-                  ('\u0024'),
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'vazir'),
-                ),
-                SizedBox(
-                  width: 120,
-                ),
-                Text(
-                  'شارژ کیف پول اصلی  ',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'vazir'),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text(
-                  'واریز به اکانت',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300,
-                    color: Color.fromARGB(255, 148, 148, 148),
-                  ),
-                ),
-                ImageIcon(
-                  AssetImage('assets/icon/depositarrow.png'),
-                ),
-                SizedBox(
-                  width: 67,
-                ),
-                Text(
-                  'Mar 14,2024 at 2:30am',
-                  style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w300,
-                      color: Color.fromARGB(255, 148, 148, 148)),
-                ),
-                SizedBox(
-                  height: 50,
-                )
               ],
             ),
           ],

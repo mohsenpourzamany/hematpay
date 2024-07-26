@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/signin.dart';
+import 'package:hematpay/user_account/bill_bank.dart';
 
 class TransHistory extends StatelessWidget {
   const TransHistory({super.key});
@@ -26,7 +26,7 @@ class TransHistory extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const Signin();
+                    return const BillBank();
                   },
                 ),
               );

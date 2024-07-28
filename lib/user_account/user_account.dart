@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class UserAccount extends StatefulWidget {
@@ -13,6 +14,7 @@ class _ConfirmBankTransferState extends State<UserAccount> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -22,7 +24,7 @@ class _ConfirmBankTransferState extends State<UserAccount> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -63,7 +65,7 @@ class _ConfirmBankTransferState extends State<UserAccount> {
             const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 130),
+              margin: const EdgeInsets.only(top: 5),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(248, 253, 253, 253),
                 borderRadius: BorderRadius.only(
@@ -72,27 +74,40 @@ class _ConfirmBankTransferState extends State<UserAccount> {
               ),
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 35.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'پنل کاربری حامد قوامی ',
-                          style: TextStyle(
-                              fontSize: 21,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir'),
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
-                        Image(
-                          width: 55,
-                          image: AssetImage('assets/images/Ellipse3.png'),
-                        ),
-                      ],
+                  Container(
+                    margin: const EdgeInsets.only(right: 360, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const MainScreen();
+                            },
+                          ),
+                        );
+                      },
                     ),
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'پنل کاربری حامد قوامی ',
+                        style: TextStyle(
+                            fontSize: 21,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'vazir'),
+                      ),
+                      SizedBox(
+                        width: 2,
+                      ),
+                      Image(
+                        width: 55,
+                        image: AssetImage('assets/images/Ellipse3.png'),
+                      ),
+                    ],
                   ),
                   const SizedBox(
                     height: 55,

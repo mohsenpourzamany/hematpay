@@ -27,6 +27,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -44,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 62),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -190,28 +191,47 @@ class _MainScreenState extends State<MainScreen> {
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(top: 182),
+                  margin: EdgeInsets.only(top: 122),
                   decoration: BoxDecoration(
                     color: Color.fromARGB(253, 253, 253, 253),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(50)),
                   ),
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(top: 20, left: 40, right: 30),
-                    child: Wrap(
-                      children: [
-                        ReceiveMoney(),
-                        SendMoney(),
-                        BankTransfer(),
-                        MoneyBag(),
-                        AIPay(),
-                        TransHistory(),
-                        FundsBox(),
-                        Settings(),
-                        LastTrans(),
-                      ],
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(right: 350, top: 20),
+                        child: IconButton(
+                          icon: Image.asset('assets/icon/back.png'),
+                          iconSize: 35,
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const MainScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 40, right: 30),
+                        child: Wrap(
+                          children: [
+                            ReceiveMoney(),
+                            SendMoney(),
+                            BankTransfer(),
+                            MoneyBag(),
+                            AIPay(),
+                            TransHistory(),
+                            FundsBox(),
+                            Settings(),
+                            LastTrans(),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

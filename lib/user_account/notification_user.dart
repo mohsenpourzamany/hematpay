@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class NotificationUser extends StatelessWidget {
@@ -8,6 +9,7 @@ class NotificationUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -17,7 +19,7 @@ class NotificationUser extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -60,7 +62,7 @@ class NotificationUser extends StatelessWidget {
               textDirection: TextDirection.rtl,
               child: Container(
                 width: double.infinity,
-                margin: const EdgeInsets.only(top: 130),
+                margin: const EdgeInsets.only(top: 5),
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(248, 253, 253, 253),
                   borderRadius: BorderRadius.only(
@@ -69,20 +71,33 @@ class NotificationUser extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(top: 35.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '* اعلانات برنامه *',
-                            style: TextStyle(
-                                fontSize: 21,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'vazir'),
-                          ),
-                        ],
+                    Container(
+                      margin: const EdgeInsets.only(right: 360, top: 20),
+                      child: IconButton(
+                        icon: Image.asset('assets/icon/back.png'),
+                        iconSize: 35,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const MainScreen();
+                              },
+                            ),
+                          );
+                        },
                       ),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '* اعلانات برنامه *',
+                          style: TextStyle(
+                              fontSize: 21,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir'),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 35,

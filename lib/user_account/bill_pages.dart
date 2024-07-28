@@ -14,6 +14,7 @@ class _BillPagesState extends State<BillPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,7 +24,7 @@ class _BillPagesState extends State<BillPages> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -164,7 +165,7 @@ class _BillPagesState extends State<BillPages> {
                       child: const MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: Text(
-                          'صورت حساب ',
+                          'اشتراک گذاری',
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'vazir',

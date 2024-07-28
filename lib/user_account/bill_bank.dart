@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/bill_pages.dart';
 import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/widgets/tab_bill_account.dart';
 
 class BillBank extends StatefulWidget {
   const BillBank({super.key});
@@ -15,6 +16,7 @@ class _BillBankState extends State<BillBank> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,7 +26,7 @@ class _BillBankState extends State<BillBank> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -110,13 +112,20 @@ class _BillBankState extends State<BillBank> {
                     const SizedBox(
                       height: 35,
                     ),
+                    const Image(
+                      image: AssetImage('assets/images/chart.png'),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     GestureDetector(
                       onTap: () {
                         //
                       },
                       child: Container(
-                        width: 300,
-                        height: 45,
+                        margin: const EdgeInsets.only(left: 190),
+                        width: 150,
+                        height: 25,
                         decoration: const BoxDecoration(
                             border: Border(
                                 bottom: BorderSide(
@@ -124,17 +133,10 @@ class _BillBankState extends State<BillBank> {
                         child: const Column(
                           children: [
                             Text(
-                              '۱ - مبلغ ۷۸ دلار به حساب شما واریز شد ',
+                              'دلار : ۶۵۴۳',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
-                                  fontFamily: 'vazir'),
-                            ),
-                            Text(
-                              '2024/06/12',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w400,
                                   fontFamily: 'vazir'),
                             ),
                           ],
@@ -142,9 +144,66 @@ class _BillBankState extends State<BillBank> {
                       ),
                     ),
                     const SizedBox(
-                      height: 2,
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        //
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(left: 190),
+                        width: 150,
+                        height: 25,
+                        decoration: const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    width: 1, color: Colors.black54))),
+                        child: const Column(
+                          children: [
+                            Text(
+                              'یورو :  ۶۳',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'vazir'),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        //
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(left: 190),
+                        width: 150,
+                        height: 25,
+                        decoration: const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    width: 1, color: Colors.black54))),
+                        child: const Column(
+                          children: [
+                            Text(
+                              'افغانی :  ۱۷۹۰۹۸',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'vazir'),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     const Spacer(),
+                    const TabBillAccount(),
+                    const SizedBox(
+                      height: 25,
+                    ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(
@@ -176,7 +235,7 @@ class _BillBankState extends State<BillBank> {
                       ),
                     ),
                     const SizedBox(
-                      height: 45,
+                      height: 65,
                     ),
                   ],
                 ),

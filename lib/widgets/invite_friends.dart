@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class InviteFriends extends StatelessWidget {
@@ -8,6 +9,7 @@ class InviteFriends extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -17,7 +19,7 @@ class InviteFriends extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -66,9 +68,25 @@ class InviteFriends extends StatelessWidget {
                   topRight: Radius.circular(25),
                 ),
               ),
-              child: const Column(
+              child: Column(
                 children: [
-                  Image(
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const SendMoneyScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const Image(
                     width: double.infinity,
                     image: AssetImage('assets/images/invite.png'),
                   ),

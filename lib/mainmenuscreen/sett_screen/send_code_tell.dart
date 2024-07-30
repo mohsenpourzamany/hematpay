@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
 import 'package:hematpay/screen/sucess_enter.dart';
 
 class SendCodeTell extends StatelessWidget {
@@ -10,6 +11,7 @@ class SendCodeTell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -19,7 +21,7 @@ class SendCodeTell extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -98,13 +100,29 @@ class SendCodeTell extends StatelessWidget {
                     Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(212, 255, 255, 255),
+                          color: Color.fromARGB(247, 255, 255, 255),
                           borderRadius:
-                              BorderRadius.only(topLeft: Radius.circular(40))),
+                              BorderRadius.only(topLeft: Radius.circular(50))),
                       width: double.infinity,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          Container(
+                            margin: const EdgeInsets.only(right: 350, top: 20),
+                            child: IconButton(
+                              icon: Image.asset('assets/icon/back.png'),
+                              iconSize: 35,
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const ChangeTell();
+                                    },
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
                           SizedBox(
                             height: 30,
                           ),
@@ -205,7 +223,12 @@ class SendCodeTell extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 vertical: 5, horizontal: 80),
                             child: Wrap(
-                              children: [_getnumber()],
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: _getnumber(),
+                                )
+                              ],
                             ),
                           ),
                           SizedBox(
@@ -243,7 +266,7 @@ class SendCodeTell extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 60,
                           ),
                         ],
                       ),

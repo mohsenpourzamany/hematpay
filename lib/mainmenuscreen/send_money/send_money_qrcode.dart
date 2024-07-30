@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
@@ -9,6 +10,7 @@ class SendMoneyQRcode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -18,7 +20,7 @@ class SendMoneyQRcode extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -58,7 +60,7 @@ class SendMoneyQRcode extends StatelessWidget {
             ),
             const CardBalance(),
             Container(
-              margin: const EdgeInsets.only(top: 160),
+              margin: const EdgeInsets.only(top: 90),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(248, 255, 255, 255),
                 borderRadius: BorderRadius.only(
@@ -68,8 +70,23 @@ class SendMoneyQRcode extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    margin:
-                        const EdgeInsets.only(left: 135, top: 40, bottom: 25),
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const SendMoneyScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 135, bottom: 25),
                     child: const Row(
                       children: [
                         Text(
@@ -103,7 +120,7 @@ class SendMoneyQRcode extends StatelessWidget {
                     image: AssetImage('assets/images/scanframe.png'),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 40,
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -133,7 +150,7 @@ class SendMoneyQRcode extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 35,
                   ),
                 ],
               ),

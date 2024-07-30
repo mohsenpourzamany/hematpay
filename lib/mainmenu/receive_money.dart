@@ -9,7 +9,7 @@ class ReceiveMoney extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(

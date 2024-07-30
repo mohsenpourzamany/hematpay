@@ -4,6 +4,7 @@ import 'package:hematpay/mainmenuscreen/sett_screen/change_language.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_pass.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/suppurt_contact.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class SettingPage extends StatelessWidget {
@@ -13,6 +14,7 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -22,7 +24,7 @@ class SettingPage extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -72,8 +74,24 @@ class SettingPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const MainScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 35.0),
+                    padding: EdgeInsets.only(top: 15.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/main_screen.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/widgets/invite_friends.dart';
 
 class ConfirmTransfer extends StatelessWidget {
   const ConfirmTransfer({super.key});
@@ -9,6 +10,7 @@ class ConfirmTransfer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -18,7 +20,7 @@ class ConfirmTransfer extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -68,8 +70,23 @@ class ConfirmTransfer extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    margin:
-                        const EdgeInsets.only(left: 135, top: 40, bottom: 25),
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const SendMoneyScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 135, bottom: 25),
                     child: const Row(
                       children: [
                         Text(
@@ -208,7 +225,7 @@ class ConfirmTransfer extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
-                        return const MainScreen();
+                        return const InviteFriends();
                       }));
                     },
                     style: ElevatedButton.styleFrom(

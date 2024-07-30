@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/transfer/confirm_bank_transfer.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class MainBankTransfer extends StatelessWidget {
@@ -9,6 +10,7 @@ class MainBankTransfer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -18,7 +20,7 @@ class MainBankTransfer extends StatelessWidget {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -68,8 +70,24 @@ class MainBankTransfer extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const MainScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 45.0),
+                    padding: EdgeInsets.only(top: 25.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/send_code_tell.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class ChangeTell extends StatefulWidget {
@@ -14,6 +15,7 @@ class _ConfirmBankTransferState extends State<ChangeTell> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,7 +25,7 @@ class _ConfirmBankTransferState extends State<ChangeTell> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -73,6 +75,22 @@ class _ConfirmBankTransferState extends State<ChangeTell> {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const SettingPage();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
                     padding: EdgeInsets.only(top: 35.0),
                     child: Row(

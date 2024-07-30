@@ -45,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 90),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 75),
               child: Column(
                 children: [
                   Text(
@@ -177,7 +177,7 @@ class _MainScreenState extends State<MainScreen> {
           child: Stack(
             children: [
               //       IndexedStack(
-              //                                           index: _selectedBottomNavigationItem,
+              //   index: _selectedBottomNavigationItem,
               //   children: getLayout(),
               // ),
               SizedBox(
@@ -216,7 +216,7 @@ class _MainScreenState extends State<MainScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 40, right: 30),
+                        padding: const EdgeInsets.only(left: 25, right: 25),
                         child: Wrap(
                           children: [
                             ReceiveMoney(),

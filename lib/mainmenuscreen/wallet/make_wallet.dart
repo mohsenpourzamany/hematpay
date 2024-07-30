@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/wallet/depsite_wallet.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/invite_friends.dart';
 
@@ -15,6 +16,7 @@ class _ConfirmBankTransferState extends State<MakeWallet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,7 +26,7 @@ class _ConfirmBankTransferState extends State<MakeWallet> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
               child: Column(
                 children: [
                   Text(
@@ -74,8 +76,24 @@ class _ConfirmBankTransferState extends State<MakeWallet> {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const MainScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 35.0),
+                    padding: EdgeInsets.only(top: 15.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

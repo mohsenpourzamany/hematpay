@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/aipay/aipay_choice.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class AiPayList extends StatefulWidget {
@@ -14,6 +15,7 @@ class _ConfirmBankTransferState extends State<AiPayList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,7 +25,7 @@ class _ConfirmBankTransferState extends State<AiPayList> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 70),
               child: Column(
                 children: [
                   Text(
@@ -64,7 +66,7 @@ class _ConfirmBankTransferState extends State<AiPayList> {
             const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 230),
+              margin: const EdgeInsets.only(top: 180),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(248, 253, 253, 253),
                 borderRadius: BorderRadius.only(
@@ -73,8 +75,24 @@ class _ConfirmBankTransferState extends State<AiPayList> {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const MainScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 35.0),
+                    padding: EdgeInsets.only(top: 15.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -184,7 +202,7 @@ class _ConfirmBankTransferState extends State<AiPayList> {
                         fontFamily: 'vazir'),
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 45,
                   ),
                 ],
               ),

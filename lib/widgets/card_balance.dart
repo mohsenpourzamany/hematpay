@@ -16,17 +16,17 @@ class _CardBalanceState extends State<CardBalance> {
       textDirection: TextDirection.rtl,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 30, right: 70),
+          margin: const EdgeInsets.only(right: 5),
           child: const Image(
-            width: 300,
+            width: 400,
             image: AssetImage(
-              'assets/images/goldcredit.png',
+              'assets/images/maincredit.png',
             ),
           ),
         ),
         ClipRRect(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
             child: Container(
               height: 160,
               width: double.infinity,
@@ -39,17 +39,17 @@ class _CardBalanceState extends State<CardBalance> {
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 85, top: 10),
+                    margin: const EdgeInsets.only(left: 90, top: 25),
                     child: const Text(
                       'HEMATPAY CARD',
                       style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black54),
+                          fontWeight: FontWeight.w800,
+                          color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(left: 60, top: 20),
+                    margin: const EdgeInsets.only(left: 60, top: 10),
                     child: const Text(
                       '135719780000',
                       style: TextStyle(
@@ -59,7 +59,7 @@ class _CardBalanceState extends State<CardBalance> {
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(left: 60),
+                    margin: const EdgeInsets.only(left: 60, top: 5),
                     child: const Text(
                       '1357 1978 0011 1234',
                       style: TextStyle(
@@ -69,7 +69,7 @@ class _CardBalanceState extends State<CardBalance> {
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(right: 120),
+                    margin: const EdgeInsets.only(right: 100, top: 7),
                     child: const Text(
                       '  موجودی اکانت شما ',
                       style: TextStyle(
@@ -83,12 +83,12 @@ class _CardBalanceState extends State<CardBalance> {
                   Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(left: 60),
                         child: const Text(
                           '17,592',
                           style: TextStyle(
                               fontSize: 18,
-                              color: Colors.black54,
+                              color: Color.fromARGB(240, 255, 255, 255),
                               fontWeight: FontWeight.w700),
                         ),
                       ),
@@ -100,7 +100,7 @@ class _CardBalanceState extends State<CardBalance> {
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
-                            color: Colors.black54),
+                            color: Color.fromARGB(240, 255, 255, 255)),
                       ),
                     ],
                   ),

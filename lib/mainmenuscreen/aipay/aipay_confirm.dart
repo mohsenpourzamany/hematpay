@@ -14,6 +14,7 @@ class _ConfirmBankTransferState extends State<AiPayConfirm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,7 +24,7 @@ class _ConfirmBankTransferState extends State<AiPayConfirm> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 70),
               child: Column(
                 children: [
                   Text(
@@ -73,8 +74,24 @@ class _ConfirmBankTransferState extends State<AiPayConfirm> {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const AiPayReceipt();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 35.0),
+                    padding: EdgeInsets.only(top: 15.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

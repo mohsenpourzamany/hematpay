@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/aipay/aipay_confirm.dart';
+import 'package:hematpay/mainmenuscreen/aipay/aipay_list.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class AiPayChoice extends StatefulWidget {
@@ -14,6 +15,7 @@ class _ConfirmBankTransferState extends State<AiPayChoice> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,7 +25,7 @@ class _ConfirmBankTransferState extends State<AiPayChoice> {
               image: AssetImage('assets/images/Ellipse.png'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 70),
               child: Column(
                 children: [
                   Text(
@@ -73,6 +75,22 @@ class _ConfirmBankTransferState extends State<AiPayChoice> {
               ),
               child: Column(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    child: IconButton(
+                      icon: Image.asset('assets/icon/back.png'),
+                      iconSize: 35,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const AiPayList();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const Padding(
                     padding: EdgeInsets.only(top: 35.0),
                     child: Row(

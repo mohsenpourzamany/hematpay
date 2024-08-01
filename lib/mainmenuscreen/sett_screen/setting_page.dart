@@ -3,6 +3,7 @@ import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_language.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_pass.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/manag_account/add_account.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/suppurt_contact.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/widgets/card_balance.dart';
@@ -127,6 +128,61 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
+                            return const AddAccount();
+                          },
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.arrow_back_ios),
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          const Text(
+                            'مدیریت حساب ',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'vazir'),
+                          ),
+                          const SizedBox(
+                            width: 75,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 168, 168, 168)),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: const Image(
+                              width: 38,
+                              image: AssetImage('assets/icon/m-account.png'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      maximumSize: const Size(314, 45),
+                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
                             return const ChangePass();
                           },
                         ),
@@ -168,7 +224,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 7,
+                    height: 10,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -223,7 +279,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 7,
+                    height: 10,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -278,7 +334,7 @@ class SettingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 7,
+                    height: 10,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(

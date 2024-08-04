@@ -9,7 +9,6 @@ import 'package:hematpay/mainmenu/receive_money.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
@@ -75,103 +74,119 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
-          child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: Color.fromARGB(255, 243, 243, 243),
-            // currentIndex: _selectedBottomNavigationItem,
-            onTap: (int index) {
-              // setState(() {
-              //   _selectedBottomNavigationItem = index;
-              // });
-            },
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: [
-              BottomNavigationBarItem(
-                icon: Container(
-                    width: 5,
-                    height: 5,
-                    child: Image.asset('assets/icon/Mainpage.png')),
-                activeIcon: Image.asset('assets/icon/Mainpage.png'),
-                label: 'Item1',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                    width: 38,
-                    height: 38,
-                    child: Image.asset('assets/icon/currency_exchange.png')),
-                activeIcon: Image.asset('assets/icon/currency_exchange.png'),
-                label: 'Item2',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                    width: 42,
-                    height: 42,
-                    child: Image.asset('assets/icon/settings.png')),
-                activeIcon: Image.asset('assets/icon/settings.png'),
-                label: 'Item3',
-              ),
-              BottomNavigationBarItem(
-                // ignore: duplicate_ignore
-                // ignore: sized_box_for_whitespace
-                icon: Container(
-                    width: 38,
-                    height: 38,
-                    child: Image.asset('assets/icon/cards.png')),
-                activeIcon: Image.asset('assets/icon/cards.png'),
-                label: 'Item4',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  width: 38,
-                  height: 38,
-                  decoration: BoxDecoration(),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(6)),
-                    child: FittedBox(
-                      fit: BoxFit.cover,
-                      child: Image.asset('assets/icon/accounts.png'),
-                    ),
-                  ),
-                ),
-                activeIcon: Container(
-                  width: 38,
-                  height: 38,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: Color(0xffF35383),
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(6)),
-                    child: FittedBox(
-                      fit: BoxFit.cover,
-                      child: Image.asset('assets/icon/accounts.png'),
-                    ),
-                  ),
-                ),
-                label: 'Item4',
-              ),
-            ],
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
-        ),
+        ],
       ),
+      // bottomNavigationBar: Container(
+      //   decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(15),
+      //       topRight: Radius.circular(15),
+      //     ),
+      //   ),
+      //   child: ClipRRect(
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(15),
+      //       topRight: Radius.circular(15),
+      //     ),
+      //     child: BottomNavigationBar(
+      //       type: BottomNavigationBarType.fixed,
+      //       backgroundColor: Color.fromARGB(255, 243, 243, 243),
+      //       // currentIndex: _selectedBottomNavigationItem,
+      //       onTap: (int index) {
+      //         // setState(() {
+      //         //   _selectedBottomNavigationItem = index;
+      //         // });
+      //       },
+      //       showSelectedLabels: false,
+      //       showUnselectedLabels: false,
+      //       items: [
+      //         BottomNavigationBarItem(
+      //           icon: Container(
+      //               width: 5,
+      //               height: 5,
+      //               child: Image.asset('assets/icon/Mainpage.png')),
+      //           activeIcon: Image.asset('assets/icon/Mainpage.png'),
+      //           label: 'Item1',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Container(
+      //               width: 38,
+      //               height: 38,
+      //               child: Image.asset('assets/icon/currency_exchange.png')),
+      //           activeIcon: Image.asset('assets/icon/currency_exchange.png'),
+      //           label: 'Item2',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Container(
+      //               width: 42,
+      //               height: 42,
+      //               child: Image.asset('assets/icon/settings.png')),
+      //           activeIcon: Image.asset('assets/icon/settings.png'),
+      //           label: 'Item3',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           // ignore: duplicate_ignore
+      //           // ignore: sized_box_for_whitespace
+      //           icon: Container(
+      //               width: 38,
+      //               height: 38,
+      //               child: Image.asset('assets/icon/cards.png')),
+      //           activeIcon: Image.asset('assets/icon/cards.png'),
+      //           label: 'Item4',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Container(
+      //             width: 38,
+      //             height: 38,
+      //             decoration: BoxDecoration(),
+      //             child: ClipRRect(
+      //               borderRadius: BorderRadius.all(Radius.circular(6)),
+      //               child: FittedBox(
+      //                 fit: BoxFit.cover,
+      //                 child: Image.asset('assets/icon/accounts.png'),
+      //               ),
+      //             ),
+      //           ),
+      //           activeIcon: Container(
+      //             width: 38,
+      //             height: 38,
+      //             decoration: BoxDecoration(
+      //               border: Border.all(
+      //                 width: 2,
+      //                 color: Color(0xffF35383),
+      //               ),
+      //               borderRadius: BorderRadius.all(
+      //                 Radius.circular(8),
+      //               ),
+      //             ),
+      //             child: ClipRRect(
+      //               borderRadius: BorderRadius.all(Radius.circular(6)),
+      //               child: FittedBox(
+      //                 fit: BoxFit.cover,
+      //                 child: Image.asset('assets/icon/accounts.png'),
+      //               ),
+      //             ),
+      //           ),
+      //           label: 'Item4',
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(
@@ -242,13 +257,13 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  List<Widget> getLayout() {
-    return <Widget>[
-      MainScreen(),
-      // SearchScreen(),
-      SettingPage(),
-      // ActivityScreen(),
-      // UserProfileScreen()
-    ];
-  }
+  // List<Widget> getLayout() {
+  //   return <Widget>[
+  //     MainScreen(),
+  //     // SearchScreen(),
+  //     SettingPage(),
+  //     // ActivityScreen(),
+  //     // UserProfileScreen()
+  //   ];
+  // }
 }

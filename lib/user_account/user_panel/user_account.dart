@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/screen/main_screen.dart';
+import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class UserAccount extends StatefulWidget {
   const UserAccount({super.key});
 
   @override
-  State<UserAccount> createState() => _ConfirmBankTransferState();
+  State<UserAccount> createState() => _UserAccountState();
 }
 
-class _ConfirmBankTransferState extends State<UserAccount> {
+class _UserAccountState extends State<UserAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +68,7 @@ class _ConfirmBankTransferState extends State<UserAccount> {
               width: double.infinity,
               margin: const EdgeInsets.only(top: 5),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
+                color: Color(0xffF5F5F5),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50),
                 ),
@@ -123,7 +124,7 @@ class _ConfirmBankTransferState extends State<UserAccount> {
                       // );
                     },
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(150, 60),
+                      minimumSize: const Size(320, 40),
                       backgroundColor: const Color.fromARGB(254, 255, 255, 255),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -142,20 +143,22 @@ class _ConfirmBankTransferState extends State<UserAccount> {
                       ),
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(
+                    height: 3,
+                  ),
                   ElevatedButton(
                     onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const InviteFriends();
-                      //     },
-                      //   ),
-                      // );
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const CurrencyRate();
+                          },
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(314, 43),
-                      backgroundColor: const Color(0xff111111),
+                      minimumSize: const Size(320, 40),
+                      backgroundColor: const Color.fromARGB(184, 255, 255, 255),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -163,23 +166,13 @@ class _ConfirmBankTransferState extends State<UserAccount> {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
-                        'تغییر رمز ورود',
+                        'نرخ ارز ',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 118, 118, 118),
                           fontFamily: 'vazir',
                           fontSize: 17,
                           fontWeight: FontWeight.w700,
                         ),
-                      ),
-                    ),
-                  ),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        '۱ - پروفایل کاربری',
-                        style: TextStyle(),
                       ),
                     ),
                   ),

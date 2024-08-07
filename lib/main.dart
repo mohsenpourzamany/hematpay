@@ -3,6 +3,7 @@
 // ignore: avoid_web_libraries_in_flutter
 
 import 'package:flutter/material.dart';
+import 'package:hematpay/screen/forgot_password.dart';
 import 'package:hematpay/screen/signup.dart';
 import 'package:hematpay/screen/signin.dart';
 
@@ -165,9 +166,17 @@ class GetBodyWidget extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  'فراموشی رمز',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return ForgotPassword();
+                    }));
+                  },
+                  child: Text(
+                    'فراموشی رمز',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 ),
                 SizedBox(
                   height: 80,

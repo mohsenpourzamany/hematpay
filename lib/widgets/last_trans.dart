@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LastTrans extends StatefulWidget {
   const LastTrans({super.key});
@@ -33,30 +35,53 @@ class _LastTransState extends State<LastTrans> {
             SizedBox(
               height: 15,
             ),
-            Column(
+            Row(
               children: [
-                Row(
+                Column(
                   children: [
-                    Text(
-                      '750',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'vazir'),
+                    Row(
+                      children: [
+                        Text(
+                          '750',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir'),
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          ('\u0024'),
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir'),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 4,
+                    Row(
+                      children: [
+                        Text(
+                          'واریز به اکانت',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                            color: Color.fromARGB(255, 148, 148, 148),
+                          ),
+                        ),
+                        ImageIcon(
+                          AssetImage('assets/icon/depositarrow.png'),
+                        ),
+                      ],
                     ),
-                    Text(
-                      ('\u0024'),
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'vazir'),
-                    ),
-                    SizedBox(
-                      width: 120,
-                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 80,
+                ),
+                Column(
+                  children: [
                     Text(
                       'شارژ کیف پول اصلی  ',
                       style: TextStyle(
@@ -64,23 +89,8 @@ class _LastTransState extends State<LastTrans> {
                           fontWeight: FontWeight.w600,
                           fontFamily: 'vazir'),
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'واریز به اکانت',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300,
-                        color: Color.fromARGB(255, 148, 148, 148),
-                      ),
-                    ),
-                    ImageIcon(
-                      AssetImage('assets/icon/depositarrow.png'),
-                    ),
                     SizedBox(
-                      width: 67,
+                      height: 7,
                     ),
                     Text(
                       'Mar 14,2024 at 2:30am',
@@ -89,13 +99,13 @@ class _LastTransState extends State<LastTrans> {
                           fontWeight: FontWeight.w300,
                           color: Color.fromARGB(255, 148, 148, 148)),
                     ),
-                    SizedBox(
-                      height: 50,
-                    )
                   ],
                 ),
               ],
             ),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       ),

@@ -11,7 +11,8 @@ import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/user_account/notification_user.dart';
-import 'package:hematpay/user_account/user_account.dart';
+import 'package:hematpay/user_account/user_panel/currency_rate.dart';
+import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/last_trans.dart';
 
@@ -23,14 +24,14 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List<Widget> pages = const [
-    MainScreen(),
-    // currencypage(),
-    SettingPage(),
-    SendMoney(),
-    // accounts(),
-  ];
-  int currentPage = 0;
+  // final List<Widget> pages = const [
+  //   MainScreen(),
+  //   // currencypage(),
+  //   SettingPage(),
+  //   SendMoney(),
+  //   // accounts(),
+  // ];
+  // int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -85,38 +86,117 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentPage,
-        onTap: (value) {
-          setState(() {
-            currentPage = value;
-          });
-        },
+        unselectedLabelStyle:
+            const TextStyle(color: Colors.white, fontSize: 14),
+        backgroundColor: const Color(0xFF084A76),
+        fixedColor: Colors.black54,
+        unselectedItemColor: Colors.black54,
+        // currentIndex: currentPage,
+        // onTap: (value) {
+        //   setState(() {
+        //     currentPage = value;
+        //   });
+        // },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MainScreen();
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.home,
+                size: 40,
+                color: Colors.black54,
+              ),
+            ),
             label: 'خانه',
-            backgroundColor: Color.fromARGB(255, 246, 174, 31),
+            // backgroundColor: Color.fromARGB(255, 246, 174, 31),
           ),
           BottomNavigationBarItem(
-            icon: Container(
-                width: 50, height: 40, child: Icon(Icons.currency_exchange)),
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const CurrencyRate();
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.currency_exchange,
+                size: 35,
+                color: Colors.black54,
+              ),
+            ),
             label: 'نرخ ارز',
-            backgroundColor: Color.fromARGB(255, 243, 183, 65),
+            // backgroundColor: Color.fromARGB(255, 243, 183, 65),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SettingPage();
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.settings,
+                size: 40,
+                color: Colors.black54,
+              ),
+            ),
             label: 'تنظیمات',
-            backgroundColor: Color.fromARGB(255, 255, 196, 77),
+            // backgroundColor: Color.fromARGB(255, 255, 196, 77),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.send_to_mobile),
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SendMoney();
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.send_to_mobile,
+                size: 35,
+                color: Colors.black54,
+              ),
+            ),
             label: 'ارسال',
-            backgroundColor: Color.fromARGB(255, 243, 183, 65),
+            // backgroundColor: Color.fromARGB(255, 243, 183, 65),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MoneyBag();
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.account_balance_wallet,
+                size: 35,
+                color: Colors.black54,
+              ),
+            ),
             label: 'حساب',
-            backgroundColor: Color.fromARGB(255, 246, 174, 31),
+            // backgroundColor: Color.fromARGB(255, 246, 174, 31),
           ),
         ],
       ),
@@ -138,7 +218,7 @@ class _MainScreenState extends State<MainScreen> {
                   width: double.infinity,
                   margin: EdgeInsets.only(top: 142),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(253, 253, 253, 253),
+                    color: Color(0xffF5F5F5),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(50)),
                   ),

@@ -9,7 +9,7 @@ class BankTransfer extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -38,8 +38,11 @@ class BankTransfer extends StatelessWidget {
               ),
             ),
             child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 4),
-              child: ImageIcon(AssetImage('assets/icon/bank-trans.png')),
+              padding: EdgeInsets.symmetric(vertical: 28, horizontal: 4),
+              child: Icon(
+                Icons.account_balance_outlined,
+                size: 30,
+              ),
             ),
           ),
         ),

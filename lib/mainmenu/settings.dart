@@ -39,8 +39,9 @@ class Settings extends StatelessWidget {
             ),
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 30, horizontal: 4),
-              child: ImageIcon(
-                AssetImage('assets/icon/settings.png'),
+              child: Icon(
+                Icons.settings,
+                size: 30,
               ),
             ),
           ),

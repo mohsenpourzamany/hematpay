@@ -9,7 +9,7 @@ class TransHistory extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -38,9 +38,11 @@ class TransHistory extends StatelessWidget {
               ),
             ),
             child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 4),
-              child: ImageIcon(AssetImage('assets/icon/Calendar.png')),
-            ),
+                padding: EdgeInsets.symmetric(vertical: 28, horizontal: 4),
+                child: Icon(
+                  Icons.calendar_month,
+                  size: 30,
+                )),
           ),
         ),
         const SizedBox(

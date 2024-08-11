@@ -24,15 +24,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  // final List<Widget> pages = const [
-  //   MainScreen(),
-  //   // currencypage(),
-  //   SettingPage(),
-  //   SendMoney(),
-  //   // accounts(),
-  // ];
-  // int currentPage = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,17 +77,16 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedFontSize: 15,
+        selectedLabelStyle:
+            const TextStyle(color: Colors.white, fontFamily: 'vazir'),
         unselectedLabelStyle:
             const TextStyle(color: Colors.white, fontSize: 14),
-        backgroundColor: const Color(0xFF084A76),
-        fixedColor: Colors.black54,
-        unselectedItemColor: Colors.black54,
-        // currentIndex: currentPage,
-        // onTap: (value) {
-        //   setState(() {
-        //     currentPage = value;
-        //   });
-        // },
+        backgroundColor: const Color.fromARGB(255, 250, 250, 250),
+        fixedColor: const Color.fromARGB(255, 255, 255, 255),
+        unselectedItemColor: const Color.fromARGB(255, 251, 251, 251),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: InkWell(
@@ -104,19 +94,19 @@ class _MainScreenState extends State<MainScreen> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const MainScreen();
+                      return const SendMoney();
                     },
                   ),
                 );
               },
-              child: Icon(
-                Icons.home,
-                size: 40,
-                color: Colors.black54,
+              child: const Icon(
+                Icons.send_to_mobile,
+                size: 35,
+                color: Color(0xffffffff),
               ),
             ),
-            label: 'خانه',
-            // backgroundColor: Color.fromARGB(255, 246, 174, 31),
+            label: 'ارسال',
+            backgroundColor: const Color(0xff3A3A3A),
           ),
           BottomNavigationBarItem(
             icon: InkWell(
@@ -129,54 +119,42 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 );
               },
-              child: Icon(
+              child: const Icon(
                 Icons.currency_exchange,
                 size: 35,
-                color: Colors.black54,
+                color: Color(0xffffffff),
               ),
             ),
             label: 'نرخ ارز',
-            // backgroundColor: Color.fromARGB(255, 243, 183, 65),
+            backgroundColor: const Color(0xff3A3A3A),
           ),
           BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SettingPage();
-                    },
-                  ),
-                );
-              },
-              child: Icon(
-                Icons.settings,
-                size: 40,
-                color: Colors.black54,
+            icon: Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(
+                      color: Color.fromARGB(255, 255, 255, 255), width: 1)),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const MainScreen();
+                      },
+                    ),
+                  );
+                },
+                child: const Icon(
+                  Icons.home,
+                  size: 40,
+                  color: Color(0xffffffff),
+                ),
               ),
             ),
-            label: 'تنظیمات',
-            // backgroundColor: Color.fromARGB(255, 255, 196, 77),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SendMoney();
-                    },
-                  ),
-                );
-              },
-              child: Icon(
-                Icons.send_to_mobile,
-                size: 35,
-                color: Colors.black54,
-              ),
-            ),
-            label: 'ارسال',
-            // backgroundColor: Color.fromARGB(255, 243, 183, 65),
+            label: 'خانه',
+            backgroundColor: const Color(0xff3A3A3A),
           ),
           BottomNavigationBarItem(
             icon: InkWell(
@@ -189,19 +167,38 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 );
               },
-              child: Icon(
+              child: const Icon(
                 Icons.account_balance_wallet,
                 size: 35,
-                color: Colors.black54,
+                color: Color(0xffffffff),
               ),
             ),
             label: 'حساب',
-            // backgroundColor: Color.fromARGB(255, 246, 174, 31),
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SettingPage();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.settings,
+                size: 40,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'تنظیمات',
+            backgroundColor: const Color(0xff3A3A3A),
           ),
         ],
       ),
       body: SingleChildScrollView(
-        // pages[currentPage],
         child: SafeArea(
           child: Stack(
             children: [
@@ -216,9 +213,9 @@ class _MainScreenState extends State<MainScreen> {
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(top: 142),
+                  margin: EdgeInsets.only(top: 155),
                   decoration: BoxDecoration(
-                    color: Color(0xffF5F5F5),
+                    color: Color.fromARGB(255, 255, 240, 219),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(50)),
                   ),

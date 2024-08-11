@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenu/money_bag.dart';
+import 'package:hematpay/mainmenu/send_money.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
@@ -52,190 +56,306 @@ class _CurrencyRateState extends State<CurrencyRate> {
           ],
         ),
       ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedFontSize: 15,
+        selectedLabelStyle:
+            const TextStyle(color: Colors.white, fontFamily: 'vazir'),
+        unselectedLabelStyle:
+            const TextStyle(color: Colors.white, fontSize: 14),
+        backgroundColor: const Color.fromARGB(255, 250, 250, 250),
+        fixedColor: const Color.fromARGB(255, 255, 255, 255),
+        unselectedItemColor: const Color.fromARGB(255, 251, 251, 251),
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MainScreen();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.home,
+                size: 40,
+                color: Color(0xffffffff),
               ),
             ),
-            const CardBalance(),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.only(top: 5),
-              decoration: const BoxDecoration(
-                color: Color(0xffF5F5F5),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
+            label: 'خانه',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const CurrencyRate();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.currency_exchange,
+                size: 35,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'نرخ ارز',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SettingPage();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.settings,
+                size: 40,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'تنظیمات',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SendMoney();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.send_to_mobile,
+                size: 35,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'ارسال',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MoneyBag();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.account_balance_wallet,
+                size: 35,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'حساب',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Stack(
+            children: [
+              const SizedBox(
+                width: double.infinity,
+                child: Image(
+                  width: double.infinity,
+                  image: AssetImage('assets/images/sbg.jpg'),
                 ),
               ),
-              child: Column(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(right: 360, top: 20),
-                    child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
-                      iconSize: 35,
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const UserAccount();
-                            },
+              const CardBalance(),
+              Container(
+                width: double.infinity,
+                margin: const EdgeInsets.only(top: 5),
+                decoration: const BoxDecoration(
+                  color: Color(0xffF5F5F5),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(right: 360, top: 20),
+                      child: IconButton(
+                        icon: Image.asset('assets/icon/back.png'),
+                        iconSize: 35,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const UserAccount();
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'نرخ ارز',
+                          style: TextStyle(
+                              fontSize: 21,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir'),
+                        ),
+                        SizedBox(
+                          width: 7,
+                        ),
+                        Icon(
+                          Icons.currency_exchange,
+                          size: 30.0,
+                          semanticLabel:
+                              'Text to announce in accessibility modes',
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    const Text(
+                      'نرخ دلار هرات',
+                      style: TextStyle(
+                          fontFamily: 'vazir',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'خرید',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                'فروش',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600),
+                              )
+                            ],
                           ),
-                        );
-                      },
-                    ),
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'نرخ ارز',
-                        style: TextStyle(
-                            fontSize: 21,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'vazir'),
+                          SizedBox(
+                            width: 180,
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                '۷۱.۲۵',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                '۷۱.۳۵',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.w600),
+                              )
+                            ],
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 7,
-                      ),
-                      Icon(
-                        Icons.currency_exchange,
-                        size: 30.0,
-                        semanticLabel:
-                            'Text to announce in accessibility modes',
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  const Text(
-                    'نرخ دلار هرات',
-                    style: TextStyle(
-                        fontFamily: 'vazir',
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  const Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'خرید',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              'فروش',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 180,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              '۷۱.۲۵',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              '۷۱.۳۵',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.w600),
-                            )
-                          ],
-                        ),
-                      ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  const Text(
-                    'نرخ دلار استانبول',
-                    style: TextStyle(
-                        fontFamily: 'vazir',
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  const Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              'خرید',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              'فروش',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: 180,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              '۷۱.۲۵',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              '۷۱.۳۵',
-                              style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 20,
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.w600),
-                            )
-                          ],
-                        ),
-                      ],
+                    const SizedBox(
+                      height: 25,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 45,
-                  ),
-                ],
+                    const Text(
+                      'نرخ دلار استانبول',
+                      style: TextStyle(
+                          fontFamily: 'vazir',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'خرید',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                'فروش',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: 180,
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                '۷۱.۲۵',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                '۷۱.۳۵',
+                                style: TextStyle(
+                                    fontFamily: 'vazir',
+                                    fontSize: 20,
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.w600),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 45,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

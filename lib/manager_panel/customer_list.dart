@@ -5,6 +5,9 @@ import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
+import 'package:hematpay/manager_panel/send_massage_all_users.dart';
+import 'package:hematpay/manager_panel/send_massage_user.dart';
+import 'package:hematpay/manager_panel/upgrade_user_to_brunch.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
@@ -211,7 +214,7 @@ class _CustomerListState extends State<CustomerList> {
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(top: 400),
+                  margin: EdgeInsets.only(top: 100),
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 254, 254, 254),
                     borderRadius:
@@ -219,21 +222,58 @@ class _CustomerListState extends State<CustomerList> {
                   ),
                   child: Column(
                     children: [
-                      Container(
-                        margin: const EdgeInsets.only(right: 350, top: 10),
-                        child: IconButton(
-                          icon: Image.asset('assets/icon/back.png'),
-                          iconSize: 35,
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return const ManagerPanelMainPage();
-                                },
+                      Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 15, top: 20),
+                            child: IconButton(
+                              icon: Image.asset('assets/icon/back.png'),
+                              iconSize: 35,
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const ManagerPanelMainPage();
+                                    },
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top: 20, left: 140),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const SendMassageAllUsers();
+                                    },
+                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                minimumSize: Size(40, 35),
+                                backgroundColor:
+                                    Color.fromARGB(255, 117, 117, 117),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
                               ),
-                            );
-                          },
-                        ),
+                              child: Text(
+                                'ارسال پیام به همه مشتریان',
+                                style: TextStyle(
+                                    color: Color(0xffffffff),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'vazir'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 35,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 35, right: 25),
@@ -284,7 +324,15 @@ class _CustomerListState extends State<CustomerList> {
                                     Padding(
                                       padding: const EdgeInsets.all(12.0),
                                       child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                              builder: (context) {
+                                                return const SendMassageUser();
+                                              },
+                                            ),
+                                          );
+                                        },
                                         style: ElevatedButton.styleFrom(
                                           minimumSize: Size(40, 30),
                                           backgroundColor: Color(0xffffffff),
@@ -354,7 +402,15 @@ class _CustomerListState extends State<CustomerList> {
                                       width: 28,
                                     ),
                                     GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) {
+                                              return const UpgradeUserToBraunch();
+                                            },
+                                          ),
+                                        );
+                                      },
                                       child: Text(
                                         'ارتقاء...',
                                         style: TextStyle(
@@ -387,7 +443,7 @@ class _CustomerListState extends State<CustomerList> {
                               ),
                             ),
                             SizedBox(
-                              height: 45,
+                              height: 390,
                             )
                           ],
                         ),

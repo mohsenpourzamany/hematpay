@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/manager_panel/brunch_list.dart';
 import 'package:hematpay/manager_panel/customer_list.dart';
+import 'package:hematpay/manager_panel/main_bank_balance.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
@@ -89,6 +91,26 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
+                      return const MainScreen();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.home,
+                size: 40,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'خانه',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
                       return const SendMoney();
                     },
                   ),
@@ -121,34 +143,6 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
               ),
             ),
             label: 'نرخ ارز',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: Container(
-              width: 70,
-              height: 70,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(
-                      color: Color.fromARGB(255, 255, 255, 255), width: 1)),
-              child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const MainScreen();
-                      },
-                    ),
-                  );
-                },
-                child: const Icon(
-                  Icons.home,
-                  size: 40,
-                  color: Color(0xffffffff),
-                ),
-              ),
-            ),
-            label: 'خانه',
             backgroundColor: const Color(0xff3A3A3A),
           ),
           BottomNavigationBarItem(
@@ -382,7 +376,15 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                               height: 10,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const BrunchList();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Container(
                                 width: 350,
                                 height: 90,
@@ -397,7 +399,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                       child: Column(
                                         children: [
                                           Text(
-                                            'لیست شب ٫ نمایندگان',
+                                            'لیست شعب ٫ نمایندگان',
                                             style: TextStyle(
                                                 fontFamily: 'vazir',
                                                 fontSize: 17,
@@ -420,7 +422,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                       width: 15,
                                     ),
                                     Container(
-                                      margin: EdgeInsets.only(left: 30),
+                                      margin: EdgeInsets.only(left: 24),
                                       height: 55,
                                       decoration: BoxDecoration(
                                         border: Border(
@@ -446,7 +448,15 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                               height: 10,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const MainBankBalance();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Container(
                                 width: 350,
                                 height: 90,

@@ -215,7 +215,7 @@ class _MainScreenState extends State<MainScreen> {
                   width: double.infinity,
                   margin: EdgeInsets.only(top: 155),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 240, 219),
+                    color: Color.fromARGB(255, 255, 255, 255),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(50)),
                   ),

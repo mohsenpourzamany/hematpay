@@ -13,6 +13,7 @@ import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/widgets/search_box.dart';
 
 class CustomerList extends StatefulWidget {
   const CustomerList({super.key});
@@ -293,7 +294,7 @@ class _CustomerListState extends State<CustomerList> {
                                 height: 45,
                                 width: 350,
                                 color: Colors.transparent,
-                                child: SearchBar()),
+                                child: SearchBox()),
                             // ListView.separated(
                             //   padding: const EdgeInsets.all(8),
                             //   itemCount: entries.length,

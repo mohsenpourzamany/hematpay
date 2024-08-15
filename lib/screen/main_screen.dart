@@ -94,6 +94,26 @@ class _MainScreenState extends State<MainScreen> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
+                      return const MainScreen();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.home,
+                size: 40,
+                color: Color(0xffffffff),
+              ),
+            ),
+            label: 'خانه',
+            backgroundColor: const Color(0xff3A3A3A),
+          ),
+          BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
                       return const SendMoney();
                     },
                   ),
@@ -126,34 +146,6 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             label: 'نرخ ارز',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: Container(
-              width: 70,
-              height: 70,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(
-                      color: Color.fromARGB(255, 255, 255, 255), width: 1)),
-              child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const MainScreen();
-                      },
-                    ),
-                  );
-                },
-                child: const Icon(
-                  Icons.home,
-                  size: 40,
-                  color: Color(0xffffffff),
-                ),
-              ),
-            ),
-            label: 'خانه',
             backgroundColor: const Color(0xff3A3A3A),
           ),
           BottomNavigationBarItem(

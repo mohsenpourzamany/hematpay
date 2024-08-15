@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
-import 'package:hematpay/manager_panel/customer_list.dart';
+import 'package:hematpay/manager_panel/users/customer_list.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';

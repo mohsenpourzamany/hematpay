@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/manager_panel/main_bank/create_wallet.dart';
+import 'package:hematpay/manager_panel/main_bank/transfer_to_users.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
@@ -293,7 +295,7 @@ class _MainBankBalanceState extends State<MainBankBalance> {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return const MainScreen();
+                                      return const CreateWallet();
                                     },
                                   ),
                                 );
@@ -333,7 +335,7 @@ class _MainBankBalanceState extends State<MainBankBalance> {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return const MainScreen();
+                                      return const TransferToUsers();
                                     },
                                   ),
                                 );

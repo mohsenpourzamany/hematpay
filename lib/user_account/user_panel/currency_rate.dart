@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenu/send_money.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
@@ -134,7 +134,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const SendMoney();
+                      return const SendMoneyScreen();
                     },
                   ),
                 );
@@ -230,6 +230,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                         ),
                       ],
                     ),
+                    const Divider(),
                     const SizedBox(
                       height: 25,
                     ),
@@ -269,7 +270,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                           Column(
                             children: [
                               Text(
-                                '۷۱.۲۵',
+                                '70.3',
                                 style: TextStyle(
                                     fontFamily: 'vazir',
                                     fontSize: 20,
@@ -277,7 +278,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                                     fontWeight: FontWeight.w600),
                               ),
                               Text(
-                                '۷۱.۳۵',
+                                '71.3',
                                 style: TextStyle(
                                     fontFamily: 'vazir',
                                     fontSize: 20,
@@ -328,7 +329,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                           Column(
                             children: [
                               Text(
-                                '۷۱.۲۵',
+                                '32.8',
                                 style: TextStyle(
                                     fontFamily: 'vazir',
                                     fontSize: 20,
@@ -336,7 +337,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                                     fontWeight: FontWeight.w600),
                               ),
                               Text(
-                                '۷۱.۳۵',
+                                '33.3',
                                 style: TextStyle(
                                     fontFamily: 'vazir',
                                     fontSize: 20,
@@ -349,7 +350,7 @@ class _CurrencyRateState extends State<CurrencyRate> {
                       ),
                     ),
                     const SizedBox(
-                      height: 45,
+                      height: 400,
                     ),
                   ],
                 ),

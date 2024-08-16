@@ -2,27 +2,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenu/send_money.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
-import 'package:hematpay/manager_panel/main_bank/create_user.dart';
-import 'package:hematpay/manager_panel/main_bank/create_wallet.dart';
-import 'package:hematpay/manager_panel/main_bank/transfer_to_users.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
-import 'package:hematpay/widgets/main_card_balance.dart';
+import 'package:hematpay/widgets/search_box.dart';
 
-class MainBankBalance extends StatefulWidget {
-  const MainBankBalance({super.key});
+class BrunchReport extends StatefulWidget {
+  const BrunchReport({super.key});
 
   @override
-  State<MainBankBalance> createState() => _MainBankBalanceState();
+  State<BrunchReport> createState() => _BrunchReportState();
 }
 
-class _MainBankBalanceState extends State<MainBankBalance> {
+class _BrunchReportState extends State<BrunchReport> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,7 +110,7 @@ class _MainBankBalanceState extends State<MainBankBalance> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const SendMoney();
+                      return const SendMoneyScreen();
                     },
                   ),
                 );
@@ -204,7 +201,7 @@ class _MainBankBalanceState extends State<MainBankBalance> {
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(top: 68),
+                  margin: EdgeInsets.only(top: 5),
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255),
                     borderRadius:
@@ -229,17 +226,28 @@ class _MainBankBalanceState extends State<MainBankBalance> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 25, right: 25),
+                        padding:
+                            const EdgeInsets.only(left: 25, right: 25, top: 25),
                         child: Column(
                           children: [
                             Text(
-                              'صندوق اصلی و دیگر حساب ها ',
+                              'گزارش گردش حساب مشتریان، شعب / نمایندگان',
                               style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'vazir'),
                             ),
-                            MainCardBalance(),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Container(
+                                height: 45,
+                                width: 350,
+                                color: Colors.transparent,
+                                child: SearchBox()),
+                            SizedBox(
+                              height: 25,
+                            ),
                             Container(
                               width: 340,
                               height: 59,
@@ -285,131 +293,94 @@ class _MainBankBalanceState extends State<MainBankBalance> {
                                 ),
                               ),
                             ),
-                            Divider(
-                              color: Color.fromARGB(216, 248, 249, 252),
-                            ),
                             SizedBox(
-                              height: 20,
+                              height: 25,
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const CreateWallet();
-                                    },
+                            Container(
+                              width: 350,
+                              height: 65,
+                              decoration: BoxDecoration(
+                                color: Color(0xffF8F9FC),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    '8.348',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'vazir'),
                                   ),
-                                );
-                              },
-                              child: Container(
-                                width: 340,
-                                height: 86,
-                                decoration: BoxDecoration(
-                                    color: Color(0xffF8F9FC),
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'ایجاد کیف پول جدید ',
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700,
-                                          fontFamily: 'vazir'),
-                                    ),
-                                    Text(
-                                      'از طریق این منو رای نماینگان و شعب کیف پول ایاد کنید ',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w300,
-                                          fontFamily: 'vazir'),
-                                    ),
-                                  ],
-                                ),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    '\u0024',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'vazir'),
+                                  ),
+                                  SizedBox(
+                                    width: 70,
+                                  ),
+                                  Text(
+                                    ' محسن پورزمانی نجات',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'vazir'),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 25,
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const TransferToUsers();
-                                    },
+                            Container(
+                              width: 350,
+                              height: 65,
+                              decoration: BoxDecoration(
+                                color: Color(0xffF8F9FC),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    '5.200',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'vazir'),
                                   ),
-                                );
-                              },
-                              child: Container(
-                                width: 340,
-                                height: 86,
-                                decoration: BoxDecoration(
-                                    color: Color(0xffF8F9FC),
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'انتقال به کاربر ٫ شعبه ٫ نماینده',
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700,
-                                          fontFamily: 'vazir'),
-                                    ),
-                                    Text(
-                                      'مبلغ انتقالی از این طریق به کیف پول منتخب واریز میگردد',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w300,
-                                          fontFamily: 'vazir'),
-                                    ),
-                                  ],
-                                ),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    '\u0024',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'vazir'),
+                                  ),
+                                  SizedBox(
+                                    width: 70,
+                                  ),
+                                  Text(
+                                    'احمد صمیم ابراهیمی',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        fontFamily: 'vazir'),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(
-                              height: 20,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const CreateUser();
-                                    },
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                width: 340,
-                                height: 86,
-                                decoration: BoxDecoration(
-                                    color: Color(0xffF8F9FC),
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      ' ایجاد کاربر ٫ شعبه ٫ نماینده',
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700,
-                                          fontFamily: 'vazir'),
-                                    ),
-                                    Text(
-                                      'از این طریق کاربر ٫شعبه و یا نمانده خود را ایجاد کنید ',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w300,
-                                          fontFamily: 'vazir'),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 45,
+                              height: 300,
                             ),
                           ],
                         ),

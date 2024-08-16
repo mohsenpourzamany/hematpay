@@ -259,6 +259,11 @@ class _CreateWalletState extends State<CreateWallet> {
                                     decoration: InputDecoration(
                                       border: OutlineInputBorder(),
                                       labelText: 'عنوان کیف پول را وارد کنید',
+                                      labelStyle: TextStyle(
+                                          color: Color(0xffC8D1E1),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          fontFamily: 'vazir'),
                                     ),
                                   ),
                                 ),
@@ -272,6 +277,11 @@ class _CreateWalletState extends State<CreateWallet> {
                                   child: TextField(
                                     obscureText: false,
                                     decoration: InputDecoration(
+                                      labelStyle: TextStyle(
+                                          color: Color(0xffC8D1E1),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          fontFamily: 'vazir'),
                                       border: OutlineInputBorder(),
                                       labelText:
                                           ' مبلغ شارژ کیف پول را وارد کنید',
@@ -289,6 +299,11 @@ class _CreateWalletState extends State<CreateWallet> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(),
+                                        labelStyle: TextStyle(
+                                            color: Color(0xffC8D1E1),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            fontFamily: 'vazir'),
                                         labelText:
                                             'نام کاربر، شعبه / نمایندگی را وارد کنید...'),
                                   ),
@@ -312,7 +327,7 @@ class _CreateWalletState extends State<CreateWallet> {
                                       Text(
                                         'ایجاد کیف پول برای همه کاربران',
                                         style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.w300,
                                             fontFamily: 'vazir'),
                                       )
@@ -335,7 +350,7 @@ class _CreateWalletState extends State<CreateWallet> {
                                       Text(
                                         'ایجاد کیف پول برای همه شعب / نمایندگان',
                                         style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.w300,
                                             fontFamily: 'vazir'),
                                       )

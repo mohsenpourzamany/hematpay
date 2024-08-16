@@ -260,6 +260,11 @@ class _TransferToUsersState extends State<TransferToUsers> {
                                       border: OutlineInputBorder(),
                                       labelText:
                                           'نام کاربر، شعبه / نمایندگی را وارد کنید',
+                                      labelStyle: TextStyle(
+                                          color: Color(0xffC8D1E1),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700,
+                                          fontFamily: 'vazir'),
                                     ),
                                   ),
                                 ),
@@ -276,6 +281,11 @@ class _TransferToUsersState extends State<TransferToUsers> {
                                       border: OutlineInputBorder(),
                                       labelText:
                                           ' مبلغ شارژ کیف پول را وارد کنید',
+                                      labelStyle: TextStyle(
+                                          color: Color(0xffC8D1E1),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700,
+                                          fontFamily: 'vazir'),
                                     ),
                                   ),
                                 ),
@@ -284,6 +294,7 @@ class _TransferToUsersState extends State<TransferToUsers> {
                                 ),
                                 Container(
                                   width: 300,
+                                  color: Colors.white,
                                   child: TextField(
                                     maxLines: 4,
                                     keyboardType: TextInputType.multiline,
@@ -291,6 +302,11 @@ class _TransferToUsersState extends State<TransferToUsers> {
                                       alignLabelWithHint: true,
                                       border: OutlineInputBorder(),
                                       labelText: 'شرح تراکنش',
+                                      labelStyle: TextStyle(
+                                          color: Color(0xffC8D1E1),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w700,
+                                          fontFamily: 'vazir'),
                                     ),
                                   ),
                                 ),

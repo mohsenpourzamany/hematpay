@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/screen/main_screen.dart';
+import 'package:hematpay/screen/signup.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -87,6 +88,11 @@ class Signin extends StatelessWidget {
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'ایمیل خود را وارد کنید',
+                                labelStyle: TextStyle(
+                                    color: Color(0xffC8D1E1),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'vazir'),
                               ),
                             ),
                           ),
@@ -101,26 +107,42 @@ class Signin extends StatelessWidget {
                                 fontFamily: 'vazir'),
                           ),
                           Container(
-                            width: 314,
-                            height: 39,
+                            width: 320,
+                            height: 41,
                             color: Colors.white,
                             child: TextField(
                               obscureText: true,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'رمز خود را وارد کنید ',
+                                labelStyle: TextStyle(
+                                    color: Color(0xffC8D1E1),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'vazir'),
                               ),
                             ),
                           ),
                           SizedBox(
                             height: 100,
                           ),
-                          Text(
-                            'عضو نیستید ؟ اکانت خود را ایجاد کنید ',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'vazir'),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return Signup();
+                              }));
+                            },
+                            child: Text(
+                              'عضو نیستید ؟ اکانت خود را ایجاد کنید ',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'vazir'),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
                           ),
                           ElevatedButton(
                             onPressed: () {

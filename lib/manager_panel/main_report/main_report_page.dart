@@ -1,30 +1,25 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenu/aipay.dart';
-import 'package:hematpay/mainmenu/bank_transfer.dart';
-import 'package:hematpay/mainmenu/funds_box.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenu/receive_money.dart';
-import 'package:hematpay/mainmenu/send_money.dart';
-import 'package:hematpay/mainmenu/settings.dart';
-import 'package:hematpay/mainmenu/trans_history.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/manager_panel/main_report/brunch_report.dart';
+import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
+import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
-import 'package:hematpay/widgets/last_trans.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class MainReportPage extends StatefulWidget {
+  const MainReportPage({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<MainReportPage> createState() => _MainReportPageState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainReportPageState extends State<MainReportPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -223,7 +218,7 @@ class _MainScreenState extends State<MainScreen> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const MainScreen();
+                                  return const ManagerPanelMainPage();
                                 },
                               ),
                             );
@@ -231,18 +226,50 @@ class _MainScreenState extends State<MainScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 35, right: 25),
-                        child: Wrap(
+                        padding: const EdgeInsets.only(left: 25, right: 25),
+                        child: Column(
                           children: [
-                            ReceiveMoney(),
-                            SendMoney(),
-                            BankTransfer(),
-                            MoneyBag(),
-                            AIPay(),
-                            TransHistory(),
-                            FundsBox(),
-                            Settings(),
-                            LastTrans(),
+                            Text(
+                              'صورت حساب و گزارشات',
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'vazir'),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 155),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return const BrunchReport();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Directionality(
+                                  textDirection: TextDirection.rtl,
+                                  child: Text(
+                                    '۱ - گزارش گردش نمایندگان',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      fontFamily: 'vazir',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 400,
+                            )
                           ],
                         ),
                       ),

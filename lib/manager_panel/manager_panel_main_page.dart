@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenu/send_money.dart';
+import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/manager_panel/brunch/brunch_list.dart';
+import 'package:hematpay/manager_panel/main_report/main_report_page.dart';
 import 'package:hematpay/manager_panel/users/customer_list.dart';
 import 'package:hematpay/manager_panel/main_bank/main_bank_balance.dart';
 import 'package:hematpay/screen/main_screen.dart';
@@ -111,7 +112,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return const SendMoney();
+                      return const SendMoneyScreen();
                     },
                   ),
                 );
@@ -434,7 +435,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         padding:
                                             const EdgeInsets.only(left: 28),
                                         child: Icon(
-                                          Icons.person_3_outlined,
+                                          Icons.app_registration_rounded,
                                           size: 25,
                                           color: Colors.black26,
                                         ),
@@ -506,7 +507,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         padding:
                                             const EdgeInsets.only(left: 26),
                                         child: Icon(
-                                          Icons.person_3_outlined,
+                                          Icons.account_balance_outlined,
                                           size: 25,
                                           color: Colors.black26,
                                         ),
@@ -520,7 +521,15 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                               height: 10,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const MainReportPage();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Container(
                                 width: 350,
                                 height: 90,
@@ -570,7 +579,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         padding:
                                             const EdgeInsets.only(left: 28),
                                         child: Icon(
-                                          Icons.person_3_outlined,
+                                          Icons.add_chart_rounded,
                                           size: 25,
                                           color: Colors.black26,
                                         ),

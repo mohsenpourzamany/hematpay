@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/screen/send_code.dart';
+import 'package:hematpay/screen/signin.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -70,17 +71,24 @@ class Signup extends StatelessWidget {
                           Text(
                             'ایمیل',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'vazir'),
                           ),
                           Container(
                             width: 314,
-                            height: 39,
+                            height: 41,
                             color: Colors.white,
                             child: TextField(
                               obscureText: true,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'ایمیل خود را وارد کنید',
+                                labelStyle: TextStyle(
+                                    color: Color(0xffC8D1E1),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'vazir'),
                               ),
                             ),
                           ),
@@ -90,17 +98,24 @@ class Signup extends StatelessWidget {
                           Text(
                             'شماره موبایل ',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'vazir'),
                           ),
                           Container(
                             width: 314,
-                            height: 39,
+                            height: 41,
                             color: Colors.white,
                             child: TextField(
                               obscureText: true,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'شماره همراه خود را وارد کنید ',
+                                labelStyle: TextStyle(
+                                    color: Color(0xffC8D1E1),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'vazir'),
                               ),
                             ),
                           ),
@@ -110,30 +125,60 @@ class Signup extends StatelessWidget {
                           Text(
                             'رمز',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'vazir'),
                           ),
                           Container(
                             width: 314,
-                            height: 39,
+                            height: 41,
                             color: Colors.white,
                             child: TextField(
                               obscureText: true,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'رمز خود را وارد کنید ',
+                                labelStyle: TextStyle(
+                                    color: Color(0xffC8D1E1),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'vazir'),
                               ),
                             ),
                           ),
                           SizedBox(
                             height: 58,
                           ),
-                          Text('عضو هستید ؟ وارد شوید '),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return Signin();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'عضو هستید ؟ وارد شوید ',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'vazir'),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 7,
+                          ),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return SendCode();
-                              }));
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return SendCode();
+                                  },
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               minimumSize: Size(314, 43),

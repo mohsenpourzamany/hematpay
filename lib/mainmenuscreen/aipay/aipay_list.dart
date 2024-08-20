@@ -128,48 +128,76 @@ class _ConfirmBankTransferState extends State<AiPayList> {
                   ),
                   Wrap(
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return const AiPayChoice();
-                          }));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(20, 80),
-                          backgroundColor:
-                              const Color.fromARGB(255, 245, 245, 245),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return const AiPayChoice();
+                              }));
+                            },
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(20, 80),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 245, 245, 245),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                            ),
+                            child: const Image(
+                              width: 50,
+                              image: AssetImage('assets/images/wateraf.jpeg'),
+                            ),
                           ),
-                        ),
-                        child: const Image(
-                          width: 40,
-                          image: AssetImage('assets/images/enerji.png'),
-                        ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            'اداره آب ',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'vazir'),
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return const AiPayChoice();
-                          }));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(20, 80),
-                          backgroundColor:
-                              const Color.fromARGB(255, 245, 245, 245),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return const AiPayChoice();
+                              }));
+                            },
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(20, 80),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 245, 245, 245),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                            ),
+                            child: const Image(
+                              width: 50,
+                              image: AssetImage('assets/images/elecaf.jpg'),
+                            ),
                           ),
-                        ),
-                        child: const Image(
-                          width: 40,
-                          image: AssetImage('assets/images/enerji.png'),
-                        ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            'اداره برق ',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'vazir'),
+                          )
+                        ],
                       ),
                     ],
                   ),

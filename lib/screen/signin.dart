@@ -62,7 +62,7 @@ class Signin extends StatelessWidget {
                     Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(212, 255, 255, 255),
+                          color: Color.fromARGB(255, 255, 255, 255),
                           borderRadius:
                               BorderRadius.only(topLeft: Radius.circular(40))),
                       width: double.infinity,

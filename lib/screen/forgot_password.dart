@@ -78,6 +78,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'شماره موبایل خود را وارد کنید',
+                        labelStyle: TextStyle(
+                            color: Color(0xffC8D1E1),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'vazir'),
                       ),
                     ),
                   ),

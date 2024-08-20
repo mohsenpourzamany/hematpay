@@ -167,6 +167,138 @@ class _UserAccountState extends State<UserAccount> {
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Text(
+                        'حساب های من',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 118, 118, 118),
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const InviteFriends();
+                      //     },
+                      //   ),
+                      // );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(320, 40),
+                      backgroundColor: const Color.fromARGB(254, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'کارت های من',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 118, 118, 118),
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const CurrencyRate();
+                          },
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(320, 40),
+                      backgroundColor: const Color.fromARGB(184, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'ارسال پول',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 118, 118, 118),
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const InviteFriends();
+                      //     },
+                      //   ),
+                      // );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(320, 40),
+                      backgroundColor: const Color.fromARGB(254, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'پرداخت ها',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 118, 118, 118),
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const CurrencyRate();
+                          },
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(320, 40),
+                      backgroundColor: const Color.fromARGB(184, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
                         'نرخ ارز ',
                         style: TextStyle(
                           color: Color.fromARGB(255, 118, 118, 118),

@@ -26,7 +26,7 @@ class _CardBalanceState extends State<CardBalance> {
         ),
         ClipRRect(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+            filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
             child: Container(
               height: 160,
               width: double.infinity,

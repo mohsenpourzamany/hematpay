@@ -133,14 +133,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'پروفایل ',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'پروفایل ',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -166,14 +176,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'حساب های من',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'حساب های من',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -199,14 +219,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'کارت های من',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'کارت های من',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -232,14 +262,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'ارسال پول',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'ارسال پول',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -265,14 +305,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'پرداخت ها',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'پرداخت ها',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -298,14 +348,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'نرخ ارز ',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'نرخ ارز ',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -328,14 +388,24 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                     child: const MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
-                        'پنل مدیریت',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 118, 118, 118),
-                          fontFamily: 'vazir',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.arrow_circle_left,
+                            size: 30,
+                            color: Color.fromARGB(255, 199, 134, 55),
+                          ),
+                          Spacer(),
+                          Text(
+                            'پنل مدیریت',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 118, 118, 118),
+                              fontFamily: 'vazir',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

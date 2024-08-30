@@ -1,21 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenu/aipay.dart';
-import 'package:hematpay/mainmenu/bank_transfer.dart';
-import 'package:hematpay/mainmenu/funds_box.dart';
-import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenu/receive_money.dart';
-import 'package:hematpay/mainmenu/send_money.dart';
-import 'package:hematpay/mainmenu/settings.dart';
-import 'package:hematpay/mainmenu/trans_history.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
-import 'package:hematpay/widgets/card_balance.dart';
-import 'package:hematpay/widgets/last_trans.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -25,6 +18,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int selectedBottomNavigationIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,178 +71,141 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedFontSize: 15,
-        selectedLabelStyle:
-            const TextStyle(color: Colors.white, fontFamily: 'vazir'),
-        unselectedLabelStyle:
-            const TextStyle(color: Colors.white, fontSize: 14),
-        backgroundColor: const Color.fromARGB(255, 250, 250, 250),
-        fixedColor: const Color.fromARGB(255, 255, 255, 255),
-        unselectedItemColor: const Color.fromARGB(255, 251, 251, 251),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MainScreen();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.home,
-                size: 40,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'خانه',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SendMoneyScreen();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.send_to_mobile,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'ارسال',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const CurrencyRate();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.currency_exchange,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'نرخ ارز',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MoneyBag();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.account_balance_wallet,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'حساب',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SettingPage();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.settings,
-                size: 40,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'تنظیمات',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-        ],
+      body: IndexedStack(
+        index: selectedBottomNavigationIndex,
+        children: getScreen(),
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Stack(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: Image(
-                  width: double.infinity,
-                  image: AssetImage('assets/images/sbg.jpg'),
+      bottomNavigationBar: ClipRRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: BottomNavigationBar(
+            onTap: (int index) {
+              setState(() {
+                selectedBottomNavigationIndex = index;
+              });
+            },
+            currentIndex: selectedBottomNavigationIndex,
+            selectedLabelStyle: const TextStyle(
+                fontFamily: 'vazir',
+                fontSize: 15,
+                color: Color.fromARGB(255, 195, 165, 106),
+                fontWeight: FontWeight.w500),
+            unselectedLabelStyle: TextStyle(
+                fontFamily: 'vazir',
+                fontSize: 14,
+                color: Colors.black,
+                fontWeight: FontWeight.w400),
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home_filled,
+                  size: 40,
+                  color: Colors.grey,
                 ),
+                activeIcon: Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 195, 165, 106),
+                        blurRadius: 20,
+                        spreadRadius: -9,
+                        offset: Offset(0, 10))
+                  ]),
+                  child: Icon(
+                    Icons.home_filled,
+                    size: 40,
+                    color: Color.fromARGB(255, 214, 161, 53),
+                  ),
+                ),
+                label: 'خانه',
               ),
-              CardBalance(),
-              SingleChildScrollView(
-                child: Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.only(top: 155),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(50)),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(right: 350, top: 20),
-                        child: IconButton(
-                          icon: Image.asset('assets/icon/back.png'),
-                          iconSize: 35,
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return const MainScreen();
-                                },
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 35, right: 25),
-                        child: Wrap(
-                          children: [
-                            ReceiveMoney(),
-                            SendMoney(),
-                            BankTransfer(),
-                            MoneyBag(),
-                            AIPay(),
-                            TransHistory(),
-                            FundsBox(),
-                            Settings(),
-                            LastTrans(),
-                          ],
-                        ),
-                      ),
-                    ],
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.currency_exchange,
+                  size: 40,
+                  color: Colors.grey,
+                ),
+                activeIcon: Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 195, 165, 106),
+                        blurRadius: 20,
+                        spreadRadius: -9,
+                        offset: Offset(0, 10))
+                  ]),
+                  child: Icon(
+                    Icons.currency_exchange,
+                    size: 40,
+                    color: Color.fromARGB(255, 214, 161, 53),
                   ),
                 ),
+                label: 'نرخ ارز',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.send_to_mobile,
+                  size: 40,
+                  color: Colors.grey,
+                ),
+                activeIcon: Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 195, 165, 106),
+                        blurRadius: 20,
+                        spreadRadius: -9,
+                        offset: Offset(0, 10))
+                  ]),
+                  child: Icon(
+                    Icons.send_to_mobile,
+                    size: 40,
+                    color: Color.fromARGB(255, 214, 161, 53),
+                  ),
+                ),
+                label: 'ارسال پول',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.wallet,
+                  size: 40,
+                  color: Colors.grey,
+                ),
+                activeIcon: Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 195, 165, 106),
+                        blurRadius: 20,
+                        spreadRadius: -9,
+                        offset: Offset(0, 10))
+                  ]),
+                  child: Icon(
+                    Icons.wallet,
+                    size: 40,
+                    color: Color.fromARGB(255, 214, 161, 53),
+                  ),
+                ),
+                label: 'حساب ها',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.settings,
+                  size: 40,
+                  color: Colors.grey,
+                ),
+                activeIcon: Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 195, 165, 106),
+                        blurRadius: 20,
+                        spreadRadius: -9,
+                        offset: Offset(0, 10))
+                  ]),
+                  child: Icon(
+                    Icons.settings,
+                    size: 40,
+                    color: Color.fromARGB(255, 214, 161, 53),
+                  ),
+                ),
+                label: 'تنظیمات',
               ),
             ],
           ),
@@ -256,4 +213,14 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
+}
+
+List<Widget> getScreen() {
+  return <Widget>[
+    MainPageScreen(),
+    CurrencyRate(),
+    SendMoneyScreen(),
+    // MyAccounts(),
+    SettingPage(),
+  ];
 }

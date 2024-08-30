@@ -51,7 +51,10 @@ class TransHistory extends StatelessWidget {
         const Text(
           'تراکنش ها ',
           style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'vazir',
+              color: Color.fromARGB(255, 233, 233, 233)),
         ),
       ],
     );

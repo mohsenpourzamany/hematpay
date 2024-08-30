@@ -49,7 +49,10 @@ class FundsBox extends StatelessWidget {
         const Text(
           'بورس',
           style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'vazir',
+              color: Color.fromARGB(255, 233, 233, 233)),
         ),
       ],
     );

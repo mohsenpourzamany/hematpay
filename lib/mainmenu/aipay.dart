@@ -52,12 +52,18 @@ class AIPay extends StatelessWidget {
         const Text(
           'پرداخت ',
           style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'vazir',
+              color: Color.fromARGB(255, 233, 233, 233)),
         ),
         const Text(
           'هوشمند ',
           style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'vazir',
+              color: Color.fromARGB(255, 233, 233, 233)),
         ),
       ],
     );

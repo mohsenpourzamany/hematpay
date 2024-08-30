@@ -51,7 +51,10 @@ class ReceiveMoney extends StatelessWidget {
         const Text(
           'دریافت پول',
           style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w600, fontFamily: 'vazir'),
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'vazir',
+              color: Color.fromARGB(255, 233, 233, 233)),
         ),
       ],
     );

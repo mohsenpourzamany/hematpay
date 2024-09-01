@@ -5,7 +5,6 @@ import 'package:hematpay/mainmenu/funds_box.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/receive_money.dart';
 import 'package:hematpay/mainmenu/send_money.dart';
-import 'package:hematpay/mainmenu/settings.dart';
 import 'package:hematpay/mainmenu/trans_history.dart';
 
 class MainMenuScreen extends StatelessWidget {
@@ -24,7 +23,7 @@ class MainMenuScreen extends StatelessWidget {
         AIPay(),
         TransHistory(),
         FundsBox(),
-        Settings(),
+        // Settings(),
       ],
     );
   }

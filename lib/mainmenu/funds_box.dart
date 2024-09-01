@@ -9,7 +9,7 @@ class FundsBox extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -38,7 +38,7 @@ class FundsBox extends StatelessWidget {
               ),
             ),
             child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 32, horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 32, horizontal: 7),
               child: ImageIcon(AssetImage('assets/icon/fundsbox.png')),
             ),
           ),

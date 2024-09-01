@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
 class UserAccount extends StatefulWidget {
@@ -96,7 +97,7 @@ class _UserAccountState extends State<UserAccount> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'پنل کاربری حامد قوامی ',
+                        ' حامد قوامی ',
                         style: TextStyle(
                             fontSize: 21,
                             fontWeight: FontWeight.w600,
@@ -162,7 +163,7 @@ class _UserAccountState extends State<UserAccount> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const CurrencyRate();
+                            return const MyAccountsPage();
                           },
                         ),
                       );
@@ -202,13 +203,13 @@ class _UserAccountState extends State<UserAccount> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const InviteFriends();
-                      //     },
-                      //   ),
-                      // );
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const MyAccountsPage();
+                          },
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(320, 40),

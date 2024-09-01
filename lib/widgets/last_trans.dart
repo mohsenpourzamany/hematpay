@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LastTrans extends StatefulWidget {
   const LastTrans({super.key});
@@ -25,10 +23,13 @@ class _LastTransState extends State<LastTrans> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      fontFamily: 'vazir'),
+                      fontFamily: 'vazir',
+                      color: Colors.white),
                 ),
                 ImageIcon(
-                  AssetImage('assets/icon/trans.png'),
+                  AssetImage(
+                    'assets/icon/trans.png',
+                  ),
                 ),
               ],
             ),
@@ -46,7 +47,8 @@ class _LastTransState extends State<LastTrans> {
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir'),
+                              fontFamily: 'vazir',
+                              color: Colors.white),
                         ),
                         SizedBox(
                           width: 4,
@@ -56,7 +58,8 @@ class _LastTransState extends State<LastTrans> {
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir'),
+                              fontFamily: 'vazir',
+                              color: Colors.white),
                         ),
                       ],
                     ),
@@ -66,8 +69,8 @@ class _LastTransState extends State<LastTrans> {
                           'واریز به اکانت',
                           style: TextStyle(
                             fontSize: 15,
-                            fontWeight: FontWeight.w300,
-                            color: Color.fromARGB(255, 148, 148, 148),
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 213, 213, 213),
                           ),
                         ),
                         ImageIcon(
@@ -87,7 +90,8 @@ class _LastTransState extends State<LastTrans> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
-                          fontFamily: 'vazir'),
+                          fontFamily: 'vazir',
+                          color: Colors.white),
                     ),
                     SizedBox(
                       height: 7,
@@ -96,8 +100,8 @@ class _LastTransState extends State<LastTrans> {
                       'Mar 14,2024 at 2:30am',
                       style: TextStyle(
                           fontSize: 13,
-                          fontWeight: FontWeight.w300,
-                          color: Color.fromARGB(255, 148, 148, 148)),
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 213, 213, 213)),
                     ),
                   ],
                 ),

@@ -8,6 +8,8 @@ import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 
 class MainScreen extends StatefulWidget {
@@ -121,7 +123,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.currency_exchange,
+                  Icons.attach_money,
                   size: 40,
                   color: Colors.grey,
                 ),
@@ -134,7 +136,7 @@ class _MainScreenState extends State<MainScreen> {
                         offset: Offset(0, 10))
                   ]),
                   child: Icon(
-                    Icons.currency_exchange,
+                    Icons.attach_money,
                     size: 40,
                     color: Color.fromARGB(255, 214, 161, 53),
                   ),
@@ -143,7 +145,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.send_to_mobile,
+                  Icons.currency_exchange_rounded,
                   size: 40,
                   color: Colors.grey,
                 ),
@@ -156,35 +158,35 @@ class _MainScreenState extends State<MainScreen> {
                         offset: Offset(0, 10))
                   ]),
                   child: Icon(
-                    Icons.send_to_mobile,
+                    Icons.currency_exchange_rounded,
                     size: 40,
                     color: Color.fromARGB(255, 214, 161, 53),
                   ),
                 ),
-                label: 'ارسال پول',
+                label: ' صرافی',
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.wallet,
-                  size: 40,
-                  color: Colors.grey,
-                ),
-                activeIcon: Container(
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                        color: Color.fromARGB(255, 195, 165, 106),
-                        blurRadius: 20,
-                        spreadRadius: -9,
-                        offset: Offset(0, 10))
-                  ]),
-                  child: Icon(
-                    Icons.wallet,
-                    size: 40,
-                    color: Color.fromARGB(255, 214, 161, 53),
-                  ),
-                ),
-                label: 'حساب ها',
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(
+              //     Icons.wallet,
+              //     size: 40,
+              //     color: Colors.grey,
+              //   ),
+              //   activeIcon: Container(
+              //     decoration: BoxDecoration(boxShadow: [
+              //       BoxShadow(
+              //           color: Color.fromARGB(255, 195, 165, 106),
+              //           blurRadius: 20,
+              //           spreadRadius: -9,
+              //           offset: Offset(0, 10))
+              //     ]),
+              //     child: Icon(
+              //       Icons.wallet,
+              //       size: 40,
+              //       color: Color.fromARGB(255, 214, 161, 53),
+              //     ),
+              //   ),
+              //   label: 'حساب ها',
+              // ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.settings,

@@ -37,51 +37,14 @@ class MainPageScreen extends StatelessWidget {
                         margin: const EdgeInsets.only(top: 5),
                         child: const CardBalance()),
                     Container(
-                      margin:
-                          const EdgeInsets.only(top: 240, right: 25, left: 25),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          width: 3,
-                          color: const Color.fromARGB(248, 203, 203, 203),
-                        ),
-                      ),
-                      child: const Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.search,
-                                size: 30,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'کلمه مورد نظر را وارد کنید',
-                                style: TextStyle(
-                                  fontFamily: 'vazir',
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color.fromARGB(248, 184, 184, 184),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 300),
+                      margin: const EdgeInsets.only(top: 240),
                       child: const Padding(
-                        padding: EdgeInsets.only(left: 35, right: 25),
+                        padding: EdgeInsets.only(left: 25, right: 20),
                         child: MainMenuScreen(),
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(top: 520),
+                      margin: const EdgeInsets.only(top: 490),
                       child: const Padding(
                         padding: EdgeInsets.only(left: 35, right: 25),
                         child: LastTrans(),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
-import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
@@ -114,6 +113,10 @@ class _UserAccountState extends State<UserAccount> {
                   ),
                   const SizedBox(
                     height: 55,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 40,
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -242,133 +245,11 @@ class _UserAccountState extends State<UserAccount> {
                     ),
                   ),
                   const SizedBox(
-                    height: 3,
+                    height: 40,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const CurrencyRate();
-                          },
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(320, 40),
-                      backgroundColor: const Color.fromARGB(184, 255, 255, 255),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    child: const MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_circle_left,
-                            size: 30,
-                            color: Color.fromARGB(255, 199, 134, 55),
-                          ),
-                          Spacer(),
-                          Text(
-                            'ارسال پول',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 118, 118, 118),
-                              fontFamily: 'vazir',
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  const Divider(),
                   const SizedBox(
-                    height: 3,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const InviteFriends();
-                      //     },
-                      //   ),
-                      // );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(320, 40),
-                      backgroundColor: const Color.fromARGB(254, 255, 255, 255),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    child: const MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_circle_left,
-                            size: 30,
-                            color: Color.fromARGB(255, 199, 134, 55),
-                          ),
-                          Spacer(),
-                          Text(
-                            'پرداخت ها',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 118, 118, 118),
-                              fontFamily: 'vazir',
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 3,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const CurrencyRate();
-                          },
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(320, 40),
-                      backgroundColor: const Color.fromARGB(184, 255, 255, 255),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    child: const MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_circle_left,
-                            size: 30,
-                            color: Color.fromARGB(255, 199, 134, 55),
-                          ),
-                          Spacer(),
-                          Text(
-                            'نرخ ارز ',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 118, 118, 118),
-                              fontFamily: 'vazir',
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    height: 40,
                   ),
                   ElevatedButton(
                     onPressed: () {

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
-import 'package:hematpay/screen/main_screen.dart';
-import 'package:hematpay/user_account/user_panel/currency_rate.dart';
-import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
-import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
 
 class OpenAccount extends StatefulWidget {
   const OpenAccount({super.key});
@@ -66,22 +62,10 @@ class _OpenAccountState extends State<OpenAccount> {
       body: SafeArea(
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 5),
               decoration: const BoxDecoration(
                 color: Color(0xffF5F5F5),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
               ),
               child: Column(
                 children: [
@@ -94,7 +78,7 @@ class _OpenAccountState extends State<OpenAccount> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return const MainScreen();
+                              return const MyAccountsPage();
                             },
                           ),
                         );
@@ -124,16 +108,71 @@ class _OpenAccountState extends State<OpenAccount> {
                     ],
                   ),
                   const Divider(),
-                  // DropdownButton(
-                  //   items: const [
-                  //     DropdownMenuItem(child: Text('AF')),
-                  //     DropdownMenuItem(child: Text('TL')),
-                  //     DropdownMenuItem(child: Text('US')),
-                  //     DropdownMenuItem(child: Text('EU')),
-                  //   ],
-                  //   value: _dropdownValue,
-                  //   onChanged: dropdownCallback,
-                  // )
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Container(
+                        width: 340,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 234, 234, 234),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: DropdownButton<String>(
+                            isExpanded: true,
+                            hint: const Text(
+                              'نوع حساب را انتخاب کنید ',
+                              style: TextStyle(
+                                  fontFamily: 'vazir',
+                                  color: Color(0xffc1c1c1)),
+                            ),
+                            items: <String>['AF', 'US', 'EU', 'GP', 'TL']
+                                .map((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (_) {},
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 45,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          // Navigator.of(context)
+                          //     .push(MaterialPageRoute(builder: (context) {
+                          //   return Signup();
+                          // }));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          minimumSize: const Size(314, 43),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: const MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: Text(
+                            'افتتاح حساب',
+                            style: TextStyle(
+                              fontFamily: 'vazir',
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

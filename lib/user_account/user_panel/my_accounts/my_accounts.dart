@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';

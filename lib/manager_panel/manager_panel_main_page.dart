@@ -1,16 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/manager_panel/brunch/brunch_list.dart';
 import 'package:hematpay/manager_panel/main_report/main_report_page.dart';
+import 'package:hematpay/manager_panel/transaction/main_transaction.dart';
 import 'package:hematpay/manager_panel/users/customer_list.dart';
 import 'package:hematpay/manager_panel/main_bank/main_bank_balance.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
-import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
@@ -74,120 +71,6 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedFontSize: 15,
-        selectedLabelStyle:
-            const TextStyle(color: Colors.white, fontFamily: 'vazir'),
-        unselectedLabelStyle:
-            const TextStyle(color: Colors.white, fontSize: 14),
-        backgroundColor: const Color.fromARGB(255, 250, 250, 250),
-        fixedColor: const Color.fromARGB(255, 255, 255, 255),
-        unselectedItemColor: const Color.fromARGB(255, 251, 251, 251),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MainScreen();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.home,
-                size: 40,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'خانه',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SendMoneyScreen();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.send_to_mobile,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'ارسال',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const CurrencyRate();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.currency_exchange,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'نرخ ارز',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MoneyBag();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.account_balance_wallet,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'حساب',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SettingPage();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.settings,
-                size: 40,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'تنظیمات',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(
@@ -206,8 +89,6 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                   margin: EdgeInsets.only(top: 1),
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(50)),
                   ),
                   child: Column(
                     children: [
@@ -324,7 +205,8 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(top: 15),
+                                      margin:
+                                          EdgeInsets.only(top: 15, left: 40),
                                       child: Column(
                                         children: [
                                           Text(
@@ -347,11 +229,9 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
+                                    Spacer(),
                                     Container(
-                                      margin: EdgeInsets.only(left: 28),
+                                      margin: EdgeInsets.only(right: 30),
                                       height: 55,
                                       decoration: BoxDecoration(
                                         border: Border(
@@ -396,7 +276,8 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(top: 15),
+                                      margin:
+                                          EdgeInsets.only(top: 15, left: 40),
                                       child: Column(
                                         children: [
                                           Text(
@@ -419,11 +300,9 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
+                                    Spacer(),
                                     Container(
-                                      margin: EdgeInsets.only(left: 24),
+                                      margin: EdgeInsets.only(right: 30),
                                       height: 55,
                                       decoration: BoxDecoration(
                                         border: Border(
@@ -468,7 +347,8 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(top: 15),
+                                      margin:
+                                          EdgeInsets.only(top: 15, left: 50),
                                       child: Column(
                                         children: [
                                           Text(
@@ -491,11 +371,80 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
+                                    Spacer(),
                                     Container(
-                                      margin: EdgeInsets.only(left: 35),
+                                      margin: EdgeInsets.only(right: 30),
+                                      height: 55,
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          left: BorderSide(
+                                              width: 3, color: Colors.black12),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 26),
+                                        child: Icon(
+                                          Icons.account_balance_outlined,
+                                          size: 25,
+                                          color: Colors.black26,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const MainTransaction();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 350,
+                                height: 90,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(252, 238, 238, 238),
+                                    borderRadius: BorderRadius.circular(7)),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      margin:
+                                          EdgeInsets.only(top: 15, left: 50),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            'معاملات',
+                                            style: TextStyle(
+                                                fontFamily: 'vazir',
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.w700),
+                                          ),
+                                          SizedBox(
+                                            height: 7,
+                                          ),
+                                          Text(
+                                            ' اضافه ٫ ویرایش ٫ حذف',
+                                            style: TextStyle(
+                                                fontFamily: 'vazir',
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                      margin: EdgeInsets.only(right: 30),
                                       height: 55,
                                       decoration: BoxDecoration(
                                         border: Border(
@@ -540,7 +489,8 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(top: 15),
+                                      margin:
+                                          EdgeInsets.only(top: 15, left: 90),
                                       child: Column(
                                         children: [
                                           Text(
@@ -563,11 +513,9 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                         ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 15,
-                                    ),
+                                    Spacer(),
                                     Container(
-                                      margin: EdgeInsets.only(left: 98),
+                                      margin: EdgeInsets.only(right: 30),
                                       height: 55,
                                       decoration: BoxDecoration(
                                         border: Border(

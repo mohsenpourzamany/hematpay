@@ -8,8 +8,6 @@ import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
-import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
-import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 
 class MainScreen extends StatefulWidget {

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
-import 'package:hematpay/user_account/user_panel/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/open_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';

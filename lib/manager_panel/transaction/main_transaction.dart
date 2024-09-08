@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 import 'package:hematpay/manager_panel/main_report/brunch_report.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
@@ -7,14 +5,9 @@ import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 
-class MainReportPage extends StatefulWidget {
-  const MainReportPage({super.key});
+class MainTransaction extends StatelessWidget {
+  const MainTransaction({super.key});
 
-  @override
-  State<MainReportPage> createState() => _MainReportPageState();
-}
-
-class _MainReportPageState extends State<MainReportPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,8 +29,8 @@ class _MainReportPageState extends State<MainReportPage> {
                 );
               },
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 75),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 75),
               child: Column(
                 children: [
                   Text(
@@ -71,19 +64,19 @@ class _MainReportPageState extends State<MainReportPage> {
         child: SafeArea(
           child: Stack(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: double.infinity,
                 child: Image(
                   width: double.infinity,
                   image: AssetImage('assets/images/sbg.jpg'),
                 ),
               ),
-              CardBalance(),
+              const CardBalance(),
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(top: 173),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(top: 173),
+                  decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255),
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(50)),
@@ -110,14 +103,14 @@ class _MainReportPageState extends State<MainReportPage> {
                         padding: const EdgeInsets.only(left: 25, right: 25),
                         child: Column(
                           children: [
-                            Text(
-                              'صورت حساب و گزارشات',
+                            const Text(
+                              'معاملات',
                               style: TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'vazir'),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             GestureDetector(
@@ -131,15 +124,15 @@ class _MainReportPageState extends State<MainReportPage> {
                                 );
                               },
                               child: Container(
-                                margin: EdgeInsets.only(left: 5),
+                                margin: const EdgeInsets.only(left: 5),
                                 child: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                           width: 2, color: Colors.black26),
                                     ),
                                   ),
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Icon(
                                         Icons.arrow_circle_left,
@@ -151,7 +144,7 @@ class _MainReportPageState extends State<MainReportPage> {
                                       Directionality(
                                         textDirection: TextDirection.rtl,
                                         child: Text(
-                                          '۱ - گزارش گردش نمایندگان',
+                                          '۱ -  نقدی و بانک ',
                                           style: TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
@@ -164,7 +157,7 @@ class _MainReportPageState extends State<MainReportPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             GestureDetector(
@@ -178,15 +171,15 @@ class _MainReportPageState extends State<MainReportPage> {
                                 );
                               },
                               child: Container(
-                                margin: EdgeInsets.only(left: 5),
+                                margin: const EdgeInsets.only(left: 5),
                                 child: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                           width: 2, color: Colors.black26),
                                     ),
                                   ),
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Icon(
                                         Icons.arrow_circle_left,
@@ -211,7 +204,7 @@ class _MainReportPageState extends State<MainReportPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             GestureDetector(
@@ -225,15 +218,15 @@ class _MainReportPageState extends State<MainReportPage> {
                                 );
                               },
                               child: Container(
-                                margin: EdgeInsets.only(left: 5),
+                                margin: const EdgeInsets.only(left: 5),
                                 child: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                           width: 2, color: Colors.black26),
                                     ),
                                   ),
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Icon(
                                         Icons.arrow_circle_left,
@@ -245,7 +238,7 @@ class _MainReportPageState extends State<MainReportPage> {
                                       Directionality(
                                         textDirection: TextDirection.rtl,
                                         child: Text(
-                                          '۳ -   نقدی و بانک',
+                                          '۳ -   متفرقه نقدی و بانک',
                                           style: TextStyle(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
@@ -258,7 +251,7 @@ class _MainReportPageState extends State<MainReportPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             GestureDetector(
@@ -272,15 +265,15 @@ class _MainReportPageState extends State<MainReportPage> {
                                 );
                               },
                               child: Container(
-                                margin: EdgeInsets.only(left: 5),
+                                margin: const EdgeInsets.only(left: 5),
                                 child: Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                           width: 2, color: Colors.black26),
                                     ),
                                   ),
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Icon(
                                         Icons.arrow_circle_left,
@@ -305,8 +298,102 @@ class _MainReportPageState extends State<MainReportPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 290,
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const BrunchReport();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(left: 5),
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                          width: 2, color: Colors.black26),
+                                    ),
+                                  ),
+                                  child: const Row(
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_circle_left,
+                                        size: 30,
+                                        color:
+                                            Color.fromARGB(255, 199, 134, 55),
+                                      ),
+                                      Spacer(),
+                                      Directionality(
+                                        textDirection: TextDirection.rtl,
+                                        child: Text(
+                                          '۵ - انتقلات حساب به حساب',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              fontFamily: 'vazir',
+                                              color: Colors.black45),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const BrunchReport();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(left: 5),
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                          width: 2, color: Colors.black26),
+                                    ),
+                                  ),
+                                  child: const Row(
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_circle_left,
+                                        size: 30,
+                                        color:
+                                            Color.fromARGB(255, 199, 134, 55),
+                                      ),
+                                      Spacer(),
+                                      Directionality(
+                                        textDirection: TextDirection.rtl,
+                                        child: Text(
+                                          '۶ - انتقال حواله ها',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              fontFamily: 'vazir',
+                                              color: Colors.black45),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 200,
                             )
                           ],
                         ),

@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
+import 'package:hematpay/screen/currency_exchange_page.dart';
 import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
@@ -163,28 +164,6 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 label: ' صرافی',
               ),
-              // BottomNavigationBarItem(
-              //   icon: Icon(
-              //     Icons.wallet,
-              //     size: 40,
-              //     color: Colors.grey,
-              //   ),
-              //   activeIcon: Container(
-              //     decoration: BoxDecoration(boxShadow: [
-              //       BoxShadow(
-              //           color: Color.fromARGB(255, 195, 165, 106),
-              //           blurRadius: 20,
-              //           spreadRadius: -9,
-              //           offset: Offset(0, 10))
-              //     ]),
-              //     child: Icon(
-              //       Icons.wallet,
-              //       size: 40,
-              //       color: Color.fromARGB(255, 214, 161, 53),
-              //     ),
-              //   ),
-              //   label: 'حساب ها',
-              // ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.settings,
@@ -219,7 +198,7 @@ List<Widget> getScreen() {
   return <Widget>[
     MainPageScreen(),
     CurrencyRate(),
-    SendMoneyScreen(),
+    CurrencyExchangePage(),
     // MyAccounts(),
     SettingPage(),
   ];

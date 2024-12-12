@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/screen/send_code.dart';
@@ -9,13 +9,19 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('ثبت نام '),
-      ),
-      body: SafeArea(
-        child: Container(
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Login & Signup'),
+          bottom: TabBar(
+            tabs: [
+              Tab(text: 'Login'),
+              Tab(text: 'Signup'),
+            ],
+          ),
+        ),
+        body: Container(
           color: Colors.brown.shade600,
           child: Stack(
             children: [
@@ -49,166 +55,105 @@ class Signup extends StatelessWidget {
                     ],
                   ),
                 ),
-                child: Column(
+                child: TabBarView(
                   children: [
-                    Image(
-                      width: 240,
-                      image: AssetImage('assets/images/Logoo.png'),
+                    Column(
+                      children: [
+                        // Image(
+                        //   width: 240,
+                        //   image: AssetImage('assets/images/Logoo.png'),
+                        // ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(40))),
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              LoginCard(),
+                              SignupCard(),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
-                    Spacer(),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(212, 255, 255, 255),
-                          borderRadius:
-                              BorderRadius.only(topLeft: Radius.circular(40))),
-                      width: double.infinity,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(
-                            height: 50,
-                          ),
-                          Text(
-                            'ایمیل',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'vazir'),
-                          ),
-                          Container(
-                            width: 314,
-                            height: 41,
-                            color: Colors.white,
-                            child: TextField(
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'ایمیل خود را وارد کنید',
-                                labelStyle: TextStyle(
-                                    color: Color(0xffC8D1E1),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'vazir'),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'شماره موبایل ',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'vazir'),
-                          ),
-                          Container(
-                            width: 314,
-                            height: 41,
-                            color: Colors.white,
-                            child: TextField(
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'شماره همراه خود را وارد کنید ',
-                                labelStyle: TextStyle(
-                                    color: Color(0xffC8D1E1),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'vazir'),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'رمز',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'vazir'),
-                          ),
-                          Container(
-                            width: 314,
-                            height: 41,
-                            color: Colors.white,
-                            child: TextField(
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'رمز خود را وارد کنید ',
-                                labelStyle: TextStyle(
-                                    color: Color(0xffC8D1E1),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'vazir'),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 58,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return Signin();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Text(
-                              'عضو هستید ؟ وارد شوید ',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'vazir'),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return SendCode();
-                                  },
-                                ),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: Size(314, 43),
-                              backgroundColor: Color(0xff111111),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                            ),
-                            child: MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Text(
-                                'عضو شوید ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'vazir',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                        ],
-                      ),
-                    )
                   ],
                 ),
               )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class LoginCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        margin: EdgeInsets.all(20.0),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(labelText: 'Email'),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle login logic here
+                },
+                child: Text('Login'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SignupCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        margin: EdgeInsets.all(20.0),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(labelText: 'Full Name'),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                decoration: InputDecoration(labelText: 'Email'),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle signup logic here
+                },
+                child: Text('Signup'),
+              ),
             ],
           ),
         ),

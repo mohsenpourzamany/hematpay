@@ -51,13 +51,13 @@ class SuccessEnter extends StatelessWidget {
                 child: Column(
                   children: [
                     Image(
-                      width: 350,
+                      width: 240,
                       image: AssetImage('assets/images/Logoo.png'),
                     ),
                     Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(212, 255, 255, 255),
+                          color: Color.fromARGB(255, 255, 255, 255),
                           borderRadius:
                               BorderRadius.only(topLeft: Radius.circular(40))),
                       width: double.infinity,
@@ -70,6 +70,7 @@ class SuccessEnter extends StatelessWidget {
                           SizedBox(
                             width: 100,
                             child: Image(
+                              color: Colors.brown,
                               image: AssetImage('assets/images/Tick.png'),
                             ),
                           ),
@@ -85,7 +86,7 @@ class SuccessEnter extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 150,
                           ),
                           ElevatedButton(
                             onPressed: () {
@@ -96,7 +97,7 @@ class SuccessEnter extends StatelessWidget {
                             },
                             style: ElevatedButton.styleFrom(
                               minimumSize: Size(314, 43),
-                              backgroundColor: Color(0xff111111),
+                              backgroundColor: Colors.brown,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
@@ -108,14 +109,14 @@ class SuccessEnter extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'vazir',
-                                  fontSize: 18,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 100,
                           ),
                         ],
                       ),

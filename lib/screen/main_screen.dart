@@ -3,7 +3,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/screen/currency_exchange_page.dart';
 import 'package:hematpay/screen/main_page_screen.dart';

@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hematpay/screen/forgot_password.dart';
+import 'package:hematpay/screen/login.dart';
 import 'package:hematpay/screen/signup.dart';
 import 'package:hematpay/screen/signin.dart';
 
@@ -151,7 +152,7 @@ class GetBodyWidget extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return Signin();
+                      return SignUpIn();
                     }));
                   },
                   child: Text(

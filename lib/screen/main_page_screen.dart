@@ -13,46 +13,33 @@ class MainPageScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/slbg.jpg'),
-            ),
-          ),
-          child: Column(
+          color: const Color.fromARGB(255, 170, 108, 67),
+          child: Stack(
             children: [
               Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                     colors: [
-                      Colors.black,
-                      Color(0xffFFDA93),
+                      Color.fromARGB(255, 16, 6, 1),
+                      Color.fromARGB(255, 46, 19, 2),
+                      Color.fromARGB(0, 65, 46, 40),
+                      Color.fromARGB(255, 17, 8, 0)
                     ],
                   ),
                 ),
-                child: Stack(
+                child: const Column(
                   children: [
-                    Container(
-                        margin: const EdgeInsets.only(top: 5),
-                        child: const CardBalance()),
-                    Container(
-                      margin: const EdgeInsets.only(top: 240),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 25, right: 20),
-                        child: MainMenuScreen(),
-                      ),
+                    CardBalance(),
+                    Padding(
+                      padding: EdgeInsets.only(left: 25, right: 20),
+                      child: MainMenuScreen(),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 490),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 35, right: 25),
-                        child: LastTrans(),
-                      ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 35, right: 25),
+                      child: LastTrans(),
                     ),
-                    const SizedBox(
-                      height: 100,
-                    )
                   ],
                 ),
               ),

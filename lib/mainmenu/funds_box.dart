@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/signin.dart';
+import 'package:hematpay/screen/login.dart';
 
 class FundsBox extends StatelessWidget {
   const FundsBox({super.key});
@@ -9,7 +9,7 @@ class FundsBox extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -26,7 +26,7 @@ class FundsBox extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const Signin();
+                    return const SignUpIn();
                   },
                 ),
               );
@@ -38,7 +38,7 @@ class FundsBox extends StatelessWidget {
               ),
             ),
             child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 32, horizontal: 7),
+              padding: EdgeInsets.symmetric(vertical: 28, horizontal: 4),
               child: ImageIcon(AssetImage('assets/icon/fundsbox.png')),
             ),
           ),

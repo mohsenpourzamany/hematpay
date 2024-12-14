@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/screen/send_code.dart';
 
 class SignUpIn extends StatelessWidget {
   const SignUpIn({super.key});
@@ -29,7 +30,7 @@ class SignUpIn extends StatelessWidget {
           ),
         ),
         body: Container(
-          color: Colors.brown.shade600,
+          color: const Color.fromARGB(255, 170, 108, 67),
           child: Stack(children: [
             Container(
               margin: const EdgeInsets.only(left: 130, top: 50),
@@ -55,9 +56,10 @@ class SignUpIn extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black,
-                    Colors.transparent,
-                    Colors.black,
+                    Color.fromARGB(255, 16, 6, 1),
+                    Color.fromARGB(255, 46, 19, 2),
+                    Color.fromARGB(0, 65, 46, 40),
+                    Color.fromARGB(255, 17, 8, 0)
                   ],
                 ),
               ),
@@ -82,9 +84,9 @@ class LoginCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        margin: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.all(30.0),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -92,7 +94,7 @@ class LoginCard extends StatelessWidget {
                 height: 30,
               ),
               const Image(
-                width: 200,
+                width: 120,
                 image: AssetImage('assets/images/logodark.png'),
               ),
               const SizedBox(
@@ -109,10 +111,10 @@ class LoginCard extends StatelessWidget {
               const SizedBox(height: 60),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.of(context)
-                  //     .push(MaterialPageRoute(builder: (context) {
-                  //   return const Verification();
-                  // }));
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const SendCode();
+                  }));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(130, 38),
@@ -164,14 +166,14 @@ class SignupCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        margin: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.all(30.0),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const Image(
-                width: 200,
+                width: 120,
                 image: AssetImage('assets/images/logodark.png'),
               ),
               const SizedBox(
@@ -192,10 +194,10 @@ class SignupCard extends StatelessWidget {
               const SizedBox(height: 70),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.of(context)
-                  //     .push(MaterialPageRoute(builder: (context) {
-                  //   return const Verification();
-                  // }));
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const SendCode();
+                  }));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(130, 38),

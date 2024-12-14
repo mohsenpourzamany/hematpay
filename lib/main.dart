@@ -3,10 +3,7 @@
 // ignore: avoid_web_libraries_in_flutter
 
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/forgot_password.dart';
 import 'package:hematpay/screen/login.dart';
-import 'package:hematpay/screen/signup.dart';
-import 'package:hematpay/screen/signin.dart';
 
 void main() {
   runApp(const myApp());
@@ -41,7 +38,7 @@ class GetBodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.brown.shade600,
+      color: const Color.fromARGB(255, 170, 108, 67),
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -71,10 +68,10 @@ class GetBodyWidget extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black,
-                  Colors.black,
-                  Colors.transparent,
-                  Colors.black,
+                  const Color.fromARGB(255, 16, 6, 1),
+                  Color.fromARGB(255, 46, 19, 2),
+                  const Color.fromARGB(0, 65, 46, 40),
+                  Color.fromARGB(255, 17, 8, 0)
                 ],
               ),
             ),
@@ -85,7 +82,7 @@ class GetBodyWidget extends StatelessWidget {
                   width: double.infinity,
                 ),
                 SizedBox(
-                  height: 60,
+                  height: 20,
                 ),
                 Image(
                   image: AssetImage('assets/images/Logo.png'),
@@ -97,10 +94,10 @@ class GetBodyWidget extends StatelessWidget {
                       color: Colors.white,
                       fontFamily: 'vazir',
                       fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w700),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 7,
                 ),
                 Text(
                   ' ....پولتان همیشه همراه شماست ',
@@ -108,7 +105,7 @@ class GetBodyWidget extends StatelessWidget {
                       color: Colors.white,
                       fontFamily: 'vazir',
                       fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w700),
                 ),
                 SizedBox(
                   height: 30,
@@ -117,7 +114,7 @@ class GetBodyWidget extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return Signup();
+                      return SignUpIn();
                     }));
                   },
                   style: ElevatedButton.styleFrom(
@@ -129,7 +126,7 @@ class GetBodyWidget extends StatelessWidget {
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Text(
-                      'ثبت نام کنید ',
+                      'ورود به  برنامه',
                       style: TextStyle(
                         fontFamily: 'vazir',
                         fontSize: 18,
@@ -139,48 +136,7 @@ class GetBodyWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
-                ),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    minimumSize: Size(314, 43),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    side: BorderSide(color: Colors.white, width: 2),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return SignUpIn();
-                    }));
-                  },
-                  child: Text(
-                    ' ورود به برنامه',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'vazir',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return ForgotPassword();
-                    }));
-                  },
-                  child: Text(
-                    'فراموشی رمز',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ),
-                SizedBox(
-                  height: 80,
+                  height: 135,
                 ),
               ],
             ),

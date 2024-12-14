@@ -13,10 +13,10 @@ class _LastTransState extends State<LastTrans> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(
-        margin: const EdgeInsets.only(top: 70, bottom: 25),
-        child: const Column(
+        margin: const EdgeInsets.only(top: 25, bottom: 35),
+        child: Column(
           children: [
-            Row(
+            const Row(
               children: [
                 Text(
                   'آخرین تراکنش ها ',
@@ -27,87 +27,95 @@ class _LastTransState extends State<LastTrans> {
                       color: Colors.white),
                 ),
                 ImageIcon(
+                  color: Colors.white,
                   AssetImage(
                     'assets/icon/trans.png',
                   ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
               children: [
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          '750',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir',
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 4,
-                        ),
-                        Text(
-                          ('\u0024'),
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir',
-                              color: Colors.white),
-                        ),
-                      ],
+                    Container(
+                      margin: const EdgeInsets.only(left: 50),
+                      child: const Row(
+                        children: [
+                          Text(
+                            '750',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'vazir',
+                                color: Colors.white),
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Text(
+                            ('\u0024'),
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'vazir',
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'واریز به اکانت',
                           style: TextStyle(
                             fontSize: 15,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w700,
                             color: Color.fromARGB(255, 213, 213, 213),
                           ),
                         ),
                         ImageIcon(
+                          color: Colors.white,
                           AssetImage('assets/icon/depositarrow.png'),
                         ),
                       ],
                     ),
                   ],
                 ),
-                SizedBox(
-                  width: 80,
+                const SizedBox(
+                  width: 85,
                 ),
                 Column(
                   children: [
-                    Text(
-                      'شارژ کیف پول اصلی  ',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'vazir',
-                          color: Colors.white),
+                    Container(
+                      margin: const EdgeInsets.only(right: 5),
+                      child: const Text(
+                        'شارژ کیف پول اصلی  ',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: 'vazir',
+                            color: Colors.white),
+                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 7,
                     ),
-                    Text(
+                    const Text(
                       'Mar 14,2024 at 2:30am',
                       style: TextStyle(
                           fontSize: 13,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w700,
                           color: Color.fromARGB(255, 213, 213, 213)),
                     ),
                   ],
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             )
           ],

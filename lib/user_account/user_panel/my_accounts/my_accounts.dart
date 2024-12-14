@@ -9,55 +9,6 @@ class MyAccounts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              icon: Image.asset('assets/images/Ellipse.png'),
-              iconSize: 35,
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const UserAccount();
-                    },
-                  ),
-                );
-              },
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 75),
-              child: Column(
-                children: [
-                  Text(
-                    'سلام حامد ',
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    'به همت پی خوش آمدی',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
-                  ),
-                ],
-              ),
-            ),
-            IconButton(
-              icon: Image.asset('assets/images/notification-red.png'),
-              iconSize: 35,
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const NotificationUser();
-                    },
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
       body: Center(
         child: Column(
           children: [

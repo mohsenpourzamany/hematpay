@@ -8,6 +8,7 @@ import 'package:hematpay/screen/currency_exchange_page.dart';
 import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/currency_rate.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 
 class MainScreen extends StatefulWidget {
@@ -165,6 +166,28 @@ class _MainScreenState extends State<MainScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
+                  Icons.account_balance_wallet_outlined,
+                  size: 40,
+                  color: Colors.grey,
+                ),
+                activeIcon: Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 195, 165, 106),
+                        blurRadius: 20,
+                        spreadRadius: -9,
+                        offset: Offset(0, 10))
+                  ]),
+                  child: Icon(
+                    Icons.account_balance_wallet_outlined,
+                    size: 40,
+                    color: Color.fromARGB(255, 214, 161, 53),
+                  ),
+                ),
+                label: 'حساب من',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
                   Icons.settings,
                   size: 40,
                   color: Colors.grey,
@@ -198,7 +221,7 @@ List<Widget> getScreen() {
     MainPageScreen(),
     CurrencyRate(),
     CurrencyExchangePage(),
-    // MyAccounts(),
+    MyAccounts(),
     SettingPage(),
   ];
 }

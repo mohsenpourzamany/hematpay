@@ -9,7 +9,7 @@ class BankTransfer extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -38,7 +38,7 @@ class BankTransfer extends StatelessWidget {
               ),
             ),
             child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 28, horizontal: 4),
+              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 1),
               child: Icon(
                 Icons.account_balance_outlined,
                 size: 30,
@@ -47,13 +47,13 @@ class BankTransfer extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 2,
         ),
         const Text(
           'انتقال بانکی',
           style: TextStyle(
               fontSize: 15,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w800,
               fontFamily: 'vazir',
               color: Color.fromARGB(255, 233, 233, 233)),
         ),

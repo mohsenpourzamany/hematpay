@@ -9,7 +9,7 @@ class ReceiveMoney extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -38,7 +38,7 @@ class ReceiveMoney extends StatelessWidget {
               ),
             ),
             child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 28, horizontal: 4),
+                padding: EdgeInsets.symmetric(vertical: 24, horizontal: 1),
                 child: Icon(
                   Icons.input_outlined,
                   size: 30,
@@ -46,7 +46,7 @@ class ReceiveMoney extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 2,
         ),
         const Text(
           'دریافت پول',
@@ -56,6 +56,9 @@ class ReceiveMoney extends StatelessWidget {
               fontFamily: 'vazir',
               color: Color.fromARGB(255, 233, 233, 233)),
         ),
+        const SizedBox(
+          height: 5,
+        )
       ],
     );
   }

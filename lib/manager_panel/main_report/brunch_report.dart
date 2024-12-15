@@ -7,7 +7,7 @@ import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
-import 'package:hematpay/user_account/user_panel/currency_rate.dart';
+import 'package:hematpay/screen/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/search_box.dart';

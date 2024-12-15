@@ -87,6 +87,7 @@ class _CardBalanceState extends State<CardBalance> {
                           Text(
                             ' 17,592',
                             style: TextStyle(
+                                fontFamily: 'OCRAEXT',
                                 fontSize: 18,
                                 color: Color.fromARGB(240, 255, 255, 255),
                                 fontWeight: FontWeight.w700),

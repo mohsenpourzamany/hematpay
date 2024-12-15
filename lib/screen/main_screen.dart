@@ -7,7 +7,7 @@ import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/screen/currency_exchange_page.dart';
 import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
-import 'package:hematpay/user_account/user_panel/currency_rate.dart';
+import 'package:hematpay/screen/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 
@@ -78,8 +78,9 @@ class _MainScreenState extends State<MainScreen> {
       ),
       bottomNavigationBar: ClipRRect(
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
           child: BottomNavigationBar(
+            fixedColor: Color.fromARGB(255, 195, 165, 106),
             onTap: (int index) {
               setState(() {
                 selectedBottomNavigationIndex = index;
@@ -88,7 +89,7 @@ class _MainScreenState extends State<MainScreen> {
             currentIndex: selectedBottomNavigationIndex,
             selectedLabelStyle: const TextStyle(
                 fontFamily: 'vazir',
-                fontSize: 15,
+                fontSize: 16,
                 color: Color.fromARGB(255, 195, 165, 106),
                 fontWeight: FontWeight.w500),
             unselectedLabelStyle: TextStyle(

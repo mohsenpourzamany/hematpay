@@ -1,150 +1,64 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts_page.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/make_account.dart';
+import 'package:hematpay/user_account/user_panel/my_accounts/make_cart.dart';
 
 class MyAccounts extends StatelessWidget {
   const MyAccounts({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 20, right: 350),
-              child: IconButton(
-                icon: Image.asset('assets/icon/back.png'),
-                iconSize: 35,
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const MyAccountsPage();
-                      },
-                    ),
-                  );
-                },
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 15, bottom: 15),
-              child: Text(
-                'حساب های من ',
-                style: TextStyle(
-                    fontFamily: 'vazir',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
-            const Divider(),
-            Container(
-              margin: const EdgeInsets.symmetric(
-                vertical: 20,
-                horizontal: 25,
-              ),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 241, 241, 241),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(7),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent,
+          title: const Text('حساب ها ، کارت ها'),
+          bottom: const TabBar(
+              indicatorColor: Colors.brown,
+              labelColor: Colors.brown,
+              labelStyle: TextStyle(
+                fontSize: 19.0,
+                fontFamily: 'vazir',
+              ), //For Selected tab
+              unselectedLabelStyle:
+                  TextStyle(fontSize: 16.0, fontFamily: 'vazir'),
+              tabs: [
+                Tab(text: 'حساب ها'),
+                Tab(
+                  text: 'کارت ها',
+                )
+              ]),
+        ),
+        body: Container(
+          color: const Color.fromARGB(255, 170, 108, 67),
+          child: Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 16, 6, 1),
+                      Color.fromARGB(255, 46, 19, 2),
+                      Color.fromARGB(0, 65, 46, 40),
+                      Color.fromARGB(255, 17, 8, 0)
+                    ],
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    const Row(
-                      children: [
-                        Text(
-                          'AF725700000000720000005001',
-                          style: TextStyle(
-                              fontFamily: 'vazir',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(),
-                        Text(
-                          'AF',
-                          style: TextStyle(
-                              fontFamily: 'vazir',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                    const Row(
-                      children: [
-                        Text(
-                          '720000005001',
-                          style: TextStyle(
-                              fontFamily: 'vazir',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Spacer(),
-                        Text(
-                          ' : شماره حساب',
-                          style: TextStyle(
-                              fontFamily: 'vazir',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            // Navigator.of(context)
-                            //     .push(MaterialPageRoute(builder: (context) {
-                            //   return Signup();
-                            // }));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
-                            minimumSize: const Size(80, 30),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          child: const MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            child: Text(
-                              'صورتحساب',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'vazir',
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        const Text(
-                          '1.000.000',
-                          style: TextStyle(
-                              fontFamily: 'vazir',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        const Spacer(),
-                        const Text(
-                          ' : موجودی حساب',
-                          style: TextStyle(
-                              fontFamily: 'vazir',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                  ],
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 25),
+                  child: TabBarView(
+                    children: [
+                      MakeAccount(),
+                      Makecard(),
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

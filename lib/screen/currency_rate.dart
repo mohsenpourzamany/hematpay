@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/exchange/EuroRate.dart';
-import 'package:hematpay/exchange/derhamrate.dart';
-import 'package:hematpay/exchange/dollarrate.dart';
-import 'package:hematpay/exchange/lirarate.dart';
-import 'package:hematpay/exchange/pondrate.dart';
+import 'package:hematpay/exchange/rate/derhamrate.dart';
+import 'package:hematpay/exchange/rate/dollarrate.dart';
+import 'package:hematpay/exchange/rate/eurorate.dart';
+import 'package:hematpay/exchange/rate/lirarate.dart';
+import 'package:hematpay/exchange/rate/pondrate.dart';
 import 'package:hematpay/screen/main_screen.dart';
 
 class CurrencyRate extends StatefulWidget {
@@ -50,7 +50,9 @@ class _CurrencyRateState extends State<CurrencyRate> {
                     child: Column(
                       children: [
                         Container(
-                          margin: const EdgeInsets.only(right: 370, top: 2),
+                          margin: const EdgeInsets.only(
+                            right: 350,
+                          ),
                           child: IconButton(
                             icon: const Icon(Icons.cancel_outlined),
                             iconSize: 35,

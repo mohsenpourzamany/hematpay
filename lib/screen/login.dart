@@ -13,7 +13,6 @@ class SignUpIn extends StatelessWidget {
           title: const Text('ورود ـ ثبت نام'),
           bottom: const TabBar(
             indicatorColor: Colors.brown,
-
             labelColor: Colors.brown,
             labelStyle: TextStyle(
               fontSize: 19.0,

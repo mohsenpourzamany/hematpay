@@ -54,7 +54,7 @@ class _CardBalanceState extends State<CardBalance> {
                     Container(
                       margin: const EdgeInsets.only(left: 3, top: 44),
                       child: const Text(
-                        '1357 1978 0011 1234',
+                        '1404 0101 0011 1234',
                         style: TextStyle(
                             fontFamily: 'OCRAEXT',
                             fontSize: 20,
@@ -65,7 +65,7 @@ class _CardBalanceState extends State<CardBalance> {
                     Container(
                       margin: const EdgeInsets.only(left: 2),
                       child: const Text(
-                        'AF1357197800005005001005',
+                        'AF140401010000720000005001',
                         style: TextStyle(
                             fontFamily: 'OCRAEXT',
                             fontSize: 16,

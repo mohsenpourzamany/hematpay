@@ -1,12 +1,20 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
-import 'package:hematpay/screen/sucess_enter.dart';
+import 'package:flutter_verification_code/flutter_verification_code.dart';
+import 'package:hematpay/screen/main_screen.dart';
 
-class SendCodeTell extends StatelessWidget {
+class SendCodeTell extends StatefulWidget {
   const SendCodeTell({super.key});
 
+  @override
+  State<SendCodeTell> createState() => _SendCodeTellState();
+}
+
+class _SendCodeTellState extends State<SendCodeTell> {
+  bool _onEditing = true;
+  // ignore: unused_field
+  String? _code;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,268 +57,178 @@ class SendCodeTell extends StatelessWidget {
           ],
         ),
       ),
-      body: SafeArea(
-        child: Container(
-          color: Colors.brown.shade600,
-          child: Stack(
-            children: [
-              Container(
-                margin: EdgeInsets.only(left: 120, top: 50),
-                child: Image(
-                  image: AssetImage('assets/images/credit3.png'),
-                ),
+      body: Container(
+        color: Color.fromARGB(255, 170, 108, 67),
+        child: Stack(
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 120, top: 50),
+              child: Image(
+                image: AssetImage('assets/images/credit3.png'),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 120, top: 150),
-                child: Image(
-                  image: AssetImage('assets/images/credit2.png'),
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 145, top: 150),
+              child: Image(
+                image: AssetImage('assets/images/credit2.png'),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 200, top: 235),
-                child: Image(
-                  image: AssetImage('assets/images/credit1.png'),
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 220, top: 235),
+              child: Image(
+                image: AssetImage('assets/images/credit1.png'),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Image(
-                  width: 400,
-                  image: AssetImage('assets/images/Logoo.png'),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.black,
-                      Colors.transparent,
-                      Colors.black,
-                    ],
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    // Image(
-                    //   width: 240,
-                    //   image: AssetImage('assets/images/Logoo.png'),
-                    // ),
-                    Spacer(),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(247, 255, 255, 255),
-                          borderRadius:
-                              BorderRadius.only(topLeft: Radius.circular(50))),
-                      width: double.infinity,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(right: 350, top: 20),
-                            child: IconButton(
-                              icon: Image.asset('assets/icon/back.png'),
-                              iconSize: 35,
-                              onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const ChangeTell();
-                                    },
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                            textDirection: TextDirection.rtl,
-                            'ورود کد ',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir',
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                            textDirection: TextDirection.rtl,
-                            'لطفا کد ارسال شده به شماره موبایل',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir',
-                            ),
-                          ),
-                          Text(
-                            textDirection: TextDirection.rtl,
-                            '۰۰۹۰۵۵۲****۲۷۹۰ را وارد کنید ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              fontFamily: 'vazir',
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 38),
-                            child: Row(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 35),
-                                  width: 55,
-                                  height: 45,
-                                  color: Color.fromARGB(70, 255, 255, 255),
-                                  child: TextField(
-                                    textAlign: TextAlign.center,
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 9),
-                                  width: 55,
-                                  height: 45,
-                                  color: Color.fromARGB(70, 255, 255, 255),
-                                  child: TextField(
-                                    textAlign: TextAlign.center,
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 9),
-                                  width: 55,
-                                  height: 45,
-                                  color: Color.fromARGB(70, 255, 255, 255),
-                                  child: TextField(
-                                    textAlign: TextAlign.center,
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 9),
-                                  width: 55,
-                                  height: 45,
-                                  color: Color.fromARGB(70, 255, 255, 255),
-                                  child: TextField(
-                                    textAlign: TextAlign.center,
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 80),
-                            child: Wrap(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: _getnumber(),
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text(' ارسال دوباره کد '),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return SuccessEnter();
-                              }));
-                            },
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: Size(314, 43),
-                              backgroundColor: Color(0xff111111),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                            ),
-                            child: MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Text(
-                                ' تغییر شماره تلفن ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'vazir',
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 60,
-                          ),
-                        ],
-                      ),
-                    )
+            ),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    const Color.fromARGB(255, 16, 6, 1),
+                    Color.fromARGB(255, 46, 19, 2),
+                    const Color.fromARGB(0, 65, 46, 40),
+                    Color.fromARGB(255, 17, 8, 0)
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(253, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(10)),
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Center(
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 60,
+                              ),
+                              Image(
+                                width: 100,
+                                image: AssetImage('assets/images/logodark.png'),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                'کد تاییدی که به شماره زیر ارسال',
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'vazir'),
+                              ),
+                              Text(
+                                'شده است را وارد کنید',
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'vazir'),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                '(0093771342654)',
+                                style: TextStyle(
+                                    color: Colors.brown,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'vazir'),
+                              ),
+                            ],
+                          ),
+                        ),
+                        VerificationCode(
+                          textStyle: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(color: Theme.of(context).primaryColor),
+                          keyboardType: TextInputType.number,
+                          underlineColor: Colors.amber,
+                          length: 5,
+                          cursorColor: Colors.blue,
+                          margin: const EdgeInsets.all(12),
+                          onCompleted: (String value) {
+                            setState(() {
+                              _code = value;
+                            });
+                          },
+                          onEditing: (bool value) {
+                            setState(() {
+                              _onEditing = value;
+                            });
+                            if (!_onEditing) {
+                              FocusScope.of(context).unfocus();
+                            }
+                          },
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: const Text(
+                            'کد را دوباره بفرست',
+                            style: TextStyle(
+                                fontFamily: 'vazir',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.brown),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 100,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return const MainScreen();
+                            }));
+                          },
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(320, 45),
+                            backgroundColor: Colors.brown,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              side: const BorderSide(
+                                  color: Color(0xffa8bdc6), width: 1),
+                            ),
+                          ),
+                          child: const MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: Text(
+                              'تغییر شماره تلفن',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'vazir',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 80,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
-    );
-  }
-
-  Widget _getnumber() {
-    var listnumber = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      ' ',
-      '0',
-      ' <-'
-    ];
-    return Wrap(
-      children: [
-        for (var num in listnumber)
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 7, horizontal: 7),
-            alignment: Alignment.center,
-            width: 50,
-            height: 50,
-            color: Color.fromARGB(20, 255, 255, 255),
-            child: Text(
-              num,
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
-      ],
     );
   }
 }

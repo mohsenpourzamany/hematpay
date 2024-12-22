@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/manag_account/add_account.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/manag_account/transaction_card.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/add_account.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/transaction_card.dart';
 import 'package:hematpay/screen/main_screen.dart';
-import 'package:hematpay/widgets/card_balance.dart';
 
 class ChangeInformationCard extends StatefulWidget {
   const ChangeInformationCard({super.key});
@@ -15,6 +14,7 @@ class _ChangeInformationCardState extends State<ChangeInformationCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -54,32 +54,34 @@ class _ChangeInformationCardState extends State<ChangeInformationCard> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0)
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 5),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(248, 253, 253, 253),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    margin: const EdgeInsets.only(right: 350, top: 5),
                     child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
+                      icon: const Icon(Icons.cancel_outlined),
                       iconSize: 35,
                       onPressed: () {
                         Navigator.of(context).push(
@@ -117,10 +119,6 @@ class _ChangeInformationCardState extends State<ChangeInformationCard> {
                         ),
                       ),
                     ],
-                  ),
-                  const SizedBox(
-                    width: 290,
-                    child: Divider(),
                   ),
                   const SizedBox(
                     height: 15,

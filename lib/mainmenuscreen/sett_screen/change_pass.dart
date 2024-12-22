@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
-import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/screen/main_screen.dart';
 
 class ChangePass extends StatefulWidget {
   const ChangePass({super.key});
@@ -13,6 +12,7 @@ class _ConfirmBankTransferState extends State<ChangePass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -52,38 +52,40 @@ class _ConfirmBankTransferState extends State<ChangePass> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0)
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 130),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
-              ),
+              margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 150),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(248, 253, 253, 253),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    margin: const EdgeInsets.only(right: 300, top: 5),
                     child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
+                      icon: const Icon(Icons.cancel_outlined),
                       iconSize: 35,
+                      color: const Color.fromARGB(255, 170, 108, 67),
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return const SettingPage();
+                              return const MainScreen();
                             },
                           ),
                         );
@@ -131,6 +133,11 @@ class _ConfirmBankTransferState extends State<ChangePass> {
                     height: 43,
                     color: Colors.transparent,
                     child: const TextField(
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 154, 154, 154),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'vazir'),
                       obscureText: false,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -147,6 +154,11 @@ class _ConfirmBankTransferState extends State<ChangePass> {
                     height: 43,
                     color: Colors.transparent,
                     child: const TextField(
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 154, 154, 154),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'vazir'),
                       obscureText: false,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -163,6 +175,11 @@ class _ConfirmBankTransferState extends State<ChangePass> {
                     height: 43,
                     color: Colors.transparent,
                     child: const TextField(
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 154, 154, 154),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'vazir'),
                       obscureText: false,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),

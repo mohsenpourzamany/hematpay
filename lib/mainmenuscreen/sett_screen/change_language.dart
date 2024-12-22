@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
-import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/screen/main_screen.dart';
 
 class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
@@ -11,9 +10,11 @@ class ChangeLanguage extends StatefulWidget {
 
 class _ConfirmBankTransferState extends State<ChangeLanguage> {
   bool? isChecked = true;
+  bool isPressed = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -53,38 +54,40 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0)
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 130),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(246, 253, 253, 253),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
-              ),
+              margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 150),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(246, 253, 253, 253),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    margin: const EdgeInsets.only(right: 300, top: 5),
                     child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
+                      icon: const Icon(Icons.cancel_outlined),
                       iconSize: 35,
+                      color: const Color.fromARGB(255, 170, 108, 67),
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return const SettingPage();
+                              return const MainScreen();
                             },
                           ),
                         );
@@ -129,6 +132,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        isPressed = !isPressed;
+                      });
                       // Navigator.of(context).push(
                       //   MaterialPageRoute(
                       //     builder: (context) {
@@ -139,7 +145,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),
-                      backgroundColor: const Color.fromARGB(255, 14, 14, 14),
+                      backgroundColor: isPressed
+                          ? const Color.fromARGB(255, 170, 108, 67)
+                          : const Color.fromARGB(255, 187, 187, 187),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -162,6 +170,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        isPressed = !isPressed;
+                      });
                       // Navigator.of(context).push(
                       //   MaterialPageRoute(
                       //     builder: (context) {
@@ -172,7 +183,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),
-                      backgroundColor: const Color.fromARGB(255, 187, 187, 187),
+                      backgroundColor: isPressed
+                          ? const Color.fromARGB(255, 170, 108, 67)
+                          : const Color.fromARGB(255, 187, 187, 187),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -195,6 +208,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      setState(() {
+                        isPressed = !isPressed;
+                      });
                       // Navigator.of(context).push(
                       //   MaterialPageRoute(
                       //     builder: (context) {
@@ -205,7 +221,9 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),
-                      backgroundColor: const Color.fromARGB(255, 187, 187, 187),
+                      backgroundColor: isPressed
+                          ? const Color.fromARGB(255, 170, 108, 67)
+                          : const Color.fromARGB(255, 187, 187, 187),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -214,6 +232,44 @@ class _ConfirmBankTransferState extends State<ChangeLanguage> {
                       cursor: SystemMouseCursors.click,
                       child: Text(
                         'پښتو',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'vazir',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        isPressed = !isPressed;
+                      });
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return const InviteFriends();
+                      //     },
+                      //   ),
+                      // );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(314, 43),
+                      backgroundColor: isPressed
+                          ? const Color.fromARGB(255, 170, 108, 67)
+                          : const Color.fromARGB(255, 187, 187, 187),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    child: const MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        'عربی',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'vazir',

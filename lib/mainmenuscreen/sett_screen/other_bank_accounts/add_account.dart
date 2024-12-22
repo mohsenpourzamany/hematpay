@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/manag_account/add_card_bank.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
-import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/add_card_bank.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/change_information_card.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/transaction_card.dart';
+import 'package:hematpay/screen/main_screen.dart';
 
-class TransactionCard extends StatefulWidget {
-  const TransactionCard({super.key});
+class AddAccount extends StatefulWidget {
+  const AddAccount({super.key});
 
   @override
-  State<TransactionCard> createState() => _TransactionCardState();
+  State<AddAccount> createState() => _AddAccountState();
 }
 
-class _TransactionCardState extends State<TransactionCard> {
+class _AddAccountState extends State<AddAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -53,38 +55,40 @@ class _TransactionCardState extends State<TransactionCard> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0)
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 10),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
-              ),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(248, 253, 253, 253),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    margin: const EdgeInsets.only(right: 340, top: 5),
                     child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
+                      icon: const Icon(Icons.cancel_outlined),
                       iconSize: 35,
+                      color: const Color.fromARGB(255, 170, 108, 67),
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return const SettingPage();
+                              return const MainScreen();
                             },
                           ),
                         );
@@ -97,14 +101,14 @@ class _TransactionCardState extends State<TransactionCard> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          'فعالیت کارت',
+                          'مدیریت بانک ها',
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
                               fontFamily: 'vazir'),
                         ),
                         const SizedBox(
-                          width: 95,
+                          width: 85,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -130,59 +134,78 @@ class _TransactionCardState extends State<TransactionCard> {
                   ),
                   Container(
                     width: 380,
-                    height: 60,
+                    height: 90,
                     decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 239, 239, 239),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),
                     ),
-                    // ignore: prefer_const_constructors
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Row(
-                          children: [
-                            Text(
-                              '\u0024',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'vazir'),
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const ChangeInformationCard();
+                                },
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            SizedBox(
-                              width: 4,
-                            ),
-                            Text(
-                              ('750'),
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'vazir'),
-                            ),
-                          ],
+                          ),
+                          child: const Text(
+                            'ویرایش',
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'vazir'),
+                          ),
                         ),
-                        SizedBox(
-                          width: 180,
+                        const SizedBox(
+                          width: 40,
                         ),
-                        Column(
+                        const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'شارژ کیف پولی',
+                              'کارت بانک زراعت ',
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w700,
                                   fontFamily: 'vazir'),
                             ),
                             Text(
-                              '14:24:00   Mar 16s',
+                              '5022 4254 **** 23',
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'vazir'),
                             ),
                           ],
+                        ),
+                        const SizedBox(
+                          width: 40,
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 168, 168, 168)),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: const Image(
+                              width: 38,
+                              image: AssetImage('assets/icon/trash.png'),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -203,22 +226,55 @@ class _TransactionCardState extends State<TransactionCard> {
                             ),
                           );
                         },
+                        icon: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
                         style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(430, 65),
+                          minimumSize: const Size(194, 65),
+                          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(1.0),
+                          ),
+                        ),
+                        label: const Text(
+                          'افزودن کارت جدید',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'vazir'),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const TransactionCard();
+                              },
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(194, 65),
                           backgroundColor: const Color.fromARGB(255, 0, 0, 0),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(1.0),
                           ),
                         ),
                         icon: const Icon(
-                          Icons.download,
+                          Icons.access_time_rounded,
                           color: Colors.white,
                         ),
                         label: const Text(
-                          'دانلود لیست تراکنش',
+                          'تراکنش کارت',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.w700,
                               fontFamily: 'vazir'),
                         ),

@@ -3,10 +3,8 @@ import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_language.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_pass.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/change_tell.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/manag_account/add_account.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/add_account.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/suppurt_contact.dart';
-import 'package:hematpay/screen/main_screen.dart';
-import 'package:hematpay/widgets/card_balance.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -14,46 +12,35 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0)
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 1),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 253, 253, 253),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
-              ),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Container(
                     margin: const EdgeInsets.only(right: 350, top: 20),
-                    child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
-                      iconSize: 35,
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const MainScreen();
-                            },
-                          ),
-                        );
-                      },
-                    ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 15.0),
+                    padding: EdgeInsets.only(top: 25.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -74,9 +61,7 @@ class SettingPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
+                  const Spacer(),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       maximumSize: const Size(314, 45),
@@ -100,18 +85,16 @@ class SettingPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(Icons.arrow_back_ios),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const Spacer(),
                           const Text(
-                            'مدیریت حساب ',
+                            'مدیریت بانک های دیگر ',
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'vazir'),
                           ),
                           const SizedBox(
-                            width: 75,
+                            width: 5,
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -155,9 +138,7 @@ class SettingPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(Icons.arrow_back_ios),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const Spacer(),
                           const Text(
                             'تغییر رمز ورود',
                             style: TextStyle(
@@ -166,7 +147,7 @@ class SettingPage extends StatelessWidget {
                                 fontFamily: 'vazir'),
                           ),
                           const SizedBox(
-                            width: 90,
+                            width: 8,
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -210,9 +191,7 @@ class SettingPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(Icons.arrow_back_ios),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const Spacer(),
                           const Text(
                             'تغییر شماره تلفن',
                             style: TextStyle(
@@ -221,7 +200,7 @@ class SettingPage extends StatelessWidget {
                                 fontFamily: 'vazir'),
                           ),
                           const SizedBox(
-                            width: 65,
+                            width: 8,
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -265,9 +244,7 @@ class SettingPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(Icons.arrow_back_ios),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const Spacer(),
                           const Text(
                             'تغییر زبان برنامه',
                             style: TextStyle(
@@ -276,7 +253,7 @@ class SettingPage extends StatelessWidget {
                                 fontFamily: 'vazir'),
                           ),
                           const SizedBox(
-                            width: 68,
+                            width: 8,
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -320,9 +297,7 @@ class SettingPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(Icons.arrow_back_ios),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const Spacer(),
                           const Text(
                             '  تماس با پشتیبانی',
                             style: TextStyle(
@@ -331,7 +306,7 @@ class SettingPage extends StatelessWidget {
                                 fontFamily: 'vazir'),
                           ),
                           const SizedBox(
-                            width: 50,
+                            width: 8,
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -374,9 +349,7 @@ class SettingPage extends StatelessWidget {
                         children: [
                           const Icon(
                               color: Color(0xffffffff), Icons.arrow_back_ios),
-                          const SizedBox(
-                            width: 3,
-                          ),
+                          const Spacer(),
                           const Text(
                             'خروج از برنامه',
                             style: TextStyle(
@@ -385,9 +358,7 @@ class SettingPage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'vazir'),
                           ),
-                          const SizedBox(
-                            width: 85,
-                          ),
+                          const SizedBox(width: 8),
                           Container(
                             decoration: BoxDecoration(
                               color: const Color(0xffffffff),

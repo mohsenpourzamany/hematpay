@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenu/aipay.dart';
 import 'package:hematpay/mainmenu/bank_transfer.dart';
+import 'package:hematpay/mainmenu/buy_ticket.dart';
 import 'package:hematpay/mainmenu/funds_box.dart';
 import 'package:hematpay/mainmenu/money_bag.dart';
 import 'package:hematpay/mainmenu/receive_money.dart';
@@ -23,7 +24,7 @@ class MainMenuScreen extends StatelessWidget {
         AIPay(),
         TransHistory(),
         FundsBox(),
-        // Settings(),
+        BuyTicket(),
       ],
     );
   }

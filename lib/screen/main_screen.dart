@@ -116,7 +116,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: Icon(
                     Icons.home_filled,
                     size: 40,
-                    color: Color.fromARGB(255, 214, 161, 53),
+                    color: Color.fromARGB(255, 170, 108, 67),
                   ),
                 ),
                 label: 'خانه',
@@ -138,7 +138,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: Icon(
                     Icons.attach_money,
                     size: 40,
-                    color: Color.fromARGB(255, 214, 161, 53),
+                    color: Color.fromARGB(255, 170, 108, 67),
                   ),
                 ),
                 label: 'نرخ ارز',
@@ -160,7 +160,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: Icon(
                     Icons.currency_exchange_rounded,
                     size: 40,
-                    color: Color.fromARGB(255, 214, 161, 53),
+                    color: Color.fromARGB(255, 170, 108, 67),
                   ),
                 ),
                 label: ' صرافی',
@@ -182,7 +182,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: Icon(
                     Icons.account_balance_wallet_outlined,
                     size: 40,
-                    color: Color.fromARGB(255, 214, 161, 53),
+                    color: Color.fromARGB(255, 170, 108, 67),
                   ),
                 ),
                 label: 'حساب من',
@@ -204,7 +204,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: Icon(
                     Icons.settings,
                     size: 40,
-                    color: Color.fromARGB(255, 214, 161, 53),
+                    color: Color.fromARGB(255, 170, 108, 67),
                   ),
                 ),
                 label: 'تنظیمات',

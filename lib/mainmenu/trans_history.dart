@@ -40,6 +40,7 @@ class TransHistory extends StatelessWidget {
             child: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 24, horizontal: 1),
                 child: Icon(
+                  color: Color(0xff111111),
                   Icons.calendar_month,
                   size: 30,
                 )),

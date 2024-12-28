@@ -1,17 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/change_language.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/profile/change_email.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/profile/change_pass.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/profile/change_tell.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/add_account.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/profile/person_profile.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/suppurt_contact.dart';
+import 'package:hematpay/screen/main_screen.dart';
 
-class SettingPage extends StatelessWidget {
-  const SettingPage({super.key});
+class PersonProfile extends StatefulWidget {
+  const PersonProfile({super.key});
 
+  @override
+  State<PersonProfile> createState() => _PersonProfileState();
+}
+
+class _PersonProfileState extends State<PersonProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 170, 108, 67),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              width: 35,
+              height: 35,
+              image: AssetImage('assets/images/Ellipse.png'),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 90),
+              child: Column(
+                children: [
+                  Text(
+                    'سلام حامد ',
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'vazir'),
+                  ),
+                  Text(
+                    'به همت پی خوش آمدی',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'vazir'),
+                  ),
+                ],
+              ),
+            ),
+            Image(
+              width: 35,
+              height: 35,
+              image: AssetImage('assets/images/notification-red.png'),
+            ),
+          ],
+        ),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -29,7 +73,7 @@ class SettingPage extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 130),
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(10)),
@@ -44,18 +88,18 @@ class SettingPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          ' تنظیمات',
+                          ' پروفایل',
                           style: TextStyle(
                               fontSize: 21,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'vazir'),
                         ),
+                        Icon(
+                          Icons.person,
+                          size: 35,
+                        ),
                         SizedBox(
                           width: 5,
-                        ),
-                        Image(
-                          width: 30,
-                          image: AssetImage('assets/icon/settings.png'),
                         ),
                       ],
                     ),
@@ -73,7 +117,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const PersonProfile();
+                            return const AddAccount();
                           },
                         ),
                       );
@@ -85,7 +129,7 @@ class SettingPage extends StatelessWidget {
                         children: [
                           Spacer(),
                           Text(
-                            'پروفایل',
+                            'مشخصات فردی',
                             style: TextStyle(
                                 color: Color(0xff111111),
                                 fontSize: 18,
@@ -118,7 +162,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const AddAccount();
+                            return const ChangePass();
                           },
                         ),
                       );
@@ -130,7 +174,7 @@ class SettingPage extends StatelessWidget {
                         children: [
                           Spacer(),
                           Text(
-                            'مدیریت بانکها',
+                            'تغییر رمز ورود',
                             style: TextStyle(
                                 color: Color(0xff111111),
                                 fontSize: 18,
@@ -141,52 +185,7 @@ class SettingPage extends StatelessWidget {
                             width: 20,
                           ),
                           Icon(
-                            Icons.account_balance_outlined,
-                            color: Color(0xff111111),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      maximumSize: const Size(314, 45),
-                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const ChangeLanguage();
-                          },
-                        ),
-                      );
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.all(3.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Spacer(),
-                          Text(
-                            'تغییر زبان برنامه',
-                            style: TextStyle(
-                                color: Color(0xff111111),
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'vazir'),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Icon(
-                            Icons.language,
+                            Icons.lock,
                             color: Color(0xff111111),
                           ),
                         ],
@@ -208,7 +207,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SuppurtContact();
+                            return const ChangeTell();
                           },
                         ),
                       );
@@ -220,7 +219,7 @@ class SettingPage extends StatelessWidget {
                         children: [
                           Spacer(),
                           Text(
-                            ' تماس با پشتیبانی',
+                            'تغییر شماره تلفن',
                             style: TextStyle(
                                 color: Color(0xff111111),
                                 fontSize: 18,
@@ -231,17 +230,65 @@ class SettingPage extends StatelessWidget {
                             width: 20,
                           ),
                           Icon(
-                            Icons.support_agent_outlined,
+                            Icons.phone,
                             color: Color(0xff111111),
                           ),
                         ],
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      maximumSize: const Size(314, 45),
+                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const ChangeEmail();
+                          },
+                        ),
+                      );
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Spacer(),
+                          Text(
+                            'تغییر ایمیل',
+                            style: TextStyle(
+                                color: Color(0xff111111),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'vazir'),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Icon(
+                            Icons.email,
+                            color: Color(0xff111111),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   const Spacer(),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      maximumSize: const Size(220, 45),
+                      maximumSize: const Size(240, 45),
                       backgroundColor: const Color.fromARGB(255, 170, 108, 67),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0),
@@ -251,7 +298,7 @@ class SettingPage extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SendQRCodeTransfer();
+                            return const MainScreen();
                           },
                         ),
                       );
@@ -262,17 +309,12 @@ class SettingPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'خروج از برنامه',
+                            'برگشت به صفحه اصلی',
                             style: TextStyle(
                                 color: Color(0xffffffff),
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: 'vazir'),
-                          ),
-                          SizedBox(width: 10),
-                          Icon(
-                            Icons.exit_to_app_outlined,
-                            color: Color(0xffffffff),
                           ),
                         ],
                       ),

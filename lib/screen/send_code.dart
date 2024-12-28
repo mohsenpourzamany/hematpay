@@ -110,15 +110,15 @@ class _SendCodeState extends State<SendCode> {
                           ),
                         ),
                         VerificationCode(
-                          textStyle: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(color: Theme.of(context).primaryColor),
+                          // textStyle: Theme.of(context)
+                          //     .textTheme
+                          //     .bodyLarge!
+                          //     .copyWith(color: Theme.of(context).primaryColor),
                           keyboardType: TextInputType.number,
                           underlineColor: Colors.amber,
                           length: 5,
                           cursorColor: Colors.blue,
-                          margin: const EdgeInsets.all(12),
+                          margin: const EdgeInsets.all(2),
                           onCompleted: (String value) {
                             setState(() {
                               _code = value;

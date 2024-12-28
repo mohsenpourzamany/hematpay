@@ -172,7 +172,7 @@ class SignupCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const Image(
-                width: 120,
+                width: 90,
                 image: AssetImage('assets/images/logodark.png'),
               ),
               const SizedBox(
@@ -180,6 +180,14 @@ class SignupCard extends StatelessWidget {
               ),
               const TextField(
                 decoration: InputDecoration(labelText: 'نام و نام خانوادگی'),
+              ),
+              const SizedBox(height: 10),
+              const TextField(
+                decoration: InputDecoration(labelText: 'نام کاربری'),
+              ),
+              const SizedBox(height: 10),
+              const TextField(
+                decoration: InputDecoration(labelText: 'موبایل'),
               ),
               const SizedBox(height: 10),
               const TextField(

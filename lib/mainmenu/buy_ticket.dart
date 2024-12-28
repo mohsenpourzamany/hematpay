@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenuscreen/transfer/main_bank_transfer.dart';
+import 'package:hematpay/mainmenuscreen/aipay/aipay_list.dart';
 
-class BankTransfer extends StatelessWidget {
-  const BankTransfer({super.key});
+class BuyTicket extends StatelessWidget {
+  const BuyTicket({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BankTransfer extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const MainBankTransfer();
+                    return const AiPayList();
                   },
                 ),
               );
@@ -38,23 +38,22 @@ class BankTransfer extends StatelessWidget {
               ),
             ),
             child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 1),
-              child: Icon(
-                color: Color(0xff111111),
-                Icons.account_balance_outlined,
-                size: 30,
-              ),
-            ),
+                padding: EdgeInsets.symmetric(vertical: 24, horizontal: 1),
+                child: Icon(
+                  color: Color(0xff111111),
+                  Icons.airplane_ticket_outlined,
+                  size: 30,
+                )),
           ),
         ),
         const SizedBox(
           height: 2,
         ),
         const Text(
-          'انتقال بانکی',
+          'خرید بلیت',
           style: TextStyle(
               fontSize: 15,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w600,
               fontFamily: 'vazir',
               color: Color.fromARGB(255, 233, 233, 233)),
         ),

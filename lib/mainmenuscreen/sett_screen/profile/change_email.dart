@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/send_code_tell.dart';
 import 'package:hematpay/screen/main_screen.dart';
 
-class ChangeTell extends StatefulWidget {
-  const ChangeTell({super.key});
+class ChangeEmail extends StatefulWidget {
+  const ChangeEmail({super.key});
 
   @override
-  State<ChangeTell> createState() => _ConfirmBankTransferState();
+  State<ChangeEmail> createState() => _ChangeEmailState();
 }
 
-class _ConfirmBankTransferState extends State<ChangeTell> {
+class _ChangeEmailState extends State<ChangeEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,7 +119,7 @@ class _ConfirmBankTransferState extends State<ChangeTell> {
                     height: 5,
                   ),
                   const Text(
-                    'تغییر شماره تلفن ',
+                    'تغییر ایمیل  ',
                     style: TextStyle(
                         color: Color.fromARGB(255, 154, 154, 154),
                         fontSize: 15,
@@ -138,7 +138,7 @@ class _ConfirmBankTransferState extends State<ChangeTell> {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintStyle: TextStyle(color: Color(0xffc1c1c1)),
-                        labelText: 'شماره موبایل جدید را وارد کنید',
+                        labelText: 'ایمیل جدید را وارد کنید',
                       ),
                     ),
                   ),
@@ -170,10 +170,10 @@ class _ConfirmBankTransferState extends State<ChangeTell> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(314, 43),
-                      backgroundColor: const Color(0xff111111),
+                      minimumSize: const Size(220, 43),
+                      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.circular(50.0),
                       ),
                     ),
                     child: const MouseRegion(

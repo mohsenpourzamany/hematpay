@@ -39,13 +39,16 @@ class FundsBox extends StatelessWidget {
             ),
             child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 28, horizontal: 4),
-              child: ImageIcon(AssetImage('assets/icon/fundsbox.png')),
+              child: ImageIcon(
+                AssetImage('assets/icon/fundsbox.png'),
+                color: Color(0xff111111),
+              ),
             ),
           ),
         ),
-        const SizedBox(
-          height: 5,
-        ),
+        // const SizedBox(
+        //   height: 2,
+        // ),
         const Text(
           'بورس',
           style: TextStyle(

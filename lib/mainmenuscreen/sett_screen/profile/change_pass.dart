@@ -200,10 +200,10 @@ class _ConfirmBankTransferState extends State<ChangePass> {
                       // );
                     },
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(314, 43),
-                      backgroundColor: const Color(0xff111111),
+                      minimumSize: const Size(220, 43),
+                      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.circular(50.0),
                       ),
                     ),
                     child: const MouseRegion(
@@ -220,7 +220,7 @@ class _ConfirmBankTransferState extends State<ChangePass> {
                     ),
                   ),
                   const SizedBox(
-                    height: 45,
+                    height: 35,
                   ),
                 ],
               ),

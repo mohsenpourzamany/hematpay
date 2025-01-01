@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/user_account/bill_bank.dart';
-import 'package:hematpay/widgets/card_balance.dart';
+import 'package:hematpay/mainmenuscreen/transaction/bill_bank.dart';
+import 'package:hematpay/widgets/invite_friends.dart';
 
 class BillPages extends StatefulWidget {
   const BillPages({super.key});
@@ -13,6 +13,7 @@ class _BillPagesState extends State<BillPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -52,60 +53,60 @@ class _BillPagesState extends State<BillPages> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0),
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Directionality(
               textDirection: TextDirection.rtl,
               child: Container(
                 width: double.infinity,
-                margin: const EdgeInsets.only(top: 1),
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(248, 253, 253, 253),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                  ),
-                ),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(248, 253, 253, 253),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15.0, left: 5),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(right: 360),
-                            child: IconButton(
-                              icon: Image.asset('assets/icon/back.png'),
-                              iconSize: 35,
-                              onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const BillBank();
-                                    },
-                                  ),
-                                );
-                              },
-                            ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(right: 360),
+                          child: IconButton(
+                            icon: const Icon(Icons.cancel_outlined),
+                            color: const Color.fromARGB(255, 170, 108, 67),
+                            iconSize: 35,
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const BillBank();
+                                  },
+                                ),
+                              );
+                            },
                           ),
-                          const Text(
-                            'صورت حساب بانکی',
-                            style: TextStyle(
-                                fontSize: 21,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'vazir'),
-                          ),
-                        ],
-                      ),
+                        ),
+                        const Text(
+                          'صورت حساب بانکی',
+                          style: TextStyle(
+                              fontSize: 21,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'vazir'),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 35,
@@ -147,13 +148,13 @@ class _BillPagesState extends State<BillPages> {
                     const Spacer(),
                     ElevatedButton(
                       onPressed: () {
-                        // Navigator.of(context).push(
-                        //   MaterialPageRoute(
-                        //     builder: (context) {
-                        //       return const InviteFriends();
-                        //     },
-                        //   ),
-                        // );
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const InviteFriends();
+                            },
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(314, 43),

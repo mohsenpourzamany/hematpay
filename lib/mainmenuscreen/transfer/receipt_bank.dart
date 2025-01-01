@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/transfer/confirm_bank_transfer.dart';
-import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/invite_friends.dart';
 
 class RecieptBank extends StatefulWidget {
@@ -14,6 +13,7 @@ class _ConfirmBankTransferState extends State<RecieptBank> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -53,32 +53,34 @@ class _ConfirmBankTransferState extends State<RecieptBank> {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0),
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 20),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 222, 222, 222),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
-              ),
+              margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 70),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    margin: const EdgeInsets.only(right: 350, top: 5),
                     child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
+                      icon: const Icon(Icons.cancel_outlined),
+                      color: const Color.fromARGB(255, 170, 108, 67),
                       iconSize: 35,
                       onPressed: () {
                         Navigator.of(context).push(
@@ -94,8 +96,8 @@ class _ConfirmBankTransferState extends State<RecieptBank> {
                   Container(
                     margin: const EdgeInsets.only(top: 5),
                     child: const Image(
-                      width: 120,
-                      image: AssetImage('assets/images/Logo250H.png'),
+                      width: 90,
+                      image: AssetImage('assets/images/logodark.png'),
                     ),
                   ),
                   const Padding(
@@ -266,7 +268,7 @@ class _ConfirmBankTransferState extends State<RecieptBank> {
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(314, 43),
-                      backgroundColor: const Color(0xff111111),
+                      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),

@@ -71,7 +71,7 @@ class GetBodyWidget extends StatelessWidget {
                   const Color.fromARGB(255, 16, 6, 1),
                   Color.fromARGB(255, 46, 19, 2),
                   const Color.fromARGB(0, 65, 46, 40),
-                  Color.fromARGB(255, 17, 8, 0)
+                  Color.fromARGB(255, 17, 8, 0),
                 ],
               ),
             ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_money_screen.dart';
 import 'package:hematpay/mainmenuscreen/send_money/send_qrcode_transfer.dart';
-import 'package:hematpay/widgets/card_balance.dart';
 import 'package:hematpay/widgets/invite_friends.dart';
 
 class SendMoneyContact extends StatelessWidget {
@@ -10,6 +9,7 @@ class SendMoneyContact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Row(
@@ -49,31 +49,32 @@ class SendMoneyContact extends StatelessWidget {
           ],
         ),
       ),
-      body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 16, 6, 1),
+              Color.fromARGB(255, 46, 19, 2),
+              Color.fromARGB(0, 65, 46, 40),
+              Color.fromARGB(255, 17, 8, 0),
+            ],
+          ),
+        ),
         child: Stack(
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Image(
-                width: double.infinity,
-                image: AssetImage('assets/images/sbg.jpg'),
-              ),
-            ),
-            const CardBalance(),
             Container(
-              margin: const EdgeInsets.only(top: 160),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(248, 255, 255, 255),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
-              ),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 110),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(248, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 350, top: 20),
+                    margin: const EdgeInsets.only(right: 350, top: 3),
                     child: IconButton(
-                      icon: Image.asset('assets/icon/back.png'),
+                      icon: const Icon(Icons.cancel_outlined),
                       iconSize: 35,
                       onPressed: () {
                         Navigator.of(context).push(

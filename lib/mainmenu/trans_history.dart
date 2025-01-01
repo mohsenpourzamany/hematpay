@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/user_account/bill_bank.dart';
+import 'package:hematpay/mainmenuscreen/transaction/bill_bank.dart';
 
 class TransHistory extends StatelessWidget {
   const TransHistory({super.key});

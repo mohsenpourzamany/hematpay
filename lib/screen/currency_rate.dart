@@ -4,7 +4,6 @@ import 'package:hematpay/exchange/rate/dollarrate.dart';
 import 'package:hematpay/exchange/rate/eurorate.dart';
 import 'package:hematpay/exchange/rate/lirarate.dart';
 import 'package:hematpay/exchange/rate/pondrate.dart';
-import 'package:hematpay/screen/main_screen.dart';
 
 class CurrencyRate extends StatefulWidget {
   const CurrencyRate({super.key});
@@ -47,28 +46,12 @@ class _CurrencyRateState extends State<CurrencyRate> {
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 255, 255, 255),
                         borderRadius: BorderRadius.circular(10)),
-                    child: Column(
+                    child: const Column(
                       children: [
-                        Container(
-                          margin: const EdgeInsets.only(
-                            right: 350,
-                          ),
-                          child: IconButton(
-                            icon: const Icon(Icons.cancel_outlined),
-                            iconSize: 35,
-                            color: Colors.brown,
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const MainScreen();
-                                  },
-                                ),
-                              );
-                            },
-                          ),
+                        SizedBox(
+                          height: 30,
                         ),
-                        const Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
@@ -80,10 +63,10 @@ class _CurrencyRateState extends State<CurrencyRate> {
                             ),
                           ],
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 50,
                         ),
-                        const Directionality(
+                        Directionality(
                           textDirection: TextDirection.rtl,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -120,27 +103,27 @@ class _CurrencyRateState extends State<CurrencyRate> {
                             ],
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 15,
                         ),
-                        const DollarRate(),
-                        const SizedBox(
+                        DollarRate(),
+                        SizedBox(
                           height: 7,
                         ),
-                        const EuroRate(),
-                        const SizedBox(
+                        EuroRate(),
+                        SizedBox(
                           height: 7,
                         ),
-                        const DerhamRate(),
-                        const SizedBox(
+                        DerhamRate(),
+                        SizedBox(
                           height: 7,
                         ),
-                        const LiraRate(),
-                        const SizedBox(
+                        LiraRate(),
+                        SizedBox(
                           height: 7,
                         ),
-                        const PondRate(),
-                        const SizedBox(
+                        PondRate(),
+                        SizedBox(
                           height: 45,
                         )
                       ],

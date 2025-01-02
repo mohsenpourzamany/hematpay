@@ -51,8 +51,16 @@ class MyAccounts extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 25),
                   child: TabBarView(
                     children: [
-                      MakeAccount(),
-                      Makecard(),
+                      Column(
+                        children: [
+                          MakeAccount(),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Makecard(),
+                        ],
+                      ),
                     ],
                   ),
                 ),

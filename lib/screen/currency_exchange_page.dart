@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/exchange/buy/buy_foriegn_list_accoun.dart';
 import 'package:hematpay/exchange/sell/sell_forigen_list_account.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/make_account.dart';
 
@@ -24,9 +25,9 @@ class CurrencyExchangePage extends StatelessWidget {
               unselectedLabelStyle:
                   TextStyle(fontSize: 16.0, fontFamily: 'vazir'),
               tabs: [
-                Tab(text: ' خرید'),
+                Tab(text: ' فروش'),
                 Tab(
-                  text: ' فروش',
+                  text: ' خرید',
                 )
               ]),
         ),
@@ -65,9 +66,18 @@ class CurrencyExchangePage extends StatelessWidget {
                               child: const MakeAccount())
                         ],
                       ),
-                      const Column(
+                      Column(
                         children: [
-                          MakeAccount(),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const BuyForiegnListAccount(),
+                                    ));
+                              },
+                              child: const MakeAccount()),
                         ],
                       ),
                     ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/profile/person_profile.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/send_code_tell.dart';
-import 'package:hematpay/screen/main_screen.dart';
 
 class ChangeTell extends StatefulWidget {
   const ChangeTell({super.key});
@@ -86,7 +86,7 @@ class _ChangeTellState extends State<ChangeTell> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return const MainScreen();
+                              return const PersonProfile();
                             },
                           ),
                         );

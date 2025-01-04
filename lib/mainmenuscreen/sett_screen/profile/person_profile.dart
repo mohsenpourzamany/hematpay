@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/profile/change_email.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/profile/change_pass.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/profile/change_tell.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/add_account.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/profile/individual_profile/individual_profile.dart';
 import 'package:hematpay/screen/main_screen.dart';
 
 class PersonProfile extends StatefulWidget {
@@ -117,7 +117,7 @@ class _PersonProfileState extends State<PersonProfile> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return const AddAccount();
+                            return const IndividualProfile();
                           },
                         ),
                       );

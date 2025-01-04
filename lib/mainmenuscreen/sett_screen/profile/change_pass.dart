@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hematpay/screen/main_screen.dart';
+import 'package:hematpay/mainmenuscreen/sett_screen/profile/person_profile.dart';
 
 class ChangePass extends StatefulWidget {
   const ChangePass({super.key});
@@ -85,7 +85,7 @@ class _ConfirmBankTransferState extends State<ChangePass> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return const MainScreen();
+                              return const PersonProfile();
                             },
                           ),
                         );

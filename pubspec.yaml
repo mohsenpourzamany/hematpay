@@ -39,6 +39,8 @@ dependencies:
   flutter_verification_code: ^1.1.7
   flutter_login_template: ^1.1.0
   flutter_login: ^5.0.0
+  image_picker: ^1.1.2
+  image_picker_widget: ^2.4.1
 
 dev_dependencies:
   flutter_test:

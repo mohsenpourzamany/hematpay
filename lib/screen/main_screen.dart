@@ -9,7 +9,6 @@ import 'package:hematpay/screen/main_page_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/screen/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/my_accounts/my_accounts.dart';
-import 'package:hematpay/user_account/user_panel/user_account.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -30,15 +29,15 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             IconButton(
               icon: Image.asset('assets/images/Ellipse.png'),
-              iconSize: 35,
+              iconSize: 38,
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const UserAccount();
-                    },
-                  ),
-                );
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) {
+                //       return const UserAccount();
+                //     },
+                //   ),
+                // );
               },
             ),
             Padding(

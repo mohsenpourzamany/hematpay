@@ -36,13 +36,13 @@ class _CurrencyRateState extends State<CurrencyRate> {
               child: Column(
                 children: [
                   const Image(
-                    width: 240,
+                    width: 220,
                     image: AssetImage('assets/images/Logoo.png'),
                   ),
                   Container(
                     width: double.infinity,
                     margin: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
+                        horizontal: 30, vertical: 10),
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 255, 255, 255),
                         borderRadius: BorderRadius.circular(10)),

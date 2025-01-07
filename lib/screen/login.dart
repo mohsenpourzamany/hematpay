@@ -168,80 +168,95 @@ class SignupCard extends StatelessWidget {
         margin: const EdgeInsets.all(30.0),
         child: Padding(
           padding: const EdgeInsets.all(25.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const Image(
-                width: 90,
-                image: AssetImage('assets/images/logodark.png'),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const TextField(
-                decoration: InputDecoration(labelText: 'نام و نام خانوادگی'),
-              ),
-              const SizedBox(height: 10),
-              const TextField(
-                decoration: InputDecoration(labelText: 'نام کاربری'),
-              ),
-              const SizedBox(height: 10),
-              const TextField(
-                decoration: InputDecoration(labelText: 'موبایل'),
-              ),
-              const SizedBox(height: 10),
-              const TextField(
-                decoration: InputDecoration(labelText: 'ایمیل'),
-              ),
-              const SizedBox(height: 10),
-              const TextField(
-                decoration: InputDecoration(labelText: 'رمز'),
-                obscureText: true,
-              ),
-              const SizedBox(height: 70),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const SendCode();
-                  }));
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(130, 38),
-                  backgroundColor: Colors.brown,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Image(
+                  width: 90,
+                  image: AssetImage('assets/images/logodark.png'),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'نام'),
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'فامیلی'),
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'نام کاربری'),
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'ای دی نامبر'),
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'موبایل'),
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'ایمیل'),
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'رمز'),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 10),
+                const TextField(
+                  decoration: InputDecoration(labelText: 'تکرار رمز'),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 60),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const SendCode();
+                    }));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(130, 38),
+                    backgroundColor: Colors.brown,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  child: const Text(
+                    'ثبت نام',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'vazir',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-                child: const Text(
-                  'ثبت نام',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'vazir',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
+                const SizedBox(
+                  height: 12,
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: const Text(
+                    'ـ قبلا ثبت نام کردم',
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontFamily: 'vazir',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: const Text(
-                  'ـ قبلا ثبت نام کردم',
-                  style: TextStyle(
-                    color: Colors.black45,
-                    fontFamily: 'vazir',
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                  ),
+                const SizedBox(
+                  height: 15,
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

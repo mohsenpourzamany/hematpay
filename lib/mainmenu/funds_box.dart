@@ -50,7 +50,7 @@ class FundsBox extends StatelessWidget {
         //   height: 2,
         // ),
         const Text(
-          'بورس',
+          'ارز دیجیتال',
           style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w600,

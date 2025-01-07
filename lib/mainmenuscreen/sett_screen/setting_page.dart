@@ -4,6 +4,7 @@ import 'package:hematpay/mainmenuscreen/sett_screen/change_language.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/other_bank_accounts/add_account.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/profile/person_profile.dart';
 import 'package:hematpay/mainmenuscreen/sett_screen/suppurt_contact.dart';
+import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -232,6 +233,51 @@ class SettingPage extends StatelessWidget {
                           ),
                           Icon(
                             Icons.support_agent_outlined,
+                            color: Color(0xff111111),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      maximumSize: const Size(314, 45),
+                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const ManagerPanelMainPage();
+                          },
+                        ),
+                      );
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Spacer(),
+                          Text(
+                            'پنل مدیریتی',
+                            style: TextStyle(
+                                color: Color(0xff111111),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'vazir'),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Icon(
+                            Icons.manage_accounts_outlined,
                             color: Color(0xff111111),
                           ),
                         ],

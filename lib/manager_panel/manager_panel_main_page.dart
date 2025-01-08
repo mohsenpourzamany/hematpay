@@ -349,7 +349,7 @@ class _ManagerPanelMainPageState extends State<ManagerPanelMainPage> {
                                     child: Column(
                                       children: [
                                         Text(
-                                          ' صندوق اصلی وبانک  ',
+                                          ' صندوق اصلی و بانک  ',
                                           style: TextStyle(
                                               fontFamily: 'vazir',
                                               fontSize: 17,

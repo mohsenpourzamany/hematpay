@@ -1,15 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:hematpay/mainmenu/money_bag.dart';
-import 'package:hematpay/mainmenu/send_money.dart';
-import 'package:hematpay/mainmenuscreen/sett_screen/setting_page.dart';
 import 'package:hematpay/manager_panel/main_bank/main_bank_balance.dart';
-import 'package:hematpay/screen/main_screen.dart';
 import 'package:hematpay/user_account/notification_user.dart';
-import 'package:hematpay/screen/currency_rate.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
-import 'package:hematpay/widgets/card_balance.dart';
 
 class CreateWallet extends StatefulWidget {
   const CreateWallet({super.key});
@@ -23,6 +17,7 @@ class _CreateWalletState extends State<CreateWallet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 170, 108, 67),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Row(
@@ -72,147 +67,36 @@ class _CreateWalletState extends State<CreateWallet> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedFontSize: 15,
-        selectedLabelStyle:
-            const TextStyle(color: Colors.white, fontFamily: 'vazir'),
-        unselectedLabelStyle:
-            const TextStyle(color: Colors.white, fontSize: 14),
-        backgroundColor: const Color.fromARGB(255, 250, 250, 250),
-        fixedColor: const Color.fromARGB(255, 255, 255, 255),
-        unselectedItemColor: const Color.fromARGB(255, 251, 251, 251),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MainScreen();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.home,
-                size: 40,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'خانه',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SendMoney();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.send_to_mobile,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'ارسال',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const CurrencyRate();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.currency_exchange,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'نرخ ارز',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MoneyBag();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.account_balance_wallet,
-                size: 35,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'حساب',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-          BottomNavigationBarItem(
-            icon: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SettingPage();
-                    },
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.settings,
-                size: 40,
-                color: Color(0xffffffff),
-              ),
-            ),
-            label: 'تنظیمات',
-            backgroundColor: const Color(0xff3A3A3A),
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
-        child: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                const Color.fromARGB(255, 16, 6, 1),
+                Color.fromARGB(255, 46, 19, 2),
+                const Color.fromARGB(0, 65, 46, 40),
+                Color.fromARGB(255, 17, 8, 0),
+              ],
+            ),
+          ),
           child: Stack(
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: Image(
-                  width: double.infinity,
-                  image: AssetImage('assets/images/sbg.jpg'),
-                ),
-              ),
-              CardBalance(),
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(top: 118),
+                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 130),
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(50)),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: Column(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(right: 350, top: 20),
+                        margin: const EdgeInsets.only(right: 350, top: 5),
                         child: IconButton(
-                          icon: Image.asset('assets/icon/back.png'),
+                          icon: Icon(Icons.cancel_outlined),
                           iconSize: 35,
                           onPressed: () {
                             Navigator.of(context).push(
@@ -391,7 +275,7 @@ class _CreateWalletState extends State<CreateWallet> {
                                       ),
                                     ),
                                     SizedBox(
-                                      width: 30,
+                                      width: 25,
                                     ),
                                     ElevatedButton(
                                       onPressed: () {

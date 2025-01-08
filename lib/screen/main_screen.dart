@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -40,8 +38,8 @@ class _MainScreenState extends State<MainScreen> {
                 // );
               },
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 75),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 75),
               child: Column(
                 children: [
                   Text(
@@ -79,7 +77,7 @@ class _MainScreenState extends State<MainScreen> {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
           child: BottomNavigationBar(
-            fixedColor: Color.fromARGB(255, 195, 165, 106),
+            fixedColor: const Color.fromARGB(255, 195, 165, 106),
             onTap: (int index) {
               setState(() {
                 selectedBottomNavigationIndex = index;
@@ -91,7 +89,7 @@ class _MainScreenState extends State<MainScreen> {
                 fontSize: 16,
                 color: Color.fromARGB(255, 195, 165, 106),
                 fontWeight: FontWeight.w500),
-            unselectedLabelStyle: TextStyle(
+            unselectedLabelStyle: const TextStyle(
                 fontFamily: 'vazir',
                 fontSize: 14,
                 color: Colors.black,
@@ -99,20 +97,20 @@ class _MainScreenState extends State<MainScreen> {
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.home_filled,
                   size: 40,
                   color: Colors.grey,
                 ),
                 activeIcon: Container(
-                  decoration: BoxDecoration(boxShadow: [
+                  decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Color.fromARGB(255, 195, 165, 106),
                         blurRadius: 20,
                         spreadRadius: -9,
                         offset: Offset(0, 10))
                   ]),
-                  child: Icon(
+                  child: const Icon(
                     Icons.home_filled,
                     size: 40,
                     color: Color.fromARGB(255, 170, 108, 67),
@@ -121,20 +119,20 @@ class _MainScreenState extends State<MainScreen> {
                 label: 'خانه',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.attach_money,
                   size: 40,
                   color: Colors.grey,
                 ),
                 activeIcon: Container(
-                  decoration: BoxDecoration(boxShadow: [
+                  decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Color.fromARGB(255, 195, 165, 106),
                         blurRadius: 20,
                         spreadRadius: -9,
                         offset: Offset(0, 10))
                   ]),
-                  child: Icon(
+                  child: const Icon(
                     Icons.attach_money,
                     size: 40,
                     color: Color.fromARGB(255, 170, 108, 67),
@@ -143,20 +141,20 @@ class _MainScreenState extends State<MainScreen> {
                 label: 'نرخ ارز',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.currency_exchange_rounded,
                   size: 40,
                   color: Colors.grey,
                 ),
                 activeIcon: Container(
-                  decoration: BoxDecoration(boxShadow: [
+                  decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Color.fromARGB(255, 195, 165, 106),
                         blurRadius: 20,
                         spreadRadius: -9,
                         offset: Offset(0, 10))
                   ]),
-                  child: Icon(
+                  child: const Icon(
                     Icons.currency_exchange_rounded,
                     size: 40,
                     color: Color.fromARGB(255, 170, 108, 67),
@@ -165,20 +163,20 @@ class _MainScreenState extends State<MainScreen> {
                 label: ' صرافی',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.account_balance_wallet_outlined,
                   size: 40,
                   color: Colors.grey,
                 ),
                 activeIcon: Container(
-                  decoration: BoxDecoration(boxShadow: [
+                  decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Color.fromARGB(255, 195, 165, 106),
                         blurRadius: 20,
                         spreadRadius: -9,
                         offset: Offset(0, 10))
                   ]),
-                  child: Icon(
+                  child: const Icon(
                     Icons.account_balance_wallet_outlined,
                     size: 40,
                     color: Color.fromARGB(255, 170, 108, 67),
@@ -187,20 +185,20 @@ class _MainScreenState extends State<MainScreen> {
                 label: 'حساب من',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.settings,
                   size: 40,
                   color: Colors.grey,
                 ),
                 activeIcon: Container(
-                  decoration: BoxDecoration(boxShadow: [
+                  decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Color.fromARGB(255, 195, 165, 106),
                         blurRadius: 20,
                         spreadRadius: -9,
                         offset: Offset(0, 10))
                   ]),
-                  child: Icon(
+                  child: const Icon(
                     Icons.settings,
                     size: 40,
                     color: Color.fromARGB(255, 170, 108, 67),
@@ -218,10 +216,10 @@ class _MainScreenState extends State<MainScreen> {
 
 List<Widget> getScreen() {
   return <Widget>[
-    MainPageScreen(),
-    CurrencyRate(),
-    CurrencyExchangePage(),
-    MyAccounts(),
-    SettingPage(),
+    const MainPageScreen(),
+    const CurrencyRate(),
+    const CurrencyExchangePage(),
+    const MyAccounts(),
+    const SettingPage(),
   ];
 }

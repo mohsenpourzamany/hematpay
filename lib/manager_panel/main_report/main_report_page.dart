@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:hematpay/manager_panel/main_report/bank_report.dart';
 import 'package:hematpay/manager_panel/main_report/brunch_report.dart';
+import 'package:hematpay/manager_panel/main_report/cash_report.dart';
+import 'package:hematpay/manager_panel/main_report/incom_expenses.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
@@ -155,7 +158,7 @@ class _MainReportPageState extends State<MainReportPage> {
                                         '۱ - گزارش گردش نمایندگان',
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.w700,
                                             fontFamily: 'vazir',
                                             color: Colors.black45),
                                       ),
@@ -173,7 +176,7 @@ class _MainReportPageState extends State<MainReportPage> {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const BrunchReport();
+                                    return const IncomeExpenses();
                                   },
                                 ),
                               );
@@ -201,7 +204,99 @@ class _MainReportPageState extends State<MainReportPage> {
                                         '۲ -   عواید و مصارف',
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.w700,
+                                            fontFamily: 'vazir',
+                                            color: Colors.black45),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const CashReport();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(left: 5),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                        width: 2, color: Colors.black26),
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_circle_left,
+                                      size: 30,
+                                      color: Color.fromARGB(255, 199, 134, 55),
+                                    ),
+                                    Spacer(),
+                                    Directionality(
+                                      textDirection: TextDirection.rtl,
+                                      child: Text(
+                                        '۳ -   گزارشات نقدینگی',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w700,
+                                            fontFamily: 'vazir',
+                                            color: Colors.black45),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const BankReport();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(left: 5),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                        width: 2, color: Colors.black26),
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_circle_left,
+                                      size: 30,
+                                      color: Color.fromARGB(255, 199, 134, 55),
+                                    ),
+                                    Spacer(),
+                                    Directionality(
+                                      textDirection: TextDirection.rtl,
+                                      child: Text(
+                                        '۴ -   گزارشات بانک',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w700,
                                             fontFamily: 'vazir',
                                             color: Colors.black45),
                                       ),
@@ -244,56 +339,10 @@ class _MainReportPageState extends State<MainReportPage> {
                                     Directionality(
                                       textDirection: TextDirection.rtl,
                                       child: Text(
-                                        '۳ -   نقدی و بانک',
+                                        '۵ -   تبادل اسعار',
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                            fontFamily: 'vazir',
-                                            color: Colors.black45),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const BrunchReport();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Container(
-                              margin: EdgeInsets.only(left: 5),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                        width: 2, color: Colors.black26),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.arrow_circle_left,
-                                      size: 30,
-                                      color: Color.fromARGB(255, 199, 134, 55),
-                                    ),
-                                    Spacer(),
-                                    Directionality(
-                                      textDirection: TextDirection.rtl,
-                                      child: Text(
-                                        '۴ -   تبادل اسعار',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.w700,
                                             fontFamily: 'vazir',
                                             color: Colors.black45),
                                       ),

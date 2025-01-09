@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hematpay/manager_panel/main_report/brunch_report.dart';
 import 'package:hematpay/manager_panel/manager_panel_main_page.dart';
+import 'package:hematpay/manager_panel/transaction/cash_trans_page.dart';
 import 'package:hematpay/user_account/notification_user.dart';
 import 'package:hematpay/user_account/user_panel/user_account.dart';
 
@@ -121,7 +122,7 @@ class MainTransaction extends StatelessWidget {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const BrunchReport();
+                                    return const CashTransPage();
                                   },
                                 ),
                               );
